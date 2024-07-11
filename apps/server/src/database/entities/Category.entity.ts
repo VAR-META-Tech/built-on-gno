@@ -17,9 +17,12 @@ export class Category {
   name: string
 
   @Column()
-  description: string
+  pathname: string
 
   @Column()
+  description: string
+
+  @Column({ nullable: true })
   parent: string
 
   @CreateDateColumn()

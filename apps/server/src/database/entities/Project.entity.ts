@@ -27,8 +27,8 @@ export class Project {
   @Column()
   shortDescription: string
 
-  @Column()
-  description: string
+  // @Column()
+  // description: string
 
   @Column()
   author: string

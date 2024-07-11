@@ -1,0 +1,35 @@
+flow of each cron
+    get the output of "git pull" command, extract the file change
+    track the project folder to see file change if exist
+        if not exist, then this file is delete
+        if exist, then this file is update
+            
+
+ each project?
+    logoUrl 
+    description
+
+flow in the git pull:
+
+git pull run, get the output
+from the output, we have a list of file change
+    check if this file is equal to project change => create or update the project
+    check if this file is equal to categories change (parent category)
+
+
+the users of our system: 
+    user: 
+        create new sub category where this category have information about the project => done
+        create new project with existed sub category => done
+        update existed project => done
+    admin
+        create new parent category, maybe the admin will create some sub category
+        (merge valid pull request)
+
+Rule
+    when create sub category, need to create at least one project in that sub category, if not, then what the sub use for?
+
+=> from the git pull command, handle the "tuong ung" case
+
+        
+build base database seem to have problem of not checking nullable
