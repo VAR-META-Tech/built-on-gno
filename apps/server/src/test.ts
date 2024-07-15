@@ -1,4 +1,5 @@
-const path = '/'
+const str = 'vu tuan linh'
 
-const array = path.split('/')
-console.log(array)
+const index = str.indexOf('vus')
+
+console.log(index)

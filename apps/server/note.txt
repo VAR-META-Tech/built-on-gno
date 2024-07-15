@@ -1,0 +1,18 @@
+Updating 164b4c5..a8e3309
+Fast-forward
+ projects/Bitcoin/category.json      |  8 ++++++++
+ projects/DeFi/DEX/Deep/detail.md    |  0
+ projects/DeFi/DEX/Deep/info.json    | 36 ++++++++++++++++++++++++++++++++++++
+ projects/DeFi/DEX/Deep/logo.png     |  0
+ projects/DeFi/DIX/Machine/detail.md |  0
+ projects/DeFi/DIX/Machine/info.json | 36 ++++++++++++++++++++++++++++++++++++
+ projects/DeFi/DIX/Machine/logo.png  |  0
+ projects/DeFi/category.json         |  6 ++++++
+ 8 files changed, 86 insertions(+)
+ create mode 100644 projects/Bitcoin/category.json
+ create mode 100644 projects/DeFi/DEX/Deep/detail.md
+ create mode 100644 projects/DeFi/DEX/Deep/info.json
+ create mode 100644 projects/DeFi/DEX/Deep/logo.png
+ create mode 100644 projects/DeFi/DIX/Machine/detail.md
+ create mode 100644 projects/DeFi/DIX/Machine/info.json
+ create mode 100644 projects/DeFi/DIX/Machine/logo.png

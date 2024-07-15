@@ -22,9 +22,12 @@ the users of our system:
         create new sub category where this category have information about the project => done
         create new project with existed sub category => done
         update existed project => done
+        delete existed project ( does this have this case? )
     admin
         create new parent category, maybe the admin will create some sub category
         (merge valid pull request)
+
+        cac case delete, cac truong hop nao se xay ra?
 
 Rule
     when create sub category, need to create at least one project in that sub category, if not, then what the sub use for?
