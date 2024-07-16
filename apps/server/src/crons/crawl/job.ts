@@ -1,6 +1,7 @@
 import { exec } from 'child_process'
 import { pullStringArray } from './utils/pullStringArray'
 import { classificationCase } from './utils/classificationCase'
+import { handleCase } from './utils/handleCase'
 
 export function crawlJob() {
   const path = `${__dirname}/shell.sh`
@@ -11,6 +12,7 @@ export function crawlJob() {
       const caseData = await classificationCase(fileChange)
 
       console.log(caseData)
+      handleCase(caseData)
     }
   })
 }

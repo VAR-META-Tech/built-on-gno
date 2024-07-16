@@ -3,6 +3,7 @@ import { pullStringArray } from './crons/crawl/utils/pullStringArray'
 
 import * as fs from 'fs'
 import { connection } from './database/connection'
+import { handleCase } from './crons/crawl/utils/handleCase'
 
 async function main() {
   await connection.initialize()
@@ -15,7 +16,7 @@ async function main() {
   if (fileChange.length !== 0) {
     const caseData = await classificationCase(fileChange)
 
-    console.log(caseData)
+    handleCase(caseData)
   }
 }
 

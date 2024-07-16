@@ -36,3 +36,12 @@ Rule
 
         
 build base database seem to have problem of not checking nullable
+
+1 project name co the co trong nhieu sub categories?
+
+
+? Question about the database:
+    what is the logo_url in project
+    where is glossary?
+    where is project_description?
+    where is tag description?
