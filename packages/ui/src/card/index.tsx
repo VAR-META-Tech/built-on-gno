@@ -5,9 +5,11 @@ type Props = {
 
 export const Card = ({ children, title }: Props) => {
   return (
-    <div className='flex flex-col gap-2 justify-start items-start'>
-      <h3 className='px-4 font-bold text-lg lg:text-2xl text-ellipsis'>{title}</h3>
-      <div className='rounded-3xl shadow-lg bg-white p-6 flex flex-wrap gap-6'>
+    <div className="flex flex-col items-start justify-start gap-2">
+      <h3 className="text-ellipsis px-4 text-lg font-bold lg:text-2xl">
+        {title}
+      </h3>
+      <div className="flex flex-wrap gap-6 rounded-3xl bg-white p-6 shadow-lg">
         {children}
       </div>
     </div>

@@ -1,0 +1,22 @@
+{
+  "projects":"Built on gno",
+  "description":"Built on gnosis",
+  "categories":[
+    {
+      "name":"DeFi",
+      "pathname":"DeFi"
+    },
+    {
+      "name":"Wallets",
+      "pathname":"Wallets"
+    },
+    {
+      "name":"NFT Collections",
+      "pathname":"NFT-Collections"
+    },
+    {
+      "name":"Memecoins",
+      "pathname":"Memecoins"
+    }
+  ]
+}

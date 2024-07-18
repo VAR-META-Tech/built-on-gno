@@ -10,7 +10,7 @@ const handleError = async (error: any) => {
   return Promise.reject(data);
 };
 
-request.interceptors.response.use((response:AxiosResponse) => response.data, handleError);
+request.interceptors.response.use((response: AxiosResponse) => response.data, handleError);
 
 export { request };
 export * from "./queries";

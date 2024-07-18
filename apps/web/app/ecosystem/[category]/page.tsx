@@ -1,3 +1,3 @@
-import DetailCategory from "@/modules/DetailCategory";
+import DetailCategory from '@/modules/DetailCategory'
 
 export default DetailCategory

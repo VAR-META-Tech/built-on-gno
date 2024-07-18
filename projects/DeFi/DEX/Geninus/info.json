@@ -1,35 +1,33 @@
 {
-	"Industry": [
-		"DeFi",
-		"Dex"
-	],
-	"displayTerm": "DeFi",
-	"term": "defi",
-	"tags": [
-		"AMM",
-		"CLMM",
-		"Swaps",
-		"NFT",
-		"Liquidity Manager",
-		"Yield Farming",
-		"Yield Optimizer"
-	],
-	"Partnerships": [
-		{
-			"name": "Ledgity",
-			"image": "https://firebasestorage.googleapis.com/v0/b/builtoncardano.appspot.com/o/uploads%2F1632258485557.svg%2Bxml?alt=media&token=d6d74819-e40d-4e7b-a4be-002653835b01"
-		},
-		{
-			"name": "Ledgity",
-			"image": "https://firebasestorage.googleapis.com/v0/b/builtoncardano.appspot.com/o/uploads%2F1632258485557.svg%2Bxml?alt=media&token=d6d74819-e40d-4e7b-a4be-002653835b01"
-		}
-	],
-	"Author": "builtongno",
-	"social": {
-		"website": "https://defilama.com",
-		"twitter": "https://twitter.com/defilama",
-		"github": "https://github.com/defilama",
-		"discord": "https://discord.com/invite/defilama",
-		"telegram": "https://t.me/defilama"
-	}
+  "industry": [
+    "DeFi",
+    "Dex"
+  ],
+  "display_term": "DeFi",
+  "term": "defi",
+  "tags": [
+    "AMM",
+    "CLMM",
+    "Swaps",
+    "NFT"
+  ],
+  "short_description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com.",
+  "partnerships": [
+    {
+      "name": "Ledgity",
+      "image": "https://firebasestorage.googleapis.com/v0/b/builtoncardano.appspot.com/o/uploads%2F1632258485557.svg%2Bxml?alt=media&token=d6d74819-e40d-4e7b-a4be-002653835b01"
+    },
+    {
+      "name": "Ledgity",
+      "image": "https://firebasestorage.googleapis.com/v0/b/builtoncardano.appspot.com/o/uploads%2F1632258485557.svg%2Bxml?alt=media&token=d6d74819-e40d-4e7b-a4be-002653835b01"
+    }
+  ],
+  "author": "builtongno",
+  "social": {
+    "website": "https://defilama.com",
+    "twitter": "https://twitter.com/defilama",
+    "github": "https://github.com/defilama",
+    "discord": "https://discord.com/invite/defilama",
+    "telegram": "https://t.me/defilama"
+  }
 }

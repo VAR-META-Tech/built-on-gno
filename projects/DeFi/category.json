@@ -1,71 +1,21 @@
 {
-    "name": "DeFi",
-    "website": "https://acala.network",
-    "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com.",
-    "explorer": "https://acala.subscan.io",
-    "symbol": "ACA",
-    "type": "coin",
-    "status": "active",
-    "projects": [
-        {
-            "name": "Carot",
-            "tag": [
-                "AMM",
-                "Swaps",
-                "NFT"
-            ],
-            "logo": "https://images.thedapplist.com/prod/uploads/projects/image_1694354043720_carrot.png",
-            "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com."
-        },
-        {
-            "name": "Light",
-            "tag": [
-                "AMM",
-                "Swaps",
-                "NFT"
-            ],
-            "logo": "https://images.thedapplist.com/prod/uploads/projects/image_1713262925439_light.png",
-            "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com."
-        },
-        {
-            "name": "dRPC",
-            "tag": [
-                "AMM",
-                "Swaps",
-                "NFT"
-            ],
-            "logo": "https://images.thedapplist.com/prod/uploads/projects/image_1713202006632_d-rpc.jpeg",
-            "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com."
-        },
-        {
-            "name": "Subquid",
-            "tag": [
-                "AMM",
-                "Swaps",
-                "NFT"
-            ],
-            "logo": "https://images.thedapplist.com/prod/uploads/projects/image_1713197059581_subsquid.jpeg",
-            "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com."
-        },
-        {
-            "name": "Genius",
-            "tag": [
-                "AMM",
-                "Swaps",
-                "NFT"
-            ],
-            "logo": "https://img.freepik.com/free-vector/realistic-cardano-coin-illustration_52683-78384.jpg?semt=ais_user",
-            "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com."
-        },
-        {
-            "name": "Genius",
-            "tag": [
-                "AMM",
-                "Swaps",
-                "NFT"
-            ],
-            "logo": "https://img.freepik.com/free-vector/realistic-cardano-coin-illustration_52683-78384.jpg?semt=ais_user",
-            "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com."
-        }
-    ]
+  "name": "DeFi",
+  "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com.",
+  "pathname": "DeFi",
+  "status": "active",
+  "tags": [
+    "DeFi",
+    "Education",
+    "Videos",
+    "Merchandise",
+    "Learn"
+  ],
+  "sub_categories": [
+    {
+      "name": "Dex",
+      "pathname": "DEX",
+      "status": "active",
+      "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com."
+    }
+  ]
 }

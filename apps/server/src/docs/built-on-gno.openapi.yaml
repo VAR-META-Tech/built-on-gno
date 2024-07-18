@@ -1,0 +1,543 @@
+openapi: 3.0.0
+info:
+  title: Built On Gno
+  description: The API for the Built On Gno project
+  version: 1.0.0
+servers:
+  - url: https://virtserver.swaggerhub.com/Hoanle396/BuiltOnGno/1.0.0
+    description: SwaggerHub API Auto Mocking
+paths:
+  /api/v1/categories:
+    get:
+      tags:
+        - Categories
+      description: returns all categories
+      operationId: getCategories
+      parameters:
+        - name: page
+          in: query
+          description: page for pagination
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            type: integer
+          example: 1
+        - name: page_size
+          in: query
+          description: page size for pagination
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            type: integer
+          example: 10
+        - name: order
+          in: query
+          description: order by project
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+          example: created_at:desc
+        - name: search
+          in: query
+          description: search project by project name
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+          example: keyword
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoriesResponse'
+        '500':
+          description: error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/categories/{category_id}:
+    get:
+      tags:
+        - Categories
+      description: return category by category id
+      operationId: getCategory
+      parameters:
+        - name: category_id
+          in: path
+          description: category id
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CategoryResponse'
+        '404':
+          description: error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/projects:
+    get:
+      tags:
+        - Projects
+      description: return all projects
+      operationId: getProjects
+      parameters:
+        - name: category_id
+          in: query
+          description: category id
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            type: integer
+          example: 1
+        - name: sub_category_id
+          in: query
+          description: sub category id
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            type: integer
+          example: 1
+        - name: tag_id
+          in: query
+          description: tag id
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            type: integer
+          example: 1
+        - name: page
+          in: query
+          description: page for pagination
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            type: integer
+          example: 1
+        - name: page_size
+          in: query
+          description: page size for pagination
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            type: integer
+          example: 10
+        - name: order
+          in: query
+          description: order by project
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+          example: created_at:desc
+        - name: search
+          in: query
+          description: search project by project name
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+          example: keyword
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectResponse'
+        '500':
+          description: error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/projects/{project_id}:
+    get:
+      tags:
+        - Projects
+      description: return project by project id
+      operationId: getProject
+      parameters:
+        - name: project_id
+          in: path
+          description: project id
+          required: true
+          style: simple
+          explode: false
+          schema:
+            minimum: 1
+            type: integer
+          example: 1
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectDetails'
+        '404':
+          description: error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/tags:
+    get:
+      tags:
+        - Tags
+      description: return all tags
+      operationId: getTags
+      parameters:
+        - name: page
+          in: query
+          description: page for pagination
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            type: integer
+          example: 1
+        - name: page_size
+          in: query
+          description: page size for pagination
+          required: false
+          style: form
+          explode: true
+          schema:
+            minimum: 1
+            type: integer
+          example: 10
+        - name: order
+          in: query
+          description: order tags
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+          example: created_at:desc|id:desc
+        - name: search
+          in: query
+          description: search tags by tag name
+          required: false
+          style: form
+          explode: true
+          schema:
+            type: string
+          example: keyword
+      responses:
+        '200':
+          description: success response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TagsResponse'
+        '500':
+          description: error response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+          description: error code
+          example: '500'
+        message:
+          type: string
+          description: error description
+          example: Internal server error
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+          description: current page data
+          example: 1
+        page_size:
+          type: integer
+          description: current page size
+          example: 10
+        total_pages:
+          type: integer
+          description: total pages data
+          example: 5
+        total_items:
+          type: integer
+          description: total items data
+          example: 50
+    CategoriesResponse:
+      type: object
+      properties:
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+    CategoryResponse:
+      type: object
+      properties:
+        data:
+          allOf:
+            - $ref: '#/components/schemas/Category'
+            - type: object
+              properties:
+                sub_categories:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Category'
+    Category:
+      type: object
+      properties:
+        id:
+          type: number
+          description: category id
+          example: 1
+        name:
+          type: string
+          description: category name
+          example: category name
+        description:
+          type: string
+          description: category description
+          example: category description
+    ProjectResponse:
+      type: object
+      properties:
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProjectInfo'
+    TagsResponse:
+      type: object
+      properties:
+        pagination:
+          $ref: '#/components/schemas/Pagination'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+    Tag:
+      type: object
+      properties:
+        id:
+          type: number
+          description: tag id
+          example: 1
+        name:
+          type: string
+          description: tag name
+          example: tag name
+        description:
+          type: string
+          description: tag description
+          example: tag description
+    ProjectInfo:
+      type: object
+      properties:
+        id:
+          type: number
+          description: project id
+          example: 1
+        name:
+          type: string
+          description: project name
+          example: project name
+        logo_url:
+          type: string
+          description: project logo url
+          example: http://com.example.image/image.png
+        tags:
+          type: array
+          description: project tags
+          items:
+            $ref: '#/components/schemas/Tag'
+        short_description:
+          type: string
+          description: project short description
+          example: project short description
+        created_at:
+          type: string
+          description: project created at
+          example: datetime
+        updated_at:
+          type: string
+          description: project updated at
+          example: datetime
+    ProjectDetails:
+      type: object
+      properties:
+        data:
+          allOf:
+            - $ref: '#/components/schemas/ProjectInfo'
+            - type: object
+              properties:
+                category:
+                  allOf:
+                    - $ref: '#/components/schemas/Category'
+                    - type: object
+                      properties:
+                        sub_category:
+                          $ref: '#/components/schemas/Category'
+                description:
+                  type: string
+                  description: project description
+                  example: project description
+                author:
+                  type: string
+                  description: project author name
+                  example: project author
+                partnerships:
+                  type: array
+                  description: project partnerships
+                  items:
+                    $ref: '#/components/schemas/Partnership'
+                socials:
+                  type: array
+                  description: project socials
+                  items:
+                    $ref: '#/components/schemas/Social'
+                compare:
+                  type: array
+                  description: project compare feature
+                  items:
+                    $ref: '#/components/schemas/ProjectCompare'
+                glossaries:
+                  type: array
+                  description: project glossaries
+                  items:
+                    $ref: '#/components/schemas/Glossary'
+    Partnership:
+      type: object
+      properties:
+        id:
+          type: number
+          description: partnership id
+          example: 1
+        name:
+          type: string
+          description: partnership name
+          example: partnership name
+        logo_url:
+          type: string
+          description: partnership logo url
+          example: http://com.example.image/image.png
+    Social:
+      type: object
+      properties:
+        id:
+          type: number
+          description: social id
+          example: 1
+        type:
+          type: string
+          description: social type
+          example: social type
+        url:
+          type: string
+          description: social url
+          example: http://social.com/username
+    Feature:
+      type: object
+      properties:
+        id:
+          type: number
+          description: feature id
+          example: 1
+        key:
+          type: string
+          description: feature key
+          example: feature key
+        label:
+          type: string
+          description: feature label
+          example: feature label
+        value:
+          type: boolean
+          description: feature value
+          example: true
+    ProjectFeatures:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/ProjectInfo'
+        - type: object
+          properties:
+            features:
+              type: array
+              items:
+                $ref: '#/components/schemas/Feature'
+    ProjectCompare:
+      type: object
+      properties:
+        tag:
+          $ref: '#/components/schemas/Tag'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProjectFeatures'
+    Glossary:
+      type: object
+      properties:
+        id:
+          type: number
+          description: glossary id
+          example: 1
+        name:
+          type: string
+          description: glossary name
+          example: glossary name
+        description:
+          type: string
+          example: glossary description
