@@ -152,7 +152,7 @@ const DetailProject = () => {
       <div className="col-span-12 flex flex-col justify-start gap-8 py-10">
         <p className="max-w-md px-4 text-3xl font-bold lg:text-5xl">
           Compare similar projects to
-          <span className="text-[#312cc9]"> {data.name}</span>
+          <span className="text-primary"> {data.name}</span>
         </p>
         <CompareTable data={tabledata} features={features} />
       </div>

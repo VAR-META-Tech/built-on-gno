@@ -1,110 +1,72 @@
-"use client";
-import { fadeIn } from "@/constants/variants";
-import { Heading } from "@var-meta/ui";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import {
-  MouseParallaxChild,
-  MouseParallaxContainer,
-} from "react-parallax-mouse";
-import { TypeAnimation } from "react-type-animation";
-
-const data = [
-  "Blockchain",
-  3000,
-  "VR-AR",
-  3000,
-  "Artificial Intelligence",
-  3000,
-  "Game",
-  3000,
-  "Software Consulting",
-];
+'use client'
+import { useProjects, useTags } from '@/apis'
+import { RectangleGroup, Search } from '@repo/ui'
+import { Heading } from '@var-meta/ui'
+import { useState } from 'react'
 
 const HeroSection = () => {
+  const [search, setSearch] = useState('')
+  const { data: projects } = useProjects({ search })
+  const { data: tags } = useTags({ search })
+
+  const lineOne = [
+    'https://images.thedapplist.com/prod/uploads/projects/image_1694354043720_carrot.png',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1713262925439_light.png',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1713202006632_d-rpc.jpeg',
+  ]
+  const lineTwo = [
+    'https://images.thedapplist.com/prod/uploads/projects/image_1713197059581_subsquid.jpeg',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1709116925030_layer-zero.jpeg',
+    'https://images.thedapplist.com/dev/uploads/proposals/avatar_pool-together.png',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1707804001192_den.jpeg',
+  ]
+  const lineThree = [
+    'https://images.thedapplist.com/prod/uploads/projects/image_1705834562040_hopr-staking-hub.png',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1705674839766_ucf-finance.png',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1691752774323_aragon.jpeg',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1705493502000_triangle.jpeg',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1704351903210_hyperlane.jpeg',
+  ]
+  const lineFour = [
+    'https://images.thedapplist.com/prod/uploads/projects/image_1704185409018_walletbeat-fyi.jpeg',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1697556638632_envio.png',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1701693577729_rubic.png',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1700824970222_indexed.jpeg',
+  ]
+  const lineFive = [
+    'https://images.thedapplist.com/prod/uploads/projects/image_1700115379235_delegate.png',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1713440327185_layer-3.jpeg',
+    'https://images.thedapplist.com/prod/uploads/projects/image_1698243533973_flooz.png',
+  ]
   return (
-    <section className="h-[calc(100vh-64px)] bg-[#312cc9]">
-      <div className="container relative mx-auto h-full flex justify-center items-center lg:justify-start">
-        <div className="h-full flex flex-col justify-center items-center lg:items-start z-20 pt-12">
-          <MouseParallaxContainer
-            globalFactorX={0.1}
-            globalFactorY={0.2}
-            resetOnLeave
-            className="relative flex items-center h-[120px] lg:h-max lg:w-[640px] xl:w-[840px]"
-          >
-            <MouseParallaxChild
-              factorX={0.2}
-              factorY={0.4}
-              className="relative"
-            >
-              <motion.div
-                variants={fadeIn("up", 0.4)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.3 }}
-                className="w-[250px] h-[101.37px] lg:w-[425px] lg:h-[199.97px] xl:w-[625px] xl:h-[244.97px]"
-              >
-                <Heading weight="bold" size="9xl" className="uppercase inline" color="#111111">BUILT</Heading>
-              </motion.div>
-            </MouseParallaxChild>
-            <MouseParallaxChild
-              factorX={0.9}
-              factorY={0.9}
-              className="absolute lg:left-6 z-30"
-            >
-              <motion.div
-                variants={fadeIn("up", 0.7)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.3 }}
-                className="w-[250px] h-[101.37px] lg:w-[425px] lg:h-[199.97px] xl:w-[525px] xl:h-[244.97px]"
-              >
-                <Heading weight="semibold" size="6xl" className="text-white my-12">On Gno</Heading>
-              </motion.div>
-            </MouseParallaxChild>
-          </MouseParallaxContainer>
-
-        </div>
-        <motion.div
-          variants={fadeIn("left", 0.2)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.7 }}
-          className="hidden lg:flex absolute right-0"
+    <div className="bg-primary relative flex h-[calc(50vh-64px)] min-h-96 w-full flex-col items-center justify-center">
+      <div className="container flex w-full items-center justify-around">
+        <Heading
+          size="7xl"
+          weight="semibold"
+          align="center"
+          className="text-white"
         >
-          <div className="relative flex flex-col items-center">
-            <Image
-              src="/var-meta-logo.png"
-              className="z-50 w-[400px] h-[300px] xl:w-[400px] xl:h-[300px]"
-              width={600}
-              height={600}
-              alt="bear"
-            />
-            <motion.div
-              variants={fadeIn("up", 1)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.7 }}
-              className="min-h-[60px] flex items-center mb-6 text-[26px]"
-            >
-              <div className="hidden lg:flex items-center lg:gap-x-0">
-                <div>VAR META</div>
-                <div className="relative w-2 h-2 mx-2 rounded-full bg-slate-500" />
-              </div>
-              <TypeAnimation
-                sequence={data}
-                wrapper="div"
-                speed={10}
-                deletionSpeed={10}
-                repeat={Infinity}
-                cursor={false}
-              ></TypeAnimation>
-            </motion.div>
-          </div>
-        </motion.div>
+          Built on Gno
+        </Heading>
+        <div className="hidden gap-1 md:flex md:flex-col">
+          <RectangleGroup className="justify-start" srcs={lineOne} />
+          <RectangleGroup className="justify-start" srcs={lineTwo} />
+          <RectangleGroup className="justify-start" srcs={lineThree} />
+          <RectangleGroup className="justify-end" srcs={lineFour} />
+          <RectangleGroup className="justify-end" srcs={lineFive} />
+        </div>
       </div>
-    </section>
-  );
-};
+      <div className={`absolute bottom-[-20px] h-fit w-full max-w-lg px-10`}>
+        <Search
+          onSearch={setSearch}
+          search={search}
+          projects={projects?.data ?? []}
+          terms={tags?.data ?? []}
+        />
+      </div>
+    </div>
+  )
+}
 
-export default HeroSection;
+export default HeroSection

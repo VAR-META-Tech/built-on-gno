@@ -20,11 +20,6 @@ export interface ICategoriesResponse {
   data: ICategory[]
 }
 
-export interface ITagsResponse {
-  pagination: Pagination
-  data: ITag[]
-}
-
 export interface IProject {
   id: number
   name: string
@@ -43,19 +38,6 @@ export interface ITag {
   description: string
   createdAt: string
   updatedAt: string
-}
-
-export interface Partnership {
-  name: string
-  image: string
-}
-
-export interface Social {
-  website: string
-  twitter: string
-  github: string
-  discord: string
-  telegram: string
 }
 
 export interface IProjectsResponse {

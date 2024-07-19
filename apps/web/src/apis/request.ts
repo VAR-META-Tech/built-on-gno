@@ -1,24 +1,45 @@
-import { ICategory, IPayloadGetProject, IProject, request } from "."
+import {
+  ICategoriesResponse,
+  ICategory,
+  IFilterPagination,
+  IFilterProjectOptions,
+  IProjectsResponse,
+  request,
+} from '.'
 
-export const getProjects = async (payload?: IPayloadGetProject): Promise<IProject[]> => {
-  const url = '/projects' + (payload?.category ? `/${payload?.category}` : '') + (payload?.sub_category ? `/${payload?.sub_category}` : '')
-
+export const getProjects = async (
+  payload?: IFilterProjectOptions,
+): Promise<IProjectsResponse> => {
   return await request({
-    url,
-    method: "GET"
+    url: '/v1/projects',
+    params: payload,
+    method: 'GET',
   })
 }
 
-export const getCategories = async (): Promise<ICategory[]> => {
+export const getCategories = async (
+  payload?: IFilterPagination,
+): Promise<ICategoriesResponse> => {
   return await request({
-    url: '/categories',
-    method: "GET"
+    url: '/v1/categories',
+    params: payload,
+    method: 'GET',
+  })
+}
+
+export const getTags = async (
+  payload?: IFilterPagination,
+): Promise<ICategoriesResponse> => {
+  return await request({
+    url: '/v1/tags',
+    params: payload,
+    method: 'GET',
   })
 }
 
 export const getCategory = async (category: string): Promise<ICategory> => {
   return await request({
-    url: '/category/' + category,
-    method: "GET"
+    url: '/v1/categories/' + category,
+    method: 'GET',
   })
 }
