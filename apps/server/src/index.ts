@@ -1,21 +1,14 @@
 import 'dotenv/config'
-import express from 'express'
-import cors from 'cors'
-import { router } from './routes'
 import 'reflect-metadata'
-import { connection } from './databases/connection'
-async function main() {
-  const port = process.env.PORT || 3001
-  const app = express()
-  app.use(cors())
+import App from './App'
+import CategoriesRoute from './routes/categories.route'
+import TagsRoute from './routes/tags.route'
+import ProjectsRoute from './routes/projects.route'
 
-  await connection.initialize()
+const app = new App([
+  new CategoriesRoute(),
+  new TagsRoute(),
+  new ProjectsRoute(),
+])
 
-  app.use('/api', router)
-
-  app.listen(port, () => {
-    return console.log(`Express is listening at http://localhost:${port}`)
-  })
-}
-
-main()
+app.listen()

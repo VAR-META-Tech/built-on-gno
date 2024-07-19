@@ -1,17 +1,18 @@
 import { DataSourceOptions } from 'typeorm'
 import 'dotenv/config'
-import { Categories } from '../databases/entities/Categories'
-import { Projects } from '../databases/entities/Projects'
-import { Partnerships } from '../databases/entities/Partnerships'
-import { Socials } from '../databases/entities/Socials'
-import { ProjectFeatures } from '../databases/entities/ProjectFeatures'
-import { ProjectTags } from '../databases/entities/ProjectTags'
-import { Features } from '../databases/entities/Features'
-import { Tags } from '../databases/entities/Tags'
-import { Glossaries } from '../databases/entities/Glossaries'
-import { GlossaryProjects } from '../databases/entities/GlossaryProjects'
-import { ProjectSocials } from '../databases/entities/ProjectSocials'
-import { ProjectDescriptions } from '../databases/entities/ProjectDescriptions'
+import { Categories } from '@/databases/entities/Categories'
+import { Projects } from '@/databases/entities/Projects'
+import { Partnerships } from '@/databases/entities/Partnerships'
+import { Socials } from '@/databases/entities/Socials'
+import { ProjectFeatures } from '@/databases/entities/ProjectFeatures'
+import { ProjectTags } from '@/databases/entities/ProjectTags'
+import { Features } from '@/databases/entities/Features'
+import { Tags } from '@/databases/entities/Tags'
+import { Glossaries } from '@/databases/entities/Glossaries'
+import { GlossaryProjects } from '@/databases/entities/GlossaryProjects'
+import { ProjectSocials } from '@/databases/entities/ProjectSocials'
+import { ProjectDescriptions } from '@/databases/entities/ProjectDescriptions'
+
 export const DatabaseConfig: DataSourceOptions = {
   type: 'mysql',
   host: process.env.TYPEORM_HOST,
@@ -31,7 +32,8 @@ export const DatabaseConfig: DataSourceOptions = {
     Glossaries,
     GlossaryProjects,
     ProjectSocials,
-    ProjectDescriptions
+    ProjectDescriptions,
   ],
   synchronize: true,
+  logging: true,
 }
