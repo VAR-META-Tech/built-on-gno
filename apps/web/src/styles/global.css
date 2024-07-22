@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: var(--font-karla);
+}
+
 @layer components {
   @keyframes bounce2 {
 
@@ -65,5 +69,21 @@
 
   .animate-bounce-img {
     animation: bounceimg 10s infinite;
+  }
+}
+
+@layer {
+
+  .slick-prev::before,
+  .slick-next::before {
+    @apply !text-primary !text-3xl
+  }
+
+  .slick-list {
+    @apply mx-1;
+  }
+
+  .slick-list .slick-slide>div {
+    @apply px-1.5;
   }
 }

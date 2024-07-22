@@ -1,41 +1,42 @@
+'use client'
+import '@/styles/global.css'
+import { Header } from '@repo/ui'
+import { Footer } from '@repo/ui/src/layouts'
 
-"use client"
-import "@/styles/global.css";
-import { Header } from "@repo/ui";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Karla } from 'next/font/google'
 
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+const karla = Karla({
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700', '800'],
+  variable: '--font-karla',
+})
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-montserrat",
-});
-
-// export const metadata: Metadata = {
-// 	title: "Built on Gno",
-// 	description: "Built on Gno",
-// };
-
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: { refetchOnWindowFocus: false, retry: false, staleTime: 1000 * 5 },
+  },
+})
 const RootLayout = ({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) => {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} overflow-x-hidden relative bg-gray-100 min-h-screen`}>
+      <body
+        className={`${karla.variable} relative min-h-screen overflow-x-hidden bg-gray-100`}
+      >
         <QueryClientProvider client={queryClient}>
           <>
             <Header />
             {children}
+            <Footer />
           </>
         </QueryClientProvider>
       </body>
     </html>
-  );
+  )
 }
 
 export default RootLayout
