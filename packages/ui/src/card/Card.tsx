@@ -10,7 +10,7 @@ export const Card = ({ children, title, className }: Props) => {
   return (
     <div
       className={clsx(
-        'flex flex-col items-start justify-start gap-2',
+        'flex flex-col items-start justify-start gap-2 p-2',
         className,
       )}
     >

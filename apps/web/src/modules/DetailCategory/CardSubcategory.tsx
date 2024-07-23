@@ -1,63 +1,75 @@
-import { ISubCategory, useProjects } from '@/apis'
-import { Card } from '@repo/ui'
-import { Badge, Tooltip, TooltipProvider } from '@var-meta/ui'
+import { useProjects } from '@/apis'
+import { DEFAULT_API_RETURN } from '@/constants'
+import { Card, ICategory } from '@repo/ui'
+import { Tag, Tooltip, TooltipProvider } from '@var-meta/ui'
 import Image from 'next/image'
 import Link from 'next/link'
-type Iprops = {
-  category: string
-  sub_category: ISubCategory
+type IProps = {
+  category_id: number
+  sub_category: ICategory
 }
 
-const CardSubcategory = ({ category, sub_category }: Iprops) => {
-  const { data } = useProjects({ category, sub_category: sub_category.name })
+const CardSubcategory = ({ category_id, sub_category }: IProps) => {
+  const { data = DEFAULT_API_RETURN } = useProjects({
+    category_id,
+    sub_category_id: sub_category.id,
+    page_size: 10000,
+  })
 
   return (
-    <Card title={sub_category.name}>
-      {data?.map((project) => (
-        <TooltipProvider>
-          <Tooltip
-            title={
-              <h2 className="text-2xl font-bold">{project.display_term}</h2>
-            }
-            contentClassName="w-full"
-            content={
-              <div className="flex w-full flex-col gap-3">
-                <div className="">{project.short_description}</div>
-                <div className="flex w-full flex-row gap-1 overflow-hidden">
-                  {project.tags.map((item) => (
-                    <Badge size="sm" radius="2xl">
-                      <span className="text-nowrap">{item}</span>
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            }
-          >
-            <Link
-              href={`/ecosystem/${category}/${project.display_term}`}
-              className="group flex cursor-pointer flex-col"
-            >
-              <div className="relative h-16 w-16 rounded-full border-2">
-                <Image
-                  src={
-                    'https://images.thedapplist.com/prod/uploads/projects/image_1691752774323_aragon.jpeg'
-                  }
-                  alt=""
-                  layout="fill"
-                  className="rounded-full object-cover"
-                />
-                <div className="absolute flex h-full w-full items-center justify-center rounded-full bg-black text-sm text-white opacity-0 transition-all duration-200 group-hover:opacity-50">
-                  explore
-                </div>
-              </div>
-              <h2 className="max-w-20 overflow-hidden text-ellipsis text-nowrap text-lg font-semibold">
-                {project.name}
-              </h2>
-            </Link>
-          </Tooltip>
-        </TooltipProvider>
-      ))}
-    </Card>
+    <>
+      {data.pagination.total_items > 0 && (
+        <Card
+          title={sub_category.name}
+          className={data.data.length > 3 ? 'col-span-12 lg:col-span-2' : 'col-span-4 lg:col-span-1'}
+        >
+          {data.data.map((project) => (
+            <TooltipProvider>
+              <Tooltip
+                title={
+                  <h2 className="p-2 text-2xl font-bold">{project.name}</h2>
+                }
+                contentClassName="w-full"
+                content={
+                  <div className="flex w-full flex-col gap-3 p-2">
+                    <div className="text-md font-normal text-gray-600">
+                      {project.shortDescription}
+                    </div>
+                    <div className="flex w-full flex-row gap-1 overflow-hidden">
+                      {project.projectTags.map(({ tag }) => (
+                        <Tag size="sm" radius="xl">
+                          <span className="text-nowrap p-2">{tag.name}</span>
+                        </Tag>
+                      ))}
+                    </div>
+                  </div>
+                }
+              >
+                <Link
+                  href={`/ecosystem/project/${project.id}`}
+                  className="group flex cursor-pointer flex-col"
+                >
+                  <div className="relative z-0 h-20 w-20 rounded-full border-2">
+                    <Image
+                      src={project.logoUrl}
+                      alt=""
+                      fill
+                      className="relative z-0 rounded-full object-cover"
+                    />
+                    <div className="absolute flex h-full w-full items-center justify-center rounded-full bg-black text-sm text-white opacity-0 transition-all duration-200 group-hover:opacity-50">
+                      explore
+                    </div>
+                  </div>
+                  <h2 className="max-w-20 overflow-hidden text-ellipsis text-nowrap text-lg font-semibold">
+                    {project.name}
+                  </h2>
+                </Link>
+              </Tooltip>
+            </TooltipProvider>
+          ))}
+        </Card>
+      )}
+    </>
   )
 }
 
