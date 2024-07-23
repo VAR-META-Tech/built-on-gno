@@ -10,15 +10,11 @@ import {
   TableRow,
 } from '@var-meta/ui'
 import Image from 'next/image'
+import { IProjectCompare, IProjectFeature } from '../types'
 
 interface Props {
-  data: {
-    [x: 'image' | 'name' | 'id' | string]: boolean | string
-  }[]
-  features: {
-    key: string
-    label: string
-  }[]
+  data: IProjectCompare[]
+  features: IProjectFeature[]
 }
 
 const CompareTable = ({ data, features }: Props) => {
@@ -33,7 +29,7 @@ const CompareTable = ({ data, features }: Props) => {
                 <div className="flex cursor-pointer flex-col items-center justify-center">
                   <div className="relative h-12 w-12 rounded-full border-2">
                     <Image
-                      src={String(item.image)}
+                      src={String(item.logoUrl)}
                       alt=""
                       layout="fill"
                       className="rounded-full object-cover"
@@ -48,20 +44,17 @@ const CompareTable = ({ data, features }: Props) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {features.map(({ key, label }) => (
-            <TableRow key={key}>
+          {features.map(({ id, featureId, feature }) => (
+            <TableRow key={id}>
               <TableCell>
-                <span className="text-lg">{label}</span>
+                <span className="text-lg">{feature.label}</span>
               </TableCell>
-              {data.map((item) => (
-                <TableCell>
+              {data.map(({ projectFeatures, logoUrl, id }) => (
+                <TableCell key={id}>
                   <div className="flex justify-center">
-                    {item[key as keyof typeof item] ? (
-                      <Avatar
-                        src={String(item.image)}
-                        radius="full"
-                        size="xs"
-                      />
+                    {projectFeatures.find((item) => item.featureId == featureId)
+                      ?.value == 1 ? (
+                      <Avatar src={String(logoUrl)} radius="full" size="xs" />
                     ) : (
                       <CloseIcon color="red" />
                     )}
