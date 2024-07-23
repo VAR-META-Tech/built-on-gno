@@ -14,4 +14,3 @@ request.interceptors.response.use((response: AxiosResponse) => response.data, ha
 
 export { request };
 export * from "./queries";
-export * from "./types";
