@@ -8,11 +8,13 @@ import { useMemo } from 'react'
 export const Category = ({ id, name }: ICategory) => {
   const { data = DEFAULT_API_RETURN } = useProjects({
     category_id: id,
-    page_size: 10000,
   })
 
   const [firstThree, remaining] = useMemo(
-    () => [data.data.slice(0, 3), data.data.slice(3, data.data.length).length],
+    () => [
+      data.data.slice(0, 3),
+      data.pagination.total_items > 3 ? data.pagination.total_items - 3 : 0,
+    ],
     [data.data],
   )
 
