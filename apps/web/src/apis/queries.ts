@@ -1,10 +1,11 @@
 import { UseQueryOptions, useQuery } from '@tanstack/react-query'
-import { getCategories, getCategory, getProjects, getTags } from './request'
+import { getCategories, getCategory, getProject, getProjects, getTags } from './request'
 import {
   ICategoriesResponse,
   ICategory,
   IFilterPagination,
   IFilterProjectOptions,
+  IProjectDetail,
   IProjectsResponse,
 } from '@repo/ui'
 
@@ -42,12 +43,23 @@ export const useTags = (
 }
 
 export const useCategory = (
-  category: string,
+  categoryId: string,
   option?: Partial<UseQueryOptions<ICategory, Error>>,
 ) => {
   return useQuery<ICategory, Error>({
-    queryKey: ['category', category],
-    queryFn: () => getCategory(category),
+    queryKey: ['category', categoryId],
+    queryFn: () => getCategory(categoryId),
+    ...option,
+  })
+}
+
+export const useProject = (
+  projectId: string,
+  option?: Partial<UseQueryOptions<IProjectDetail, Error>>,
+) => {
+  return useQuery<IProjectDetail, Error>({
+    queryKey: ['project', projectId],
+    queryFn: () => getProject(projectId),
     ...option,
   })
 }

@@ -4,7 +4,7 @@ import {
   IFilterPagination,
   IFilterProjectOptions,
   IProjectsResponse,
-  ProjectDetail,
+  IProjectDetail,
 } from '@repo/ui'
 import { request } from '.'
 
@@ -40,7 +40,7 @@ export const getTags = async (
 
 export const getProject = async (
   project_id: string,
-): Promise<ProjectDetail> => {
+): Promise<IProjectDetail> => {
   return await request({
     url: '/v1/projects/' + project_id,
     method: 'GET',

@@ -75,6 +75,7 @@ export class ProjectsService {
         .leftJoinAndSelect('project_socials.social', 'social')
         .where('project.id=:id', { id: +id })
         .getOne()
+      if(!project) return null
 
       const compares = await this.getCompareByProject(id)
 

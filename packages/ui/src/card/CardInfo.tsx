@@ -1,41 +1,12 @@
-import { CheckCircleBrokenIcon, GitPullRequestIcon } from '@var-meta/icons'
+import { CheckCircleBrokenIcon } from '@var-meta/icons'
 import { Button, Divider } from '@var-meta/ui'
+// eslint-disable-next-line no-redeclare
 import Image from 'next/image'
-import Link from 'next/link'
 import { useState } from 'react'
+import { IProjectDetail } from '../types'
+import Link from 'next/link'
 
-export interface IInfo {
-  name: string
-  description: string
-  industry: string[]
-  displayTerm: string
-  term: string
-  tags: string[]
-  partnerships: Partnership[]
-  author: string
-  social: Social
-  glossary: Glossary[]
-}
-
-interface Partnership {
-  name: string
-  image: string
-}
-
-interface Social {
-  website: string
-  twitter: string
-  git: string
-  discord: string
-  telegram: string
-}
-
-interface Glossary {
-  name: string
-  description: string
-}
-
-export const CardInfo = ({ data }: { data: IInfo }) => {
+export const CardInfo = ({ data }: { data: IProjectDetail | undefined }) => {
   const [showMore, setShowMore] = useState<boolean>(false)
 
   const onShow = () => {
@@ -44,15 +15,21 @@ export const CardInfo = ({ data }: { data: IInfo }) => {
 
   return (
     <div className="flex flex-col gap-4 rounded-xl bg-white p-8 shadow-md">
-      <h2 className="text-2xl font-bold">{data.displayTerm}</h2>
+      <h2 className="text-2xl font-bold">{data?.name}</h2>
       <div className="flex w-full flex-col gap-1">
         <p className="text-sm font-light">Industry</p>
-        <p className="font-medium">{data.industry.join(', ')}</p>
+        <p className="font-medium">
+          {data?.category?.parent?.name ??
+            '' + ', ' + data?.category?.name ??
+            ''}
+        </p>
         <Divider />
       </div>
       <div className="flex w-full flex-col gap-1">
         <p className="text-sm font-light">Tags</p>
-        <p className="font-medium">{data.tags.join(', ')}</p>
+        <p className="font-medium">
+          {data?.projectTags?.map(({ tag }) => tag.name).join(', ')}
+        </p>
         <Divider />
       </div>
       <div
@@ -67,12 +44,12 @@ export const CardInfo = ({ data }: { data: IInfo }) => {
           <div
             className={`flex w-full flex-col gap-4 ${showMore ? 'animate-accordion-down' : 'animate-accordion-up'}`}
           >
-            {data.partnerships.map((item) => (
+            {data?.partnerships?.map((item) => (
               <div className="flex flex-row items-center justify-between">
                 <Image
                   alt=""
                   className="rounded"
-                  src={item.image}
+                  src={item.logoUrl}
                   width={60}
                   height={60}
                 />
@@ -83,7 +60,7 @@ export const CardInfo = ({ data }: { data: IInfo }) => {
         )}
         {!showMore && (
           <p className="font-medium">
-            View {data.partnerships.length} partnerships
+            View {data?.partnerships?.length} partnerships
           </p>
         )}
         <Divider />
@@ -91,23 +68,30 @@ export const CardInfo = ({ data }: { data: IInfo }) => {
       <div className="flex w-full flex-col gap-1">
         <p className="text-sm font-light">Author</p>
         <p className="flex items-center gap-2 font-medium">
-          <CheckCircleBrokenIcon color="green" /> {data.author}
+          <CheckCircleBrokenIcon color="green" /> {data?.author}
         </p>
         <Divider />
       </div>
       <div className="flex w-full flex-col gap-1">
         <p className="text-sm font-light">Links</p>
         <p className="flex items-center gap-1 font-medium">
-          <Link href={data.social.website} target="_blank">
-            <Button variant="outline" radius="full">
-              Project website
-            </Button>
-          </Link>
-          <Link href={data.social.git} target="_blank">
-            <Button variant="outline" radius="full" iconOnly>
-              <GitPullRequestIcon />
-            </Button>
-          </Link>
+          {data?.projectSocials?.map(({ url, id, social }) => (
+            <Link href={url} key={id} target="_blank">
+              <Button
+                variant="outline"
+                radius="full"
+                className="relative rounded-full"
+                iconOnly
+              >
+                <Image
+                  alt=""
+                  className="rounded-full p-1"
+                  src={social.iconUrl}
+                  fill
+                />
+              </Button>
+            </Link>
+          ))}
         </p>
       </div>
     </div>

@@ -5,6 +5,7 @@ export interface ICategory {
   parentId?: number
   createdAt: string
   updatedAt: string
+  parent: ICategory
   subCategories?: ICategory[]
 }
 
@@ -81,17 +82,15 @@ export interface IProjectDetail {
   categoryId: number
   createdAt: string
   updatedAt: string
-  description: IDescription
-  tags: ITag[]
-  sub_category: ICategory
   category: ICategory
+  projectDescriptions: ProjectDescriptions
+  projectTags: IProjectTag[]
   partnerships: IPartnership[]
-  glossaries: IGlossary[]
-  socials: ISocial[]
-  compare: ICompare[]
+  glossaryProjects: IGlossaryProject[]
+  projectSocials: ProjectSocial[]
+  compares: ICompare[]
 }
-
-export interface IDescription {
+export interface ProjectDescriptions {
   id: number
   description: string
   createdAt: string
@@ -107,6 +106,24 @@ export interface IPartnership {
   updatedAt: string
 }
 
+export interface IGlossaryProject {
+  id: number
+  projectId: number
+  glossaryId: number
+  createdAt: string
+  updatedAt: string
+  glossary: IGlossary
+}
+
+export interface ProjectSocial {
+  id: number
+  socialId: number
+  url: string
+  projectId: number
+  createdAt: string
+  updatedAt: string
+  social: ISocial
+}
 export interface IGlossary {
   id: number
   name: string
@@ -137,7 +154,17 @@ export interface IProjectCompare {
   categoryId: number
   createdAt: string
   updatedAt: string
-  features: IFeature[]
+  projectFeatures: IProjectFeature[]
+}
+
+export interface IProjectFeature {
+  id: number
+  projectId: number
+  featureId: number
+  value: number
+  createdAt: string
+  updatedAt: string
+  feature: IFeature
 }
 
 export interface IFeature {
