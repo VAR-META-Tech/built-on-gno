@@ -45,14 +45,18 @@ export const CardInfo = ({ data }: { data: IProjectDetail | undefined }) => {
             className={`flex w-full flex-col gap-4 ${showMore ? 'animate-accordion-down' : 'animate-accordion-up'}`}
           >
             {data?.partnerships?.map((item) => (
-              <div className="flex flex-row items-center justify-between">
-                <Image
-                  alt=""
-                  className="rounded"
-                  src={item.logoUrl}
-                  width={60}
-                  height={60}
-                />
+              <div
+                key={item.id}
+                className="flex flex-row items-center justify-between"
+              >
+                <div className="relative h-14 w-16">
+                  <Image
+                    alt=""
+                    fill
+                    className="relative z-0 rounded"
+                    src={item.logoUrl}
+                  />
+                </div>
                 <p className="font-medium">{item.name}</p>
               </div>
             ))}

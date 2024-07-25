@@ -7,13 +7,17 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@var-meta/ui'
-import { useParams } from 'next/navigation'
+import { notFound, useParams } from 'next/navigation'
 import ReactMarkDown from 'react-markdown'
 import Compare from './Compare'
 
 const DetailProject = () => {
   const { project } = useParams()
-  const { data } = useProject(String(project))
+  const { data, isError } = useProject(String(project))
+
+  if (isError) {
+    notFound()
+  }
 
   return (
     <div className="container mt-12 grid w-full grid-flow-row grid-cols-12 gap-4">
