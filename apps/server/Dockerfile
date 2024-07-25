@@ -30,7 +30,12 @@ RUN adduser --system --uid 1001 expressjs
 
 USER expressjs
 
-COPY --from=installer --chown=expressjs:nodejs /app ./
+COPY --from=installer --chown=expressjs:nodejs /app/apps/server/package.json /app/apps/server/package.json
+COPY --from=installer --chown=expressjs:nodejs /app/apps/server/tsconfig.json /app/apps/server/tsconfig.json
+COPY --from=installer --chown=expressjs:nodejs /app/apps/server/tsconfig-paths.js /app/apps/server/tsconfig-paths.js
+COPY --from=installer --chown=expressjs:nodejs /app/apps/server/dist /app/apps/server/dist
+COPY --from=installer --chown=expressjs:nodejs /app/apps/server/node_modules /app/apps/server/node_modules
+COPY --from=installer --chown=expressjs:nodejs /app/node_modules /app/node_modules
 
 WORKDIR /app/apps/server
 EXPOSE 3001

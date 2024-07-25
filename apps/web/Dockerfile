@@ -30,7 +30,11 @@ RUN adduser --system --uid 1001 nextjs
 
 USER nextjs
 
-COPY --from=installer --chown=nextjs:nodejs /app ./
+COPY --from=installer --chown=nextjs:nodejs /app/apps/web/package.json /app/apps/web/package.json
+COPY --from=installer --chown=nextjs:nodejs /app/apps/web/next.config.mjs /app/apps/web/next.config.mjs
+COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next /app/apps/web/.next
+COPY --from=installer --chown=nextjs:nodejs /app/apps/web/node_modules /app/apps/web/node_modules
+COPY --from=installer --chown=nextjs:nodejs /app/node_modules /app/node_modules
 
 WORKDIR /app/apps/web
 EXPOSE 3000
