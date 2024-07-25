@@ -6,16 +6,20 @@ import { Card } from '@repo/ui'
 import { Tag, Tooltip, TooltipProvider } from '@var-meta/ui'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
+import { notFound, useParams } from 'next/navigation'
 import { useMemo } from 'react'
 
 const DetailTag = () => {
   const { tag } = useParams()
 
-  const { data: projects = DEFAULT_API_RETURN } = useProjects({
+  const { data: projects = DEFAULT_API_RETURN, isSuccess } = useProjects({
     tag_id: Number(tag),
     page_size: 10000,
   })
+
+  if (isSuccess && projects.data.length === 0) {
+    notFound()
+  }
 
   const tagName = useMemo(() => {
     if (projects.data.length <= 0) return ''
@@ -30,9 +34,10 @@ const DetailTag = () => {
       <HeroSection />
       <div className="container mt-10 flex w-full justify-center gap-10 sm:mt-20 md:mt-32">
         <Card title={String(tagName)}>
-          {projects.data.map((project) => (
-            <TooltipProvider>
+          <TooltipProvider>
+            {projects.data.map((project) => (
               <Tooltip
+                key={project.id}
                 title={
                   <h2 className="p-2 text-2xl font-bold">{project.name}</h2>
                 }
@@ -44,7 +49,7 @@ const DetailTag = () => {
                     </div>
                     <div className="flex w-full flex-row gap-1 overflow-hidden">
                       {project.projectTags.map(({ tag }) => (
-                        <Tag size="sm" radius="xl">
+                        <Tag size="sm" radius="xl" key={tag.id}>
                           <span className="text-nowrap p-2">{tag.name}</span>
                         </Tag>
                       ))}
@@ -72,8 +77,8 @@ const DetailTag = () => {
                   </h2>
                 </Link>
               </Tooltip>
-            </TooltipProvider>
-          ))}
+            ))}
+          </TooltipProvider>
         </Card>
       </div>
     </>
