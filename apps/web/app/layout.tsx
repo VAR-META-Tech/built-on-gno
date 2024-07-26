@@ -1,7 +1,6 @@
 'use client'
 import '@/styles/global.css'
-import { Header } from '@repo/ui'
-import { Footer } from '@repo/ui/src/layouts'
+import { Header, Footer } from '@/layouts'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Karla } from 'next/font/google'

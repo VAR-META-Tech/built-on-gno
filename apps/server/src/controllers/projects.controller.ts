@@ -42,4 +42,17 @@ export class ProjectsController {
       })
     }
   }
+
+  public random = async (req: Request, res: Response): Promise<any> => {
+    try {
+      const project = await this.projectsService.randomProject()
+      return res.status(200).json(project)
+    } catch (error) {
+      logger.error(error)
+      return res.status(500).json({
+        code: 500,
+        message: error?.message ?? 'Something went wrong',
+      })
+    }
+  }
 }

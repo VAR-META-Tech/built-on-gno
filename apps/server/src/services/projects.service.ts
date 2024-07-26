@@ -112,4 +112,17 @@ export class ProjectsService {
       throw new Error(error?.message ?? 'Something went wrong')
     }
   }
+
+  public async randomProject() {
+    try {
+      const project = await this.projectRepository
+        .createQueryBuilder('project')
+        .select('project.id')
+        .orderBy('RAND()')
+        .getOne()
+      return project
+    } catch (error) {
+      throw new Error(error?.message ?? 'Something went wrong')
+    }
+  }
 }

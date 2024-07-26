@@ -5,6 +5,7 @@ import {
   IFilterProjectOptions,
   IProjectsResponse,
   IProjectDetail,
+  IProject,
 } from '@repo/ui'
 import { request } from '.'
 
@@ -51,5 +52,12 @@ export const getCategory = async (category: string): Promise<ICategory> => {
   return await request({
     url: '/v1/categories/' + category,
     method: 'GET',
+  })
+}
+
+export const randomProject = async (): Promise<IProject> => {
+  return await request({
+    url: '/v1/projects/random',
+    method: 'POST',
   })
 }
