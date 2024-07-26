@@ -19,6 +19,7 @@ class ProjectsRoute implements Routes {
       makeValidate(FilterProjectOption, 'query'),
       this.projectsController.getProjects,
     )
+    this.router.post('/random', this.projectsController.random)
     this.router.get('/:project_id', this.projectsController.getProject)
   }
 }
