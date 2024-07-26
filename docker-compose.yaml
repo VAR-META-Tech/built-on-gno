@@ -1,0 +1,35 @@
+version: '3'
+services:
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile
+    restart: always
+    env_file: ./.env
+    environment:
+      - PORT=$FE_PORT
+      - API_URL=$API_URL
+    ports:
+      - $FE_PORT:$FE_PORT
+    depends_on:
+      - api
+  api:
+    container_name: server
+    build:
+      context: .
+      dockerfile: ./apps/server/Dockerfile
+    restart: always
+    env_file: ./.env
+    environment:
+      - PORT=$PORT
+      - TYPEORM_HOST=$TYPEORM_HOST
+      - TYPEORM_PORT=$TYPEORM_PORT
+      - TYPEORM_USERNAME=$TYPEORM_USERNAME
+      - TYPEORM_PASSWORD=$TYPEORM_PASSWORD
+      - TYPEORM_DATABASE=$TYPEORM_DATABASE
+      - LOG_DIR=$LOG_DIR
+      - NODE_ENV=$NODE_ENV
+    ports:
+      - $PORT:$PORT
+    
