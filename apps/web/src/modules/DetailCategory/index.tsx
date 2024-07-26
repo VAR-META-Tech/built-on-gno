@@ -3,14 +3,17 @@ import { useCategory } from '@/apis'
 import HeroSection from '@/components/HeroSection'
 import { notFound, useParams } from 'next/navigation'
 import CardSubcategory from './CardSubcategory'
+import { Loading } from '@repo/ui'
 
 const DetailCategory = () => {
   const { category } = useParams()
-  const { data, isError } = useCategory(String(category))
+  const { data, isError, isLoading } = useCategory(String(category))
 
   if (isError) {
     notFound()
   }
+
+  if (isLoading) return <Loading />
 
   return (
     <>
