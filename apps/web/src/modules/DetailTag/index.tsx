@@ -2,7 +2,7 @@
 import { useProjects } from '@/apis'
 import HeroSection from '@/components/HeroSection'
 import { DEFAULT_API_RETURN } from '@/constants'
-import { Card } from '@repo/ui'
+import { Card, Loading } from '@repo/ui'
 import { Tag, Tooltip, TooltipProvider } from '@var-meta/ui'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,7 +12,11 @@ import { useMemo } from 'react'
 const DetailTag = () => {
   const { tag } = useParams()
 
-  const { data: projects = DEFAULT_API_RETURN, isSuccess } = useProjects({
+  const {
+    data: projects = DEFAULT_API_RETURN,
+    isSuccess,
+    isLoading,
+  } = useProjects({
     tag_id: Number(tag),
     page_size: 10000,
   })
@@ -28,6 +32,8 @@ const DetailTag = () => {
     )
     return tags?.tag?.name ?? ''
   }, [projects])
+
+  if (isLoading) return <Loading />
 
   return (
     <>

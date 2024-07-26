@@ -1,7 +1,7 @@
 import { useProjects } from '@/apis'
 import { DEFAULT_API_RETURN } from '@/constants'
 import { Card, ICategory } from '@repo/ui'
-import { Tag, Tooltip, TooltipProvider } from '@var-meta/ui'
+import { Skeleton, Tag, Tooltip, TooltipProvider } from '@var-meta/ui'
 import Image from 'next/image'
 import Link from 'next/link'
 type IProps = {
@@ -10,7 +10,7 @@ type IProps = {
 }
 
 const CardSubcategory = ({ category_id, sub_category }: IProps) => {
-  const { data = DEFAULT_API_RETURN } = useProjects({
+  const { data = DEFAULT_API_RETURN, isLoading } = useProjects({
     category_id,
     sub_category_id: sub_category.id,
     page_size: 10000,
@@ -18,14 +18,20 @@ const CardSubcategory = ({ category_id, sub_category }: IProps) => {
 
   return (
     <>
+      {isLoading && <Skeleton className="col-span-12 h-32 lg:col-span-2" />}
       {data.pagination.total_items > 0 && (
         <Card
           title={sub_category.name}
-          className={data.data.length > 3 ? 'col-span-12 lg:col-span-2' : 'col-span-4 lg:col-span-1'}
+          className={
+            data.data.length > 3
+              ? 'col-span-12 lg:col-span-2'
+              : 'col-span-4 lg:col-span-1'
+          }
         >
-          {data.data.map((project) => (
-            <TooltipProvider>
+          <TooltipProvider>
+            {data.data.map((project) => (
               <Tooltip
+                key={project.id}
                 title={
                   <h2 className="p-2 text-2xl font-bold">{project.name}</h2>
                 }
@@ -37,7 +43,7 @@ const CardSubcategory = ({ category_id, sub_category }: IProps) => {
                     </div>
                     <div className="flex w-full flex-row gap-1 overflow-hidden">
                       {project.projectTags.map(({ tag }) => (
-                        <Tag size="sm" radius="xl">
+                        <Tag size="sm" radius="xl" key={tag.id}>
                           <span className="text-nowrap p-2">{tag.name}</span>
                         </Tag>
                       ))}
@@ -65,8 +71,8 @@ const CardSubcategory = ({ category_id, sub_category }: IProps) => {
                   </h2>
                 </Link>
               </Tooltip>
-            </TooltipProvider>
-          ))}
+            ))}
+          </TooltipProvider>
         </Card>
       )}
     </>

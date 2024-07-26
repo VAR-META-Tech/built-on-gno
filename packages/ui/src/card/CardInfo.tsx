@@ -53,6 +53,7 @@ export const CardInfo = ({ data }: { data: IProjectDetail | undefined }) => {
                   <Image
                     alt=""
                     fill
+                    unoptimized
                     className="relative z-0 rounded"
                     src={item.logoUrl}
                   />

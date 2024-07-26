@@ -1,12 +1,12 @@
 import { useProjects } from '@/apis'
 import { DEFAULT_API_RETURN } from '@/constants'
 import { ICategory } from '@repo/ui'
-import { Avatar } from '@var-meta/ui'
+import { Avatar, Skeleton } from '@var-meta/ui'
 import Link from 'next/link'
 import { useMemo } from 'react'
 
 export const Category = ({ id, name }: ICategory) => {
-  const { data = DEFAULT_API_RETURN } = useProjects({
+  const { data = DEFAULT_API_RETURN, isLoading } = useProjects({
     category_id: id,
   })
 
@@ -20,6 +20,7 @@ export const Category = ({ id, name }: ICategory) => {
 
   return (
     <>
+      {isLoading && <Skeleton className="h-20 w-80" />}
       {data.pagination.total_items > 0 && (
         <Link href={'/ecosystem/' + id}>
           <div className="flex h-full flex-col gap-2">

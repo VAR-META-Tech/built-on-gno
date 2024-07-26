@@ -7,7 +7,8 @@
     "build": "tsc",
     "dev": "nodemon -x pnpm start:watch",
     "start:watch": "ts-node -r tsconfig-paths/register src/index.ts",
-    "start": "node -r ./tsconfig-paths.js dist/index.js"
+    "start": "node -r ./tsconfig-paths.js dist/index.js",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "keywords": [],
   "author": "",
