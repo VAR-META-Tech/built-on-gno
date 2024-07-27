@@ -1,3 +1,3 @@
-import AllProjects from "@/modules/AllProjects";
+import AllProjects from '@/modules/AllProjects'
 
 export default AllProjects

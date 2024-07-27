@@ -1,3 +1,3 @@
-import DetailTag from "@/modules/DetailTag";
+import DetailTag from '@/modules/DetailTag'
 
 export default DetailTag

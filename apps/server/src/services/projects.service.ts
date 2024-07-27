@@ -9,12 +9,24 @@ import { Repository } from 'typeorm'
 
 export class ProjectsService {
   constructor(
-    private projectRepository: Repository<Projects> = connection.getRepository(Projects),
-    private projectTagsRepository: Repository<ProjectTags> = connection.getRepository(ProjectTags),
+    private projectRepository: Repository<Projects> = connection.getRepository(
+      Projects,
+    ),
+    private projectTagsRepository: Repository<ProjectTags> = connection.getRepository(
+      ProjectTags,
+    ),
   ) {}
 
   public async getProjects(params?: FilterProjectOption) {
-    const { page = 1, page_size = 10, order, search, category_id, sub_category_id, tag_id } = params
+    const {
+      page = 1,
+      page_size = 10,
+      order,
+      search,
+      category_id,
+      sub_category_id,
+      tag_id,
+    } = params
     try {
       const query = await this.projectRepository
         .createQueryBuilder('project')
@@ -75,7 +87,7 @@ export class ProjectsService {
         .leftJoinAndSelect('project_socials.social', 'social')
         .where('project.id=:id', { id: +id })
         .getOne()
-      if(!project) return null
+      if (!project) return null
 
       const compares = await this.getCompareByProject(id)
 
