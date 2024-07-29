@@ -108,15 +108,22 @@ export class ProjectsService {
 
       const result = await Promise.all(
         (tags ?? []).map(async (tag) => {
-          const data = await this.projectRepository
+          const project = await this.projectRepository
+            .createQueryBuilder('project')
+            .leftJoinAndSelect('project.projectFeatures', 'project_features')
+            .leftJoinAndSelect('project_features.feature', 'feature')
+            .where('project.id = :project_id', { project_id })
+            .getOne()
+          const compares = await this.projectRepository
             .createQueryBuilder('project')
             .leftJoin('project.projectTags', 'project_tags')
             .leftJoinAndSelect('project.projectFeatures', 'project_features')
             .leftJoinAndSelect('project_features.feature', 'feature')
             .andWhere('project_tags.tag_id = :tag', { tag: tag.tagId })
-            .take(5)
+            .andWhere('project.id != :project_id', { project_id })
+            .take(4)
             .getMany()
-          return { tag: tag.tag, data }
+          return { tag: tag.tag, data: [project, ...compares] }
         }),
       )
       return result
