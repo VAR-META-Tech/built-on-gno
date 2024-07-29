@@ -1,11 +1,23 @@
-import { useRandomProject } from '@/apis'
-import { Button, Github } from '@repo/ui'
+import { useProjects, useRandomProject, useTags } from '@/apis'
+import { Button, Github, Search } from '@repo/ui'
 import { Dice5Icon } from '@var-meta/icons'
 import { HStack } from '@var-meta/ui'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
+
 const Header = () => {
   const { mutateAsync, isPending } = useRandomProject()
+  const [search, setSearch] = useState('')
+  const { data: projects = { data: [] } } = useProjects(
+    { search },
+    { enabled: !!search },
+  )
+  const { data: tags = { data: [] } } = useTags(
+    { search },
+    { enabled: !!search },
+  )
+
   const { push } = useRouter()
 
   const handleRandomProject = async () => {
@@ -24,6 +36,12 @@ const Header = () => {
           Built on Gno
         </Link>
         <div className="flex w-auto items-center justify-end gap-2 md:gap-4 xl:gap-6">
+          <Search
+            onSearch={setSearch}
+            projects={projects.data}
+            terms={tags.data}
+            search={search}
+          />
           <Link
             href="https://github.com/vAR-META-Tech/built-on-gno"
             target="_blank"

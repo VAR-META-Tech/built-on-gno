@@ -12,7 +12,7 @@ export const ProjectByCategory = ({ id, name }: ICategory) => {
 
   return (
     <>
-      {!isLoading && (
+      {isLoading && (
         <div className="grid w-full grid-cols-4 gap-4">
           <Skeleton className="col-span-12 h-8 w-[80%] rounded-xl lg:col-span-1"></Skeleton>
           <Skeleton className="col-span-12 h-28 rounded-xl lg:col-span-3"></Skeleton>
