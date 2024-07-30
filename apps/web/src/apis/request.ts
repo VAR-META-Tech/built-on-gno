@@ -6,6 +6,8 @@ import {
   IProjectsResponse,
   IProjectDetail,
   IProject,
+  IComparePayload,
+  ICompare,
 } from '@repo/ui'
 import { request } from '.'
 
@@ -59,5 +61,15 @@ export const randomProject = async (): Promise<IProject> => {
   return await request({
     url: '/v1/projects/random',
     method: 'POST',
+  })
+}
+
+export const getCompareProject = async (
+  params: IComparePayload,
+): Promise<ICompare> => {
+  return await request({
+    url: '/v1/projects/compare',
+    method: 'GET',
+    params,
   })
 }

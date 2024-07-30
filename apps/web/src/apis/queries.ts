@@ -7,6 +7,7 @@ import {
 import {
   getCategories,
   getCategory,
+  getCompareProject,
   getProject,
   getProjects,
   getTags,
@@ -15,6 +16,8 @@ import {
 import {
   ICategoriesResponse,
   ICategory,
+  ICompare,
+  IComparePayload,
   IFilterPagination,
   IFilterProjectOptions,
   IProject,
@@ -82,6 +85,17 @@ export const useRandomProject = (
 ) => {
   return useMutation<IProject, Error>({
     mutationFn: () => randomProject(),
+    ...option,
+  })
+}
+
+export const useCompareProject = (
+  params: IComparePayload,
+  option?: Partial<UseQueryOptions<ICompare, Error>>,
+) => {
+  return useQuery<ICompare, Error>({
+    queryKey: ['project', params],
+    queryFn: () => getCompareProject(params),
     ...option,
   })
 }
