@@ -35,8 +35,6 @@ cache:
   cache: 
     - <<: *global_cache_node_mods
   script:
-    - ls -la 
-    - ls -la $BUILD_DIR
     - sh ./scripts/build.sh
   tags:
     - vm-docker
