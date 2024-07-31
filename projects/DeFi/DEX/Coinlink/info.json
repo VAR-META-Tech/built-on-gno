@@ -14,6 +14,7 @@
     "Yield Farming",
     "Yield Optimizer"
   ],
+  "glossaries": ["table1"],
   "short_description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com.",
   "partnerships": [
     {
