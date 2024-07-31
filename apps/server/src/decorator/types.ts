@@ -1,5 +1,11 @@
 import { Type } from 'class-transformer'
-import { IsNumber, IsOptional, IsString, Min } from 'class-validator'
+import {
+  IsNotEmpty,
+  IsNumber,
+  IsOptional,
+  IsString,
+  Min,
+} from 'class-validator'
 
 export class Meta {
   page: number
@@ -44,6 +50,20 @@ export class FilterProjectOption extends Pagination {
   sub_category_id?: number
 
   @IsOptional()
+  @IsNumber()
+  @Type(() => Number)
+  @Min(1)
+  tag_id?: number
+}
+
+export class FilterProjectCompare {
+  @IsNotEmpty()
+  @IsNumber()
+  @Min(1)
+  @Type(() => Number)
+  project_id?: number
+
+  @IsNotEmpty()
   @IsNumber()
   @Type(() => Number)
   @Min(1)

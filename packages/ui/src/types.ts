@@ -88,7 +88,6 @@ export interface IProjectDetail {
   partnerships: IPartnership[]
   glossaryProjects: IGlossaryProject[]
   projectSocials: ProjectSocial[]
-  compares: ICompare[]
 }
 export interface ProjectDescriptions {
   id: number
@@ -141,7 +140,6 @@ export interface ISocial {
 }
 
 export interface ICompare {
-  tag: ITag
   data: IProjectCompare[]
 }
 
@@ -174,4 +172,9 @@ export interface IFeature {
   status: string
   createdAt: string
   updatedAt: string
+}
+
+export interface IComparePayload {
+  project_id: number
+  tag_id: number
 }

@@ -1,27 +1,30 @@
-import {
-  CompareTable,
-  IProjectCompare,
-  IProjectDetail,
-  IProjectFeature,
-} from '@repo/ui'
+import { useCompareProject } from '@/apis'
+import { CompareTable, IProjectDetail, IProjectFeature } from '@repo/ui'
 import { Tabs, TabsList, TabsTrigger } from '@var-meta/ui'
 import { useEffect, useMemo, useState } from 'react'
 
-const Compare = ({ compares = [], name }: Partial<IProjectDetail>) => {
+const Compare = ({ projectTags = [], name, id }: Partial<IProjectDetail>) => {
   const [tabIndex, setTabIndex] = useState('')
-  const [data, setData] = useState<IProjectCompare[] | undefined>([])
+
+  const { data, isLoading } = useCompareProject(
+    {
+      project_id: Number(id),
+      tag_id: Number(tabIndex),
+    },
+    {
+      enabled: !!tabIndex && !!id,
+    },
+  )
 
   useEffect(() => {
-    setTabIndex(compares!.length > 0 ? String(compares![0]?.tag.id ?? '') : '')
-  }, [compares])
-
-  useEffect(() => {
-    setData(compares?.find((i) => i.tag.id === Number(tabIndex))?.data)
-  }, [compares, tabIndex])
+    setTabIndex(
+      projectTags!.length > 0 ? String(projectTags![0]?.tag.id ?? '') : '',
+    )
+  }, [projectTags])
 
   const features = useMemo(() => {
     const compareFeatures: IProjectFeature[] = []
-    data?.forEach(({ projectFeatures }) => {
+    data?.data.forEach(({ projectFeatures }) => {
       projectFeatures.forEach((acc) => {
         if (
           !compareFeatures.find(({ featureId }) => featureId === acc.featureId)
@@ -44,14 +47,14 @@ const Compare = ({ compares = [], name }: Partial<IProjectDetail>) => {
         onValueChange={(e) => setTabIndex(e)}
       >
         <TabsList className="max-w-sm">
-          {compares?.map(({ tag }) => (
+          {projectTags?.map(({ tag }) => (
             <TabsTrigger key={tag.id} value={String(tag.id)}>
               {tag.name}
             </TabsTrigger>
           ))}
         </TabsList>
       </Tabs>
-      <CompareTable data={data ?? []} features={features} />
+      <CompareTable loading={isLoading} data={data?.data ?? []} features={features} />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { FilterProjectOption } from '@/decorator/types'
+import { FilterProjectCompare, FilterProjectOption } from '@/decorator/types'
 import { ProjectsService } from '@/services/projects.service'
 import { logger } from '@/utils/logger'
 import { Request, Response } from 'express'
@@ -34,6 +34,22 @@ export class ProjectsController {
         })
       }
       return res.status(200).json(project)
+    } catch (error) {
+      logger.error(error)
+      return res.status(500).json({
+        code: 500,
+        message: error?.message ?? 'Something went wrong',
+      })
+    }
+  }
+
+  public compareProject = async (
+    req: Request<any, any, any, FilterProjectCompare>,
+    res: Response,
+  ): Promise<any> => {
+    try {
+      const result = await this.projectsService.getCompareProject(req.query)
+      return res.status(200).json(result)
     } catch (error) {
       logger.error(error)
       return res.status(500).json({

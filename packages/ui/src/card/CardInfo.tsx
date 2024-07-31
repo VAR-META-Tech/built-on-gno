@@ -19,9 +19,8 @@ export const CardInfo = ({ data }: { data: IProjectDetail | undefined }) => {
       <div className="flex w-full flex-col gap-1">
         <p className="text-sm font-light">Industry</p>
         <p className="font-medium">
-          {data?.category?.parent?.name ??
-            '' + ', ' + data?.category?.name ??
-            ''}
+          {(data?.category?.parent?.name ?? '') +
+            (', ' + data?.category?.name ?? '')}
         </p>
         <Divider />
       </div>

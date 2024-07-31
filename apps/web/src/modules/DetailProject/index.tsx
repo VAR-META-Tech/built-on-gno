@@ -49,7 +49,11 @@ const DetailProject = () => {
           ))}
         </Accordion>
       </div>
-      <Compare compares={data?.compares} name={data?.name} />
+      <Compare
+        projectTags={data?.projectTags}
+        name={data?.name}
+        id={data?.id}
+      />
     </div>
   )
 }

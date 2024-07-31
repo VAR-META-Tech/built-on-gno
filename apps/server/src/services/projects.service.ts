@@ -1,7 +1,7 @@
 import { connection } from '@/databases/connection'
 import { Projects } from '@/databases/entities/Projects'
 import { ProjectTags } from '@/databases/entities/ProjectTags'
-import { FilterProjectOption } from '@/decorator/types'
+import { FilterProjectCompare, FilterProjectOption } from '@/decorator/types'
 import { getMeta } from '@/shared/get-meta'
 import { orderParser } from '@/shared/parser-pagination'
 import { logger } from '@/utils/logger'
@@ -87,46 +87,33 @@ export class ProjectsService {
         .leftJoinAndSelect('project_socials.social', 'social')
         .where('project.id=:id', { id: +id })
         .getOne()
-      if (!project) return null
 
-      const compares = await this.getCompareByProject(id)
-
-      return { ...project, compares }
+      return project
     } catch (error) {
       logger.error(error)
       throw new Error(error?.message ?? 'Something went wrong')
     }
   }
 
-  public async getCompareByProject(project_id: string) {
+  public async getCompareProject(params: FilterProjectCompare) {
+    const { project_id, tag_id } = params
     try {
-      const tags = await this.projectTagsRepository
-        .createQueryBuilder('project_tags')
-        .leftJoinAndSelect('project_tags.tag', 'tag')
-        .where('project_tags.project_id = :project_id', { project_id })
+      const project = await this.projectRepository
+        .createQueryBuilder('project')
+        .leftJoinAndSelect('project.projectFeatures', 'project_features')
+        .leftJoinAndSelect('project_features.feature', 'feature')
+        .where('project.id = :project_id', { project_id })
+        .getOne()
+      const compares = await this.projectRepository
+        .createQueryBuilder('project')
+        .leftJoin('project.projectTags', 'project_tags')
+        .leftJoinAndSelect('project.projectFeatures', 'project_features')
+        .leftJoinAndSelect('project_features.feature', 'feature')
+        .where('project_tags.tag_id = :tag_id', { tag_id })
+        .andWhere('project.id != :project_id', { project_id })
+        .take(10)
         .getMany()
-
-      const result = await Promise.all(
-        (tags ?? []).map(async (tag) => {
-          const project = await this.projectRepository
-            .createQueryBuilder('project')
-            .leftJoinAndSelect('project.projectFeatures', 'project_features')
-            .leftJoinAndSelect('project_features.feature', 'feature')
-            .where('project.id = :project_id', { project_id })
-            .getOne()
-          const compares = await this.projectRepository
-            .createQueryBuilder('project')
-            .leftJoin('project.projectTags', 'project_tags')
-            .leftJoinAndSelect('project.projectFeatures', 'project_features')
-            .leftJoinAndSelect('project_features.feature', 'feature')
-            .andWhere('project_tags.tag_id = :tag', { tag: tag.tagId })
-            .andWhere('project.id != :project_id', { project_id })
-            .take(4)
-            .getMany()
-          return { tag: tag.tag, data: [project, ...compares] }
-        }),
-      )
-      return result
+      return { data: [project, ...compares] }
     } catch (error) {
       throw new Error(error?.message ?? 'Something went wrong')
     }
