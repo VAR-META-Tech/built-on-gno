@@ -13,6 +13,7 @@ cache:
     paths:
       - apps/server/node_modules/
       - apps/web/node_modules/
+      - out/
     policy: pull # prevent subsequent jobs from modifying cache
 
 ##### Test template
@@ -74,8 +75,7 @@ install:
   script:
     # - nvm use
     - pnpm install
-    - ls -la apps/server 
-    - ls -la apps/web
+    - turbo prune server --docker
   tags: 
     - vm-docker
   rules:  #add this to bypass merge requests
