@@ -1,17 +1,17 @@
 import React from 'react'
-import Slider from 'react-slick'
+import Slider, { Settings } from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { CardProject } from '@repo/ui'
 import { useProjects } from '@/apis'
 import { DEFAULT_API_RETURN } from '@/constants'
 
-const settings = {
+const settings: Settings = {
   dots: false,
   infinite: false,
   speed: 500,
   slidesToShow: 2.5,
-  slidesToScroll: 1,
+  swipe: false,
   initialSlide: 0,
   centerPadding: '10px',
   responsive: [
@@ -41,7 +41,7 @@ const LatestAdded = () => {
       </div>
       <Slider {...settings}>
         {projects.data.map((project) => (
-          <CardProject {...project} />
+          <CardProject key={project.id} {...project} />
         ))}
       </Slider>
     </div>

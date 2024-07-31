@@ -1,7 +1,7 @@
 import { connection } from '@/databases/connection'
 import { Projects } from '@/databases/entities/Projects'
 import { ProjectTags } from '@/databases/entities/ProjectTags'
-import { FilterProjectOption } from '@/decorator/types'
+import { FilterProjectCompare, FilterProjectOption } from '@/decorator/types'
 import { getMeta } from '@/shared/get-meta'
 import { orderParser } from '@/shared/parser-pagination'
 import { logger } from '@/utils/logger'
@@ -9,12 +9,24 @@ import { Repository } from 'typeorm'
 
 export class ProjectsService {
   constructor(
-    private projectRepository: Repository<Projects> = connection.getRepository(Projects),
-    private projectTagsRepository: Repository<ProjectTags> = connection.getRepository(ProjectTags),
+    private projectRepository: Repository<Projects> = connection.getRepository(
+      Projects,
+    ),
+    private projectTagsRepository: Repository<ProjectTags> = connection.getRepository(
+      ProjectTags,
+    ),
   ) {}
 
   public async getProjects(params?: FilterProjectOption) {
-    const { page = 1, page_size = 10, order, search, category_id, sub_category_id, tag_id } = params
+    const {
+      page = 1,
+      page_size = 10,
+      order,
+      search,
+      category_id,
+      sub_category_id,
+      tag_id,
+    } = params
     try {
       const query = await this.projectRepository
         .createQueryBuilder('project')
@@ -75,39 +87,46 @@ export class ProjectsService {
         .leftJoinAndSelect('project_socials.social', 'social')
         .where('project.id=:id', { id: +id })
         .getOne()
-      if(!project) return null
 
-      const compares = await this.getCompareByProject(id)
-
-      return { ...project, compares }
+      return project
     } catch (error) {
       logger.error(error)
       throw new Error(error?.message ?? 'Something went wrong')
     }
   }
 
-  public async getCompareByProject(project_id: string) {
+  public async getCompareProject(params: FilterProjectCompare) {
+    const { project_id, tag_id } = params
     try {
-      const tags = await this.projectTagsRepository
-        .createQueryBuilder('project_tags')
-        .leftJoinAndSelect('project_tags.tag', 'tag')
-        .where('project_tags.project_id = :project_id', { project_id })
+      const project = await this.projectRepository
+        .createQueryBuilder('project')
+        .leftJoinAndSelect('project.projectFeatures', 'project_features')
+        .leftJoinAndSelect('project_features.feature', 'feature')
+        .where('project.id = :project_id', { project_id })
+        .getOne()
+      const compares = await this.projectRepository
+        .createQueryBuilder('project')
+        .leftJoin('project.projectTags', 'project_tags')
+        .leftJoinAndSelect('project.projectFeatures', 'project_features')
+        .leftJoinAndSelect('project_features.feature', 'feature')
+        .where('project_tags.tag_id = :tag_id', { tag_id })
+        .andWhere('project.id != :project_id', { project_id })
+        .take(10)
         .getMany()
+      return { data: [project, ...compares] }
+    } catch (error) {
+      throw new Error(error?.message ?? 'Something went wrong')
+    }
+  }
 
-      const result = await Promise.all(
-        (tags ?? []).map(async (tag) => {
-          const data = await this.projectRepository
-            .createQueryBuilder('project')
-            .leftJoin('project.projectTags', 'project_tags')
-            .leftJoinAndSelect('project.projectFeatures', 'project_features')
-            .leftJoinAndSelect('project_features.feature', 'feature')
-            .andWhere('project_tags.tag_id = :tag', { tag: tag.tagId })
-            .take(5)
-            .getMany()
-          return { tag: tag.tag, data }
-        }),
-      )
-      return result
+  public async randomProject() {
+    try {
+      const project = await this.projectRepository
+        .createQueryBuilder('project')
+        .select('project.id')
+        .orderBy('RAND()')
+        .getOne()
+      return project
     } catch (error) {
       throw new Error(error?.message ?? 'Something went wrong')
     }

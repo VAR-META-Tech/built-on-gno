@@ -1,19 +1,25 @@
 'use client'
 import { useProject } from '@/apis'
-import { CardInfo } from '@repo/ui'
+import { CardInfo, Loading } from '@repo/ui'
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@var-meta/ui'
-import { useParams } from 'next/navigation'
+import { notFound, useParams } from 'next/navigation'
 import ReactMarkDown from 'react-markdown'
 import Compare from './Compare'
 
 const DetailProject = () => {
   const { project } = useParams()
-  const { data } = useProject(String(project))
+  const { data, isError, isLoading } = useProject(String(project))
+
+  if (isError) {
+    notFound()
+  }
+
+  if (isLoading) return <Loading />
 
   return (
     <div className="container mt-12 grid w-full grid-flow-row grid-cols-12 gap-4">
@@ -43,7 +49,11 @@ const DetailProject = () => {
           ))}
         </Accordion>
       </div>
-      <Compare compares={data?.compares} name={data?.name} />
+      <Compare
+        projectTags={data?.projectTags}
+        name={data?.name}
+        id={data?.id}
+      />
     </div>
   )
 }

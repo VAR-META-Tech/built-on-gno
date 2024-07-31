@@ -1,5 +1,5 @@
+import { Facebook, Github, LinkedIn, Twitter } from '@repo/ui'
 import { Button } from '@var-meta/ui'
-import { Facebook, Github, LinkedIn, Twitter } from '../../icons'
 
 const Footer = () => {
   return (

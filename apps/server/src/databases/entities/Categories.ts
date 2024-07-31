@@ -40,5 +40,5 @@ export class Categories {
 
   @ManyToOne(() => Categories, (category) => category.id)
   @JoinColumn([{ name: "parent_id", referencedColumnName: "id" }])
-  parent: Categories[];
+  parent: Categories;
 }

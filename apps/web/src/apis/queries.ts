@@ -1,10 +1,26 @@
-import { UseQueryOptions, useQuery } from '@tanstack/react-query'
-import { getCategories, getCategory, getProject, getProjects, getTags } from './request'
+import {
+  UseMutationOptions,
+  UseQueryOptions,
+  useMutation,
+  useQuery,
+} from '@tanstack/react-query'
+import {
+  getCategories,
+  getCategory,
+  getCompareProject,
+  getProject,
+  getProjects,
+  getTags,
+  randomProject,
+} from './request'
 import {
   ICategoriesResponse,
   ICategory,
+  ICompare,
+  IComparePayload,
   IFilterPagination,
   IFilterProjectOptions,
+  IProject,
   IProjectDetail,
   IProjectsResponse,
 } from '@repo/ui'
@@ -60,6 +76,26 @@ export const useProject = (
   return useQuery<IProjectDetail, Error>({
     queryKey: ['project', projectId],
     queryFn: () => getProject(projectId),
+    ...option,
+  })
+}
+
+export const useRandomProject = (
+  option?: Partial<UseMutationOptions<IProject, Error>>,
+) => {
+  return useMutation<IProject, Error>({
+    mutationFn: () => randomProject(),
+    ...option,
+  })
+}
+
+export const useCompareProject = (
+  params: IComparePayload,
+  option?: Partial<UseQueryOptions<ICompare, Error>>,
+) => {
+  return useQuery<ICompare, Error>({
+    queryKey: ['project', params],
+    queryFn: () => getCompareProject(params),
     ...option,
   })
 }
