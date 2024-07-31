@@ -24,7 +24,7 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
-        className={`${karla.variable} relative min-h-screen overflow-x-hidden bg-gray-100`}
+        className={`${karla.variable} bg-primary dark relative min-h-screen overflow-x-hidden`}
       >
         <QueryClientProvider client={queryClient}>
           <>

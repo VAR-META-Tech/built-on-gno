@@ -2,55 +2,53 @@
 import { Button, Github, Rectangle } from '@repo/ui'
 import { PlaneIcon } from '@var-meta/icons'
 import { Heading } from '@var-meta/ui'
+import Image from 'next/image'
 import Link from 'next/link'
 
 const HeroSection = () => {
   return (
-    <div className="relative flex h-[calc(100vh-64px)] min-h-96 w-full flex-col items-center justify-center">
-      <div className="absolute right-1/2 top-32 overflow-visible opacity-50">
-        <div className="bg-primary h-160 w-160 absolute z-[-1] overflow-hidden rounded-full mix-blend-multiply blur-2xl"></div>
+    <div className="relative flex h-[100vh] min-h-96 w-full flex-col items-center justify-center">
+      <div className="bg-primary absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#80808020_2px,transparent_2px),linear-gradient(to_bottom,#80808020_2px,transparent_2px)] bg-[size:128px_128px]" />
+      <div className="absolute left-[calc(50%_-_160%_/_2)] top-0 z-10 h-[1080px] w-[160%] flex-none overflow-hidden bg-[radial-gradient(50%_50%_at_50%_0%,_rgba(0,_89,_255,_.48)_0%,_rgba(0,_89,_255,_0)_100%)]" />
+      <div className="absolute bottom-[10%] left-[30%] hidden overflow-visible md:flex">
+        <Image
+          src="/gnoscan.png"
+          alt=""
+          width={200}
+          height={20}
+          className="h-full w-full"
+        />
       </div>
-      <div className="absolute left-56 top-32 overflow-visible opacity-50">
-        <div className="bg-secondary h-120 w-120 absolute z-[-1] overflow-hidden rounded-full mix-blend-multiply blur-3xl"></div>
-      </div>
-
-      <div className="flex w-full flex-row items-start justify-between">
+      <div className="flex w-full flex-row items-start justify-between bg-transparent">
         <div className="relative z-0 hidden md:flex">
           <div className="absolute left-12 overflow-visible lg:left-56">
-            <div className="w-0.25 mx-auto mb-2 h-32 bg-gray-400"></div>
-            <Rectangle src="https://images.thedapplist.com/prod/uploads/projects/image_1694354043720_carrot.png" />
-          </div>
-          <div className="absolute -top-16 left-4 overflow-visible lg:left-48">
-            <div className="w-0.25 mx-auto mb-2 h-32 bg-gray-400"></div>
-            <Rectangle src="https://images.thedapplist.com/prod/uploads/projects/image_1698243533973_flooz.png" />
-          </div>
-          <div className="absolute -top-32 left-20 overflow-visible lg:left-64">
-            <div className="w-0.25 mx-auto mb-2 h-32 bg-gray-400"></div>
-            <Rectangle src="https://images.thedapplist.com/prod/uploads/projects/image_1709116925030_layer-zero.jpeg" />
+            <div className="w-0.25 mx-auto h-32 bg-gray-400"></div>
+            <Rectangle src="/gno.logo.png" />
           </div>
         </div>
         <div className="container relative z-10 flex w-full flex-col items-center justify-around gap-8">
           <Heading
-            size="7xl"
+            size="6xl"
             weight="semibold"
+            className="text-white"
             align="center"
-            className="from-primary to-secondary w-fit bg-gradient-to-r bg-clip-text text-transparent"
           >
             Built on Gno
           </Heading>
-          <p className="max-w-screen-md text-center text-lg">
-            Listed below are the top crypto coins and tokens used for the Gnosis
-            Ecosystem. They are listed in size by many contributors. We welcome
-            you to contribute your projects to the system, please create a pull
-            request to{' '}
+          <p className="max-w-screen-md text-center text-lg text-white">
+            Listed below are the top crypto coins and tokens used for the
+            Gno.land Ecosystem. They are listed in size by many contributors. We
+            welcome you to contribute your projects to the system, please create
+            a pull request to{' '}
             <Link
               href="https://github.com/VAR-META-Tech/built-on-gno"
-              className="text-secondary inline-flex w-fit items-start gap-1"
+              target="_blank"
+              className="inline-flex w-fit items-start gap-1 text-white"
             >
-              <Github className="h-5 w-5" color="#769689" />{' '}
-              <span className="text-lg">github</span>
+              <Github className="h-5 w-5" color="#0059ff" />{' '}
+              <span className="text-lg text-[#0059ff]">github</span>
             </Link>{' '}
-            if you have one or many projects/tools built with gnosis.
+            if you have one or many projects/tools built with gno.land.
           </p>
 
           <Link href="/ecosystem/project/all">
@@ -58,8 +56,8 @@ const HeroSection = () => {
               startIcon={<PlaneIcon />}
               radius="full"
               size="xl"
-              color="warning"
-              className="rounded-full"
+              variant="outline"
+              className="bg-secondary hover:bg-primary/50 border-secondary focus:bg-primary rounded-lg text-white hover:text-white/90"
             >
               Explore all
             </Button>
@@ -67,16 +65,8 @@ const HeroSection = () => {
         </div>
         <div className="relative z-0 hidden md:flex">
           <div className="absolute right-12 overflow-visible lg:right-56">
-            <div className="w-0.25 mx-auto mb-2 h-32 bg-gray-400"></div>
-            <Rectangle src="https://images.thedapplist.com/prod/uploads/projects/image_1697556638632_envio.png" />
-          </div>
-          <div className="absolute -top-16 right-4 overflow-visible lg:right-48">
-            <div className="w-0.25 mx-auto mb-2 h-32 bg-gray-400"></div>
-            <Rectangle src="https://images.thedapplist.com/prod/uploads/projects/image_1700824970222_indexed.jpeg" />
-          </div>
-          <div className="absolute -top-32 right-20 overflow-visible lg:right-64">
-            <div className="w-0.25 mx-auto mb-2 h-32 bg-gray-400"></div>
-            <Rectangle src="https://images.thedapplist.com/prod/uploads/projects/image_1713440327185_layer-3.jpeg" />
+            <div className="w-0.25 mx-auto h-32 bg-gray-400"></div>
+            <Rectangle src="/adena.svg" />
           </div>
         </div>
       </div>

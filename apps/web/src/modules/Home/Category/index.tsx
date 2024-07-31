@@ -20,25 +20,25 @@ export const Category = ({ id, name }: ICategory) => {
 
   return (
     <>
-      {isLoading && <Skeleton className="h-20 w-80" />}
+      {isLoading && <Skeleton className="h-40 w-80" />}
       {data.pagination.total_items > 0 && (
         <Link href={'/ecosystem/' + id}>
-          <div className="flex h-full flex-col gap-2">
-            <div className="mx-4 text-lg font-bold lg:text-2xl">{name}</div>
-            <div className="flex gap-1 rounded-3xl border bg-white p-6 shadow-xl">
+          <div className="shadow-xs shadow-secondary flex h-full flex-col gap-4 rounded-lg border border-gray-500 p-6">
+            <div className="text-lg font-bold lg:text-2xl">{name}</div>
+            <div className="flex gap-0.5">
               {firstThree.map((i) => (
                 <Avatar
                   key={i.logoUrl}
                   indicator="none"
                   radius="half"
                   size="2xl"
-                  className="border-primary relative z-0 border-2"
+                  className="relative z-0 border-2 border-gray-500"
                   src={i.logoUrl}
                 />
               ))}
               {remaining > 0 && (
-                <div className="border-primary flex h-16 w-16 items-center justify-center rounded-full border-2">
-                  <span className="text-center text-xl text-gray-400">
+                <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-gray-500">
+                  <span className="text-center text-xl text-white">
                     +{remaining}
                   </span>
                 </div>

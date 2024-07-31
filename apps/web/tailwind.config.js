@@ -13,8 +13,8 @@ const config = {
   theme: {
     extend: {
       colors: {
-        primary: '#cbc3ad',
-        secondary: '#769689',
+        primary: '#110F12',
+        secondary: '#0059ff7a',
       },
     },
   },

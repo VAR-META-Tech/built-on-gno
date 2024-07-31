@@ -7,14 +7,18 @@ export const SeeAll = () => {
   const { data = DEFAULT_API_RETURN } = useProjects()
 
   return (
-    <div className="flex h-full flex-col gap-2">
-      <div className="mx-4 text-lg font-bold lg:text-2xl">All projects</div>
-      <div className="flex flex-col items-center gap-1 rounded-3xl border bg-white p-6 shadow-xl">
-        <span className="text-4xl font-bold text-gray-400">
+    <div className="shadow-xs shadow-secondary flex h-full w-[328px] flex-col gap-2 rounded-lg border border-gray-500 p-6">
+      <div className="text-lg font-bold lg:text-2xl">All projects</div>
+      <div className="flex h-[76px] items-center justify-center gap-4 bg-transparent">
+        <span className="text-5xl font-bold">
           {data.pagination.total_items}
         </span>
         <Link href={'/ecosystem/project/all'}>
-          <Button radius="full" color="warning">
+          <Button
+            size="xl"
+            variant="outline"
+            className="bg-secondary hover:bg-primary/50 border-secondary focus:bg-primary rounded-lg text-white hover:text-white/90"
+          >
             View All Projects
           </Button>
         </Link>
