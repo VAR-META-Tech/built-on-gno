@@ -7,8 +7,8 @@ set -eu
 # #unzip artifacts ---> dist
 # unzip artifacts.zip
 
-# #add kaniko authenticaion
-# cp $REGISTRY_AUTH /kaniko/.docker/config.json
+#add kaniko authenticaion
+cp $REGISTRY_AUTH /kaniko/.docker/config.json
 
 #use kaniko to build image
 /kaniko/executor  \
