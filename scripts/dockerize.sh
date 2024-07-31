@@ -2,13 +2,13 @@
 
 set -eu
 
-cd DOCKERFILE_DIR
+# cd DOCKERFILE_DIR
 
-#unzip artifacts ---> dist
-unzip artifacts.zip
+# #unzip artifacts ---> dist
+# unzip artifacts.zip
 
-#add kaniko authenticaion
-cp $REGISTRY_AUTH /kaniko/.docker/config.json
+# #add kaniko authenticaion
+# cp $REGISTRY_AUTH /kaniko/.docker/config.json
 
 #use kaniko to build image
 /kaniko/executor  \
