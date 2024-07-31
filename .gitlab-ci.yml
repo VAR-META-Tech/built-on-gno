@@ -1,0 +1,139 @@
+stages:
+  - test
+  - build
+  - dockerize
+  # - deploy
+
+##### cache template
+cache:
+  - &global_cache_node_mods
+    key:
+      files:
+        - pnpm-lock.yaml
+    paths:
+      - apps/server/node_modules/
+      - apps/web/node_modules/
+    policy: pull # prevent subsequent jobs from modifying cache
+
+##### Test template
+.test_template: &test
+  stage: test
+  image: $RUNNER_IMAGE
+  script:
+    - sh ./scripts/test.sh
+  cache: 
+    - <<: *global_cache_node_mods
+  tags:
+    - vm-docker
+  allow_failure: false
+  when: on_success
+
+##### Build template
+.build_template: &build
+  stage: build
+  image: $RUNNER_IMAGE
+  cache: 
+    - <<: *global_cache_node_mods
+  script:
+    - ls -la 
+    - ls -la $BUILD_DIR
+    - sh ./scripts/build.sh
+  tags:
+    - vm-docker
+  allow_failure: false
+  when: on_success
+  artifacts:
+    paths:
+      - apps/$BUILD_DIR/artifacts.zip
+    expire_in: 1 day
+
+##### Dockerize template
+.dockerize_template: &dockerize
+  stage: dockerize
+  image: $KANIKO_RUNNER_IMAGE
+  script:
+    - sh ./scripts/dockerize.sh
+  cache: 
+    - <<: *global_cache_node_mods
+  tags:
+    - vm-docker
+  allow_failure: false
+  when: on_success
+
+##### node_module install step 
+## Stage: .pre
+######
+install:
+  image: $RUNNER_IMAGE
+  stage: .pre      # always first
+  cache:
+    # Mimic &global_cache_node_mods config but override policy
+    # to allow this job to update the cache at the end of the job
+    # and only update if it was a successful job (#5)
+    - <<: *global_cache_node_mods
+      when: on_success
+      policy: pull-push
+  script:
+    # - nvm use
+    - pnpm install
+    - ls -la apps/server 
+    - ls -la apps/web
+  tags: 
+    - vm-docker
+  rules:  #add this to bypass merge requests
+    - if: '$CI_PIPELINE_SOURCE =~ /.*/'
+
+# unit-test:
+#   <<: *test
+#   rules:
+#     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+
+# build-mr:
+#   <<: *build
+#   # image: node with zip
+#   rules:
+#     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+#   needs:
+#     - unit-test
+
+build:be:
+  <<: *build
+  variables:
+    BUILD_DIR: server
+  when: manual
+  only:   # update this for staging
+    - dev
+    - develop
+
+build:fe:
+  <<: *build
+  variables:
+    BUILD_DIR: web
+  when: manual
+  only:   # update this for staging
+    - dev
+    - develop
+
+dockerize:be:
+  <<: *dockerize
+  variables:
+    REGISTRY: $REGISTRY_BE
+    DOCKERFILE_DIR: apps/server
+  only:   # update this for staging
+    - dev
+    - develop
+  needs: 
+    - job: build:be
+      artifacts: true
+
+dockerize:fe:
+  <<: *dockerize
+  variables:
+    REGISTRY: $REGISTRY_FE
+    DOCKERFILE_DIR: apps/web
+  only:   # update this for staging
+    - dev
+    - develop
+  needs: 
+    - job: build:fe
+      artifacts: true

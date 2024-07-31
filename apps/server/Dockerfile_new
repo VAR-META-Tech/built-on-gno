@@ -1,0 +1,21 @@
+FROM node:18-alpine AS base
+WORKDIR /app
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 expressjs
+
+USER expressjs
+
+COPY --from=installer --chown=expressjs:nodejs package.json /app/apps/server/package.json
+COPY --from=installer --chown=expressjs:nodejs tsconfig.json /app/apps/server/tsconfig.json
+COPY --from=installer --chown=expressjs:nodejs tsconfig-paths.js /app/apps/server/tsconfig-paths.js
+COPY --from=installer --chown=expressjs:nodejs dist /app/apps/server/dist
+COPY --from=installer --chown=expressjs:nodejs node_modules /app/apps/server/node_modules
+COPY --from=installer --chown=expressjs:nodejs ../../node_modules /app/node_modules
+
+WORKDIR /app/apps/server
+EXPOSE 3001
+ENV PORT 3001
+ENV LOG_DIR logs
+
+CMD ["npm","start"]
