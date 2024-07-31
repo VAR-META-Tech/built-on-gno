@@ -17,7 +17,7 @@ export const Card = ({ children, title, className }: Props) => {
       <h3 className="text-ellipsis px-4 text-lg font-bold lg:text-2xl">
         {title}
       </h3>
-      <div className="flex flex-wrap justify-center gap-6 rounded-3xl bg-white p-6 shadow-lg">
+      <div className="bg-primary flex flex-wrap justify-center gap-6 rounded-lg border p-6 shadow-md">
         {children}
       </div>
     </div>

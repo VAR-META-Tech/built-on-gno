@@ -18,7 +18,7 @@ const DetailCategory = () => {
   return (
     <>
       <HeroSection />
-      <div className="container mt-10 grid w-full grid-cols-6 justify-center gap-8 sm:mt-20 md:mt-32">
+      <div className="container my-10 grid w-full grid-cols-6 justify-center gap-8 sm:my-20 md:my-32">
         {(data?.subCategories ?? []).map((category) => (
           <CardSubcategory
             key={category.id}
