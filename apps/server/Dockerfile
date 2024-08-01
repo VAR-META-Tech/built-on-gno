@@ -6,11 +6,12 @@ RUN apt-get update && apt-get upgrade -y && \
     openssl \
     && rm -rf /var/lib/apt/lists/*
 
-RUN corepack enable && pnpm install -g turbo
+RUN corepack enable && npm install -g turbo
 
 FROM base AS builder
 WORKDIR /app
 COPY . .
+RUN npm install -g turbo
 RUN turbo prune server --docker
 
 FROM base AS installer
