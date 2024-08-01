@@ -12,6 +12,7 @@ export const Rectangle = ({ src }: { src: string }) => {
     >
       <Image
         alt=""
+        unoptimized
         layout="fill"
         className="delay-50 h-24 w-24 rounded object-contain transition duration-200 ease-in-out hover:scale-110"
         src={src}

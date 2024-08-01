@@ -20,6 +20,7 @@ function CardPreview({
         <div className="basics-1/3">
           <div className="relative z-[0] flex h-20 w-20 overflow-hidden rounded-full border-2 border-gray-500">
             <Image
+              unoptimized
               src={logoUrl}
               alt=""
               className="relative z-[0] h-16 w-16 rounded-full transition-all delay-75 duration-300 ease-in-out hover:scale-125"

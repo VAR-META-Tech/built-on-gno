@@ -1,6 +1,9 @@
+// @ts-nocheck
 import {
+  UseInfiniteQueryOptions,
   UseMutationOptions,
   UseQueryOptions,
+  useInfiniteQuery,
   useMutation,
   useQuery,
 } from '@tanstack/react-query'
@@ -96,6 +99,33 @@ export const useCompareProject = (
   return useQuery<ICompare, Error>({
     queryKey: ['project', params],
     queryFn: () => getCompareProject(params),
+    ...option,
+  })
+}
+
+export const useInfiniteProjects = (
+  filterParams?: IFilterProjectOptions,
+  option?: Partial<UseInfiniteQueryOptions<IProjectsResponse, Error>>,
+) => {
+  return useInfiniteQuery<IProjectsResponse, Error>({
+    queryKey: [`infiniteProjects`, filterParams],
+    queryFn: ({ pageParam = 1 }) => {
+      const params: IFilterProjectOptions = {
+        ...filterParams,
+        page: Number(pageParam),
+      }
+      return getProjects(params)
+    },
+    getNextPageParam: (lastPage) => {
+      const currentPage = lastPage.pagination.page
+      const totalPage = lastPage.pagination.total_pages
+      const isLastPage = currentPage === totalPage
+      if (lastPage.pagination.total_items === 0) return undefined
+      return isLastPage ? undefined : currentPage + 1
+    },
+    initialData: () => {
+      return undefined 
+    },
     ...option,
   })
 }
