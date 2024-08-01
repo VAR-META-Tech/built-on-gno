@@ -75,6 +75,7 @@ const CompareTable = ({ loading, data, features }: Props) => {
                     <Image
                       src={String(item.logoUrl)}
                       alt=""
+                      unoptimized
                       layout="fill"
                       className="rounded-full object-cover"
                     />

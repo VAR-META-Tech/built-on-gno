@@ -21,6 +21,7 @@ export const CardProject = ({
           <div className="basics-1/3">
             <div className="relative z-[0] flex h-24 w-24 overflow-hidden rounded-full border-2 border-gray-400 md:h-28 md:w-28">
               <Image
+                unoptimized
                 src={logoUrl}
                 alt=""
                 className="relative z-[0] h-24 w-24 rounded-full transition-all delay-75 duration-300 ease-in-out hover:scale-125 md:h-28 md:w-28"
