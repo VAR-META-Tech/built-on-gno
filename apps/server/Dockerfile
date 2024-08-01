@@ -1,9 +1,13 @@
-FROM node:18-alpine3.18 AS base
-RUN apk update
-RUN apk add --no-cache libssl3 libcrypto3
-RUN apk add --no-cache libc6-compat
-RUN corepack enable
-RUN npm add -g turbo
+FROM node:18 AS base
+
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends \
+    ca-certificates \
+    openssl \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN corepack enable && \
+    npm install -g turbo
 
 FROM base AS builder
 WORKDIR /app
