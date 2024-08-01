@@ -22,9 +22,9 @@ const DetailProject = () => {
   if (isLoading) return <Loading />
 
   return (
-    <div className="container mt-12 grid w-full grid-flow-row grid-cols-12 gap-4">
+    <div className="container grid w-full grid-flow-row grid-cols-12 gap-4 pt-32">
       <div className="col-span-12 lg:col-span-8">
-        <div className="flex flex-col gap-8 rounded-xl bg-white p-8 shadow-md">
+        <div className="border-gray shadow-xs shadow-secondary flex flex-col gap-8 rounded-lg border p-8">
           <div className="flex items-center gap-2">
             <h2 className="text-2xl font-bold lg:text-4xl">
               {data?.name ?? ''}
@@ -35,10 +35,14 @@ const DetailProject = () => {
           </ReactMarkDown>
         </div>
       </div>
-      <div className="col-span-12 flex w-full flex-col gap-4 lg:col-span-4">
+      <div className="col-span-12 flex w-full flex-col gap-6 lg:col-span-4">
         <CardInfo data={data!} />
         <h2 className="px-4 text-3xl font-bold">Glossary</h2>
-        <Accordion type="multiple">
+        <Accordion
+          type="multiple"
+          divider
+          defaultValue={[String(data?.glossaryProjects[0]?.id ?? '')]}
+        >
           {data?.glossaryProjects?.map(({ glossary, id }) => (
             <AccordionItem value={String(id)} key={id}>
               <AccordionTrigger className="text-xl font-bold uppercase">
@@ -49,11 +53,13 @@ const DetailProject = () => {
           ))}
         </Accordion>
       </div>
-      <Compare
-        projectTags={data?.projectTags}
-        name={data?.name}
-        id={data?.id}
-      />
+      {data?.projectTags.length ?? 0 > 0 ? (
+        <Compare
+          projectTags={data?.projectTags}
+          name={data?.name}
+          id={data?.id}
+        />
+      ) : null}
     </div>
   )
 }

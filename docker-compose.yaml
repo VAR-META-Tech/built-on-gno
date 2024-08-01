@@ -6,12 +6,12 @@ services:
       context: .
       dockerfile: ./apps/web/Dockerfile
     restart: always
-    env_file: ./.env
+#    env_file: ./.env
     environment:
-      - PORT=$FE_PORT
-      - NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+      - PORT=${FE_PORT}
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
     ports:
-      - $FE_PORT:$FE_PORT
+      - ${FE_PORT}:${FE_PORT}
     depends_on:
       - api
   api:
@@ -20,16 +20,15 @@ services:
       context: .
       dockerfile: ./apps/server/Dockerfile
     restart: always
-    env_file: ./.env
     environment:
-      - PORT=$PORT
-      - TYPEORM_HOST=$TYPEORM_HOST
-      - TYPEORM_PORT=$TYPEORM_PORT
-      - TYPEORM_USERNAME=$TYPEORM_USERNAME
-      - TYPEORM_PASSWORD=$TYPEORM_PASSWORD
-      - TYPEORM_DATABASE=$TYPEORM_DATABASE
-      - LOG_DIR=$LOG_DIR
-      - NODE_ENV=$NODE_ENV
+      - PORT=${PORT}
+      - TYPEORM_HOST=${TYPEORM_HOST}
+      - TYPEORM_PORT=${TYPEORM_PORT}
+      - TYPEORM_USERNAME=${TYPEORM_USERNAME}
+      - TYPEORM_PASSWORD=${TYPEORM_PASSWORD}
+      - TYPEORM_DATABASE=${TYPEORM_DATABASE}
+      - LOG_DIR=${LOG_DIR}
+      - NODE_ENV=${NODE_ENV}
     ports:
-      - $PORT:$PORT
+      - ${PORT}:${PORT}
     

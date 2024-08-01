@@ -34,6 +34,7 @@ COPY --from=installer --chown=nextjs:nodejs /app/apps/web/package.json /app/apps
 COPY --from=installer --chown=nextjs:nodejs /app/apps/web/next.config.mjs /app/apps/web/next.config.mjs
 COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next /app/apps/web/.next
 COPY --from=installer --chown=nextjs:nodejs /app/apps/web/node_modules /app/apps/web/node_modules
+COPY --from=installer --chown=nextjs:nodejs /app/apps/web/public /app/apps/web/public
 COPY --from=installer --chown=nextjs:nodejs /app/node_modules /app/node_modules
 
 WORKDIR /app/apps/web

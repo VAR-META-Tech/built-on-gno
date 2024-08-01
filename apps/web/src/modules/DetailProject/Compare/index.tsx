@@ -37,15 +37,11 @@ const Compare = ({ projectTags = [], name, id }: Partial<IProjectDetail>) => {
 
   return (
     <div className="col-span-12 flex flex-col justify-start gap-8 py-10">
-      <p className="max-w-md px-4 text-3xl font-bold lg:text-5xl">
+      <p className="max-w-lg px-4 text-2xl font-bold leading-none lg:text-4xl">
         Compare similar projects to
-        <span className="text-primary"> {name}</span>
+        <span className="text-[#0059ff]"> {name}</span>
       </p>
-      <Tabs
-        radius="full"
-        value={tabIndex}
-        onValueChange={(e) => setTabIndex(e)}
-      >
+      <Tabs radius="lg" value={tabIndex} onValueChange={(e) => setTabIndex(e)}>
         <TabsList className="max-w-sm">
           {projectTags?.map(({ tag }) => (
             <TabsTrigger key={tag.id} value={String(tag.id)}>
@@ -54,7 +50,11 @@ const Compare = ({ projectTags = [], name, id }: Partial<IProjectDetail>) => {
           ))}
         </TabsList>
       </Tabs>
-      <CompareTable loading={isLoading} data={data?.data ?? []} features={features} />
+      <CompareTable
+        loading={isLoading}
+        data={data?.data ?? []}
+        features={features}
+      />
     </div>
   )
 }

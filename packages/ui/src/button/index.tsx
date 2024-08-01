@@ -7,7 +7,7 @@ export const Button = ({ children, className, ...props }: ButtonProps) => {
     <VARButton
       {...props}
       className={clsx(
-        'group relative cursor-pointer bg-[#769689] transition-all duration-300 ease-in-out hover:bg-[#3e6957] hover:shadow-lg',
+        'group relative cursor-pointer transition-all duration-300 ease-in-out hover:shadow-lg',
         className,
       )}
     >

@@ -14,7 +14,7 @@ export const CardInfo = ({ data }: { data: IProjectDetail | undefined }) => {
   }
 
   return (
-    <div className="flex flex-col gap-4 rounded-xl bg-white p-8 shadow-md">
+    <div className="border-gray shadow-xs shadow-secondary flex flex-col gap-4 rounded-lg border p-8">
       <h2 className="text-2xl font-bold">{data?.name}</h2>
       <div className="flex w-full flex-col gap-1">
         <p className="text-sm font-light">Industry</p>
@@ -84,7 +84,7 @@ export const CardInfo = ({ data }: { data: IProjectDetail | undefined }) => {
               <Button
                 variant="outline"
                 radius="full"
-                className="relative rounded-full"
+                className="border-secondary relative rounded-full"
                 iconOnly
               >
                 <Image
