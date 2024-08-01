@@ -9,8 +9,6 @@ function getIDsMergeAction(output: string) {
 
   const id0 = array[0].split(' ')[0]
   const id1 = array[1].split(' ')[0]
-  console.log(id0)
-  console.log(id1)
   return {
     recent: id0,
     past: id1,
