@@ -1,5 +1,6 @@
 import { CrawlController } from '@/controllers/crawl.controller'
 import { Routes } from '@/decorator/routes'
+import { authenticationGithub } from '@/shared/middleware-github'
 import { Router } from 'express'
 
 export class CrawlRoute implements Routes {
@@ -12,6 +13,6 @@ export class CrawlRoute implements Routes {
   }
 
   private initializeRoute() {
-    this.router.get('/', this.crawlController.crawl)
+    this.router.get('/', authenticationGithub, this.crawlController.crawl)
   }
 }
