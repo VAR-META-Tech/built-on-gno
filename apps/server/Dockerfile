@@ -1,5 +1,6 @@
-FROM node:18-alpine AS base
+FROM node:18-alpine3.18 AS base
 RUN apk update
+RUN apk add --no-cache libssl3 libcrypto3
 RUN apk add --no-cache libc6-compat
 RUN corepack enable
 RUN npm add -g turbo
