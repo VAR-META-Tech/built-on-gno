@@ -6,8 +6,7 @@ RUN apt-get update && apt-get upgrade -y && \
     openssl \
     && rm -rf /var/lib/apt/lists/*
 
-RUN corepack enable && \
-    npm install -g turbo
+RUN corepack enable && pnpm install -g turbo
 
 FROM base AS builder
 WORKDIR /app
