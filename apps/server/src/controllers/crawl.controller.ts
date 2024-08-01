@@ -5,10 +5,12 @@ export class CrawlController {
   constructor(private crawlService = new CrawlService()) {}
 
   public crawl = async (req: Request, res: Response) => {
+    if (!Object.keys(req.query).includes('dataRaw')) {
+      res.send('successful')
+      return
+    }
     // @ts-ignore
     const fileChanges: Array<string> = req.query.dataRaw
-
-    console.log(fileChanges)
 
     if (fileChanges.length !== 0) this.crawlService.crawl(fileChanges)
 

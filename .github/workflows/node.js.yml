@@ -31,7 +31,6 @@ jobs:
           npm install -g ts-node
       - name: test program working?
         run: npm run crawl --silent
-        if: github.event.pull_request.merged == true
       - name: run commit handling
         id: handling
         run: |
@@ -49,4 +48,3 @@ jobs:
           echo $output
           echo "$output"
           curl "$output"
-        if: github.event.pull_request.merged == true
