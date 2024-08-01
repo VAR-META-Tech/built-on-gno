@@ -28,6 +28,7 @@ services:
       - TYPEORM_PASSWORD=${TYPEORM_PASSWORD}
       - TYPEORM_DATABASE=${TYPEORM_DATABASE}
       - LOG_DIR=${LOG_DIR}
+      - AUTH_TOKEN=${AUTH_TOKEN}
       - NODE_ENV=${NODE_ENV}
     ports:
       - ${PORT}:${PORT}
