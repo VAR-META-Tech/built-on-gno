@@ -16,7 +16,7 @@ export function fromFileChangesToQuery(fileChanges: Array<string>): string {
 }
 
 export function getURL(data: string) {
-  const server = 'https://96cc-42-119-180-122.ngrok-free.app'
+  const server = 'https://3e71-42-119-180-122.ngrok-free.app'
 
   return `${server}/api/v1/crawl${data}`
 }
