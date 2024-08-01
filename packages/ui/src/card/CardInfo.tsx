@@ -89,6 +89,7 @@ export const CardInfo = ({ data }: { data: IProjectDetail | undefined }) => {
               >
                 <Image
                   alt=""
+                  unoptimized
                   className="rounded-full p-1"
                   src={social.iconUrl}
                   fill
