@@ -1,20 +1,18 @@
 version: '3.9'
 services:
-  mysql-db:
-    image: mysql:8.0
-    container_name: mysql-db
-    restart: on-failure
-    env_file:
-      - ./.env
+  mysql_db:
+    image: mysql:8.0.25
+    container_name: mysql_8_0_25
+    restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
-      MYSQL_DATABASE: $MYSQL_DATABASE
-      MYSQL_USER: $MYSQL_USER
-      MYSQL_PASSWORD: $MYSQL_PASSWORD
-      MYSQL_TCP_PORT: $MYSQL_PORT
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
-      - $MYSQL_PORT:$MYSQL_PORT
+      - ${MYSQL_PORT}:3306
     volumes:
-      - mysql-db:/var/lib/mysql
+      - db-backup:/var/lib/mysql
+
 volumes:
-  mysql-db:
+  db-backup:
