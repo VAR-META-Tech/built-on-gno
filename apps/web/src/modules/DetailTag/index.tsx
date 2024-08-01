@@ -2,10 +2,8 @@
 import { useProjects } from '@/apis'
 import HeroSection from '@/components/HeroSection'
 import { DEFAULT_API_RETURN } from '@/constants'
-import { Card, Loading } from '@repo/ui'
-import { Tag, Tooltip, TooltipProvider } from '@var-meta/ui'
-import Image from 'next/image'
-import Link from 'next/link'
+import { Loading } from '@repo/ui'
+import CardPreview from '@repo/ui/src/card/CardPreview'
 import { notFound, useParams } from 'next/navigation'
 import { useMemo } from 'react'
 
@@ -38,54 +36,15 @@ const DetailTag = () => {
   return (
     <>
       <HeroSection />
-      <div className="container mt-10 flex w-full justify-center gap-10 sm:mt-20 md:mt-32">
-        <Card title={String(tagName)}>
-          <TooltipProvider>
-            {projects.data.map((project) => (
-              <Tooltip
-                key={project.id}
-                title={
-                  <h2 className="p-2 text-2xl font-bold">{project.name}</h2>
-                }
-                contentClassName="w-full"
-                content={
-                  <div className="flex w-full flex-col gap-3 p-2">
-                    <div className="text-md font-normal text-gray-600">
-                      {project.shortDescription}
-                    </div>
-                    <div className="flex w-full flex-row gap-1 overflow-hidden">
-                      {project.projectTags.map(({ tag }) => (
-                        <Tag size="sm" radius="xl" key={tag.id}>
-                          <span className="text-nowrap p-2">{tag.name}</span>
-                        </Tag>
-                      ))}
-                    </div>
-                  </div>
-                }
-              >
-                <Link
-                  href={`/ecosystem/project/${project.id}`}
-                  className="group flex cursor-pointer flex-col"
-                >
-                  <div className="relative z-0 h-20 w-20 rounded-full border-2">
-                    <Image
-                      src={project.logoUrl}
-                      alt=""
-                      fill
-                      className="relative z-0 rounded-full object-cover"
-                    />
-                    <div className="absolute flex h-full w-full items-center justify-center rounded-full bg-black text-sm text-white opacity-0 transition-all duration-200 group-hover:opacity-50">
-                      explore
-                    </div>
-                  </div>
-                  <h2 className="max-w-20 overflow-hidden text-ellipsis text-nowrap text-lg font-semibold">
-                    {project.name}
-                  </h2>
-                </Link>
-              </Tooltip>
-            ))}
-          </TooltipProvider>
-        </Card>
+      <div className="container my-10 flex w-full flex-col items-start justify-start gap-4 p-2 sm:my-20 md:my-32">
+        <h3 className="text-ellipsis text-lg font-bold lg:text-2xl">
+          {tagName}
+        </h3>
+        <div className="flex w-full flex-wrap justify-start gap-6">
+          {projects.data.map((project) => (
+            <CardPreview key={project.id} {...project} />
+          ))}
+        </div>
       </div>
     </>
   )
