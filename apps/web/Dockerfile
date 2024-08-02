@@ -1,12 +1,13 @@
 FROM node:18-alpine AS base
-RUN apk update
-RUN apk add --no-cache libc6-compat
-RUN corepack enable
-RUN npm add -g turbo
+# RUN apk add --update openssl \
+#     && apk --no-cache -U -a upgrade \
+#     && apk add --no-cache libc6-compat
+RUN corepack enable 
 
 FROM base AS builder
 WORKDIR /app
 COPY . .
+RUN npm install -g turbo
 RUN turbo prune web --docker
 
 FROM base AS installer
@@ -16,6 +17,7 @@ COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 
+RUN npm install -g pnpm
 RUN pnpm install
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json

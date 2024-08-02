@@ -1,12 +1,8 @@
-FROM node:18 AS base
-
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y --no-install-recommends \
-    ca-certificates \
-    openssl \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN corepack enable && npm install -g turbo
+FROM node:18-alpine AS base
+# RUN apk add --update openssl \
+#     && apk --no-cache -U -a upgrade \
+#     && apk add --no-cache libc6-compat
+RUN corepack enable
 
 FROM base AS builder
 WORKDIR /app
@@ -21,6 +17,7 @@ COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 
+RUN npm install -g pnpm
 RUN pnpm install
 COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
