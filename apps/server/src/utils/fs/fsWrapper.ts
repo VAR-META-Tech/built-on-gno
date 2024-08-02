@@ -48,4 +48,15 @@ export class fsWrapper {
       })
     })
   }
+
+  static checkFileExist(path: string): Promise<boolean> {
+    return new Promise((res, rej) => {
+      const request = fsGithubRequest(path)
+      exec(request, (error, stdout, stderr) => {
+        const data = JSON.parse(stdout)
+        if (data.message == 'Not Found') res(false)
+        else res(true)
+      })
+    })
+  }
 }
