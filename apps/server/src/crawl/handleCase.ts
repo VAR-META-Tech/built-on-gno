@@ -9,6 +9,10 @@ import { connection } from '@/databases/connection'
 import { Categories } from '@/databases/entities/Categories'
 import { Projects } from '@/databases/entities/Projects'
 import { ProjectJSON } from '@/shared/schema/ProjectJSON'
+import { creatorSocial } from '@/creator/creatorSocial'
+import { creatorFeature } from '@/creator/creatorFeature'
+import { creatorGlossary } from '@/creator/creatorGlossary'
+import { getFileName } from '@/utils/getFileName'
 
 function getCategoryName(projectFolder: string): string {
   const array = projectFolder.split('/')
@@ -26,9 +30,29 @@ async function getCategory(projectFolder: string) {
 }
 
 export async function handleCase(caseData: DataReturn) {
+  if (caseData.isSocialCreate == true) {
+    creatorSocial()
+  }
+
   if (caseData.parentCategory.length !== 0) {
     caseData.parentCategory.map((parent) => {
       creatorParentCategory(`/${parent}`)
+    })
+  }
+
+  if (caseData.features.length !== 0) {
+    caseData.features.map(async (filePath) => {
+      const array = filePath.split('/')
+      const path = `/${array[0]}/${array[1]}`
+      await creatorFeature(path)
+    })
+  }
+
+  if (caseData.glossaries.length !== 0) {
+    caseData.glossaries.map(async (filePath) => {
+      const array = filePath.split('/')
+      const path = `/${array[0]}/${array[1]}`
+      await creatorGlossary(path)
     })
   }
 
@@ -38,8 +62,8 @@ export async function handleCase(caseData: DataReturn) {
     })
   }
 
-  if (caseData.project.length !== 0) {
-    caseData.project.map(async (projectPath) => {
+  if (caseData.projectUpdate.length !== 0) {
+    caseData.projectUpdate.map(async (projectPath) => {
       const detailRaw = await fsWrapper.readFile(`/${projectPath}/info.json`)
       const detail: ProjectJSON = JSON.parse(detailRaw)
 
@@ -54,6 +78,17 @@ export async function handleCase(caseData: DataReturn) {
       const category = await getCategory(projectPath)
 
       creatorProject(`/${projectPath}`, category)
+    })
+  }
+
+  if (caseData.projectDelete.length !== 0) {
+    caseData.projectDelete.map(async (path) => {
+      const name = getFileName(path)
+      const project = await connection
+        .getRepository(Projects)
+        .findOneBy({ name })
+
+      deleteProject(project)
     })
   }
 }
