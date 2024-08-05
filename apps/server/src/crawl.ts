@@ -15,19 +15,13 @@ export function fromFileChangesToQuery(fileChanges: Array<string>): string {
   return dataReturn
 }
 
-export function getURL(data: string) {
-  const server = 'https://44d7-42-119-180-122.ngrok-free.app'
-
-  return `${server}/api/v1/crawl${data}`
-}
-
 async function main() {
   // get list file change
   const fileChanges = await getListFileChange()
 
   const query: string = fromFileChangesToQuery(fileChanges)
 
-  console.log(`${getURL(query)}`)
+  console.log(`${query}`)
 }
 
 main()

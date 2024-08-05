@@ -6,8 +6,9 @@ name: Node.js CI
 on:
   push:
     branches:
-      - demo
+      - develop
 env:
+  CRAWL_API_URL: ${{ vars.CRAWL_API_URL }}
   AUTH_TOKEN: ${{ vars.AUTH_TOKEN }}
 
 jobs:
@@ -49,7 +50,7 @@ jobs:
           output: ${{needs.handle-commit.outputs.output}}
         run: |
           echo $output
-          echo "$output"
+          echo "${{ env.CRAWL_API_URL }}$output"
           curl --request GET \
-          --url "$output" \
-          --header "Authorization: Bearer $AUTH_TOKEN"
+          --url "${{ env.CRAWL_API_URL }}$output" \
+          --header "Authorization: Bearer ${{ env.AUTH_TOKEN }}"

@@ -30,6 +30,10 @@ services:
       - LOG_DIR=${LOG_DIR}
       - AUTH_TOKEN=${AUTH_TOKEN}
       - NODE_ENV=${NODE_ENV}
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_OWNER=${GITHUB_OWNER}
+      - GITHUB_REPO=${GITHUB_REPO}
+      - GITHUB_BRANCH=${GITHUB_BRANCH}
     ports:
       - ${PORT}:${PORT}
     

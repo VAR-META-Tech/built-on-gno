@@ -4,13 +4,14 @@ import { exec } from 'child_process'
 const token = process.env.GITHUB_TOKEN
 const owner = process.env.GITHUB_OWNER
 const repo = process.env.GITHUB_REPO
+const branch = process.env.GITHUB_BRANCH
 
 function fsGithubRequest(path: string): string {
   const request = `curl -L \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: Bearer ${token}" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  https://api.github.com/repos/${owner}/${repo}/contents${path}?ref=demo`
+  https://api.github.com/repos/${owner}/${repo}/contents${path}?ref=${branch}`
 
   return request
 }
