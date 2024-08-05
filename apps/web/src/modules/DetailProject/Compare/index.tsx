@@ -42,9 +42,9 @@ const Compare = ({ projectTags = [], name, id }: Partial<IProjectDetail>) => {
         <span className="text-[#0059ff]"> {name}</span>
       </p>
       <Tabs radius="lg" value={tabIndex} onValueChange={(e) => setTabIndex(e)}>
-        <TabsList className="max-w-sm">
+        <TabsList className="w-fit">
           {projectTags?.map(({ tag }) => (
-            <TabsTrigger key={tag.id} value={String(tag.id)}>
+            <TabsTrigger key={tag.id} className="px-4" value={String(tag.id)}>
               {tag.name}
             </TabsTrigger>
           ))}

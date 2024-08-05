@@ -35,5 +35,5 @@ export const DatabaseConfig: DataSourceOptions = {
     ProjectDescriptions,
   ],
   synchronize: true,
-  logging: true,
+  logging: false,
 }
