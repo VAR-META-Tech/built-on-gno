@@ -7,9 +7,10 @@ on:
   push:
     branches:
       - develop
+      - main
 env:
-  CRAWL_API_URL: ${{ vars.CRAWL_API_URL }}
-  AUTH_TOKEN: ${{ vars.AUTH_TOKEN }}
+  CRAWL_API_URL: ${{ secrets.CRAWL_API_URL }}
+  AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
 
 jobs:
   handle-commit:
