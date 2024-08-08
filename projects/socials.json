@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Website",
+    "code": "website",
+    "icon_url": "https://icons.veryicon.com/png/o/miscellaneous/cryptape_neuron_icon/browser-48.png"
+  },
+  {
+    "name": "Twitter",
+    "code": "twitter",
+    "icon_url": "https://upload.wikimedia.org/wikipedia/commons/c/cc/X_icon.svg"
+  },
+  {
+    "name": "Github",
+    "code": "github",
+    "icon_url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"
+  },
+  {
+    "name": "Discord",
+    "code": "discord",
+    "icon_url": "https://www.svgrepo.com/show/353655/discord-icon.svg"
+  },
+  {
+    "name": "Telegram",
+    "code": "telegram",
+    "icon_url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
+  }
+]
