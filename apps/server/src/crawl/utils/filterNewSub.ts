@@ -1,4 +1,5 @@
 import { connection } from '@/databases/connection'
+import { logger } from '@/utils/logger'
 import { DataReturn } from '../classificationCase'
 
 // layer 2
@@ -57,36 +58,41 @@ export async function filterNewSub(
     return []
   }
 
-  const fileChange = removeCategoryJson(fileChangeRaw)
+  try {
+    const fileChange = removeCategoryJson(fileChangeRaw)
 
-  const listName = getListSubName(fileChange)
-  const inQuery = listName.map((name) => `"${name}"`).join(',')
-  const query = `
+    const listName = getListSubName(fileChange)
+    const inQuery = listName.map((name) => `"${name}"`).join(',')
+    const query = `
         SELECT categories.name
         FROM categories
         WHERE categories.parent_id IS NOT NULL AND categories.name IN (${inQuery});
   `
 
-  const datas: Array<{ name: string }> = await connection.manager.query(query)
+    const datas: Array<{ name: string }> = await connection.manager.query(query)
 
-  const subNew: Array<string> = []
-  const subExist: Array<string> = []
+    const subNew: Array<string> = []
+    const subExist: Array<string> = []
 
-  listName.forEach((name) => {
-    const isExist = datas.some((data) => data.name == name)
-    if (isExist) subExist.push(name)
-    else subNew.push(name)
-  })
+    listName.forEach((name) => {
+      const isExist = datas.some((data) => data.name == name)
+      if (isExist) subExist.push(name)
+      else subNew.push(name)
+    })
 
-  //   now we have sub new, let add it to the dataReturn
-  dataReturn.subCategory = getSubReturn(subNew, fileChange)
+    //   now we have sub new, let add it to the dataReturn
+    dataReturn.subCategory = getSubReturn(subNew, fileChange)
 
-  let fileChangeUpate = fileChange.filter((file) => {
-    for (let i = 0; i < subExist.length; i++) {
-      if (file.includes(subExist[i])) return true
-    }
-    return false
-  })
+    let fileChangeUpate = fileChange.filter((file) => {
+      for (let i = 0; i < subExist.length; i++) {
+        if (file.includes(subExist[i])) return true
+      }
+      return false
+    })
 
-  return fileChangeUpate
+    return fileChangeUpate
+  } catch (error) {
+    logger.info('Filter new sub error', error)
+    throw error
+  }
 }

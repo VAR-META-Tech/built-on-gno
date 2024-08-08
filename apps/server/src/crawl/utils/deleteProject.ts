@@ -37,16 +37,18 @@ export async function deleteProject(project: Projects) {
     WHERE projects.id = ${project.id}
   `
 
-  await Promise.all([
-    connection.manager.query(projectSocialQuery),
-    connection.manager.query(partnershipQuery),
-    connection.manager.query(projectTagQuery),
-    connection.manager.query(projectFeatureQuery),
-    connection.manager.query(projectGlossaryQuery),
-    connection.manager.query(projectDescriptionQuery),
-  ])
-    .then(() => {
-      connection.manager.query(projectQuery)
-    })
-    .catch(logger.info)
+  try {
+    await Promise.all([
+      connection.manager.query(projectSocialQuery),
+      connection.manager.query(partnershipQuery),
+      connection.manager.query(projectTagQuery),
+      connection.manager.query(projectFeatureQuery),
+      connection.manager.query(projectGlossaryQuery),
+      connection.manager.query(projectDescriptionQuery),
+    ])
+    await connection.manager.query(projectQuery)
+  } catch (error) {
+    logger.info('delete project error', error)
+    throw error
+  }
 }
