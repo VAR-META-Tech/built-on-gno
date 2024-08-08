@@ -1,11 +1,12 @@
+import { connection } from '@/databases/connection'
+import { Categories } from '@/databases/entities/Categories'
 import { CategoryJSON } from '@/shared/schema/CategoryKJSON'
 import { fsWrapper } from '@/utils/fs/fsWrapper'
 import { getFileName } from '@/utils/getFileName'
 import { getParentPath } from '@/utils/getParentPath'
+import { logger } from '@/utils/logger'
 import 'dotenv/config'
 import { creatorProject } from './creatorProject'
-import { Categories } from '@/databases/entities/Categories'
-import { connection } from '@/databases/connection'
 
 export async function creatorSubCategory(subPath: string) {
   // ex of subPath: /projects/DeFi/DEX
@@ -13,11 +14,13 @@ export async function creatorSubCategory(subPath: string) {
 
   const parentPath = getParentPath(subPath)
 
-  const cat = await connection
-    .getRepository(Categories)
-    .findOneBy({ name: getFileName(parentPath) })
+  try {
+    const cat = await connection
+      .getRepository(Categories)
+      .findOneBy({ name: getFileName(parentPath) })
 
-  fsWrapper.readFile(`${parentPath}category.json`).then((dataString) => {
+    const dataString = await fsWrapper.readFile(`${parentPath}category.json`)
+
     const data: CategoryJSON = JSON.parse(dataString)
 
     const tmp = data.sub_categories.filter(
@@ -33,19 +36,22 @@ export async function creatorSubCategory(subPath: string) {
     category.description = detail.description
     category.parentId = cat.id
 
-    connection
+    const created = await connection
       .getRepository(Categories)
       .save(category)
       .catch((error) => console.log(error))
-      .then((category) => {
-        fsWrapper.readdir(`${subPath}`).then((datas) => {
-          datas.map((data) => {
-            const path = `${subPath}/${data}`
-            creatorProject(path, category)
-          })
-        })
-      })
-  })
+
+    const datas = await fsWrapper.readdir(`${subPath}`)
+    await Promise.all(
+      datas.map(async (data) => {
+        const path = `${subPath}/${data}`
+        await creatorProject(path, created)
+      }),
+    )
+  } catch (error) {
+    logger.info('Sub category create error', error)
+    throw error
+  }
 }
 
 //check done

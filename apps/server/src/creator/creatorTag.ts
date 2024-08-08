@@ -1,5 +1,6 @@
 import { connection } from '@/databases/connection'
 import { Tags } from '@/databases/entities/Tags'
+import { logger } from '@/utils/logger'
 
 export async function creatorTag(tags: Array<string>) {
   const inQuery = `${tags.map((tag) => `\"${tag}\"`).join(',')}`
@@ -10,30 +11,28 @@ export async function creatorTag(tags: Array<string>) {
         WHERE name IN ( ${inQuery} );
       `
 
-  await connection.manager
-    .query(queryString)
-    .then((result: Array<{ name: string }>) => {
-      const tagsNotExist = tags.filter((tag) => {
-        const data = result.find((value) => value.name === tag)
-        if (data) return false
-        else return true
-      })
+  try {
+    const result: Array<{ name: string }> =
+      await connection.manager.query(queryString)
 
-      const tagsSave: Array<Tags> = tagsNotExist.map((data) => {
-        const tag = new Tags()
-        tag.name = data
-        tag.description = ''
-        return tag
-      })
+    const tagsNotExist = tags.filter((tag) => {
+      const data = result.find((value) => value.name === tag)
+      if (data) return false
+      else return true
+    })
 
-      connection
-        .getRepository(Tags)
-        .save(tagsSave)
-        .catch((error) => console.log('tag save error'))
+    const tagsSave: Array<Tags> = tagsNotExist.map((data) => {
+      const tag = new Tags()
+      tag.name = data
+      tag.description = ''
+      return tag
     })
-    .catch((error) => {
-      console.log(error)
-    })
+
+    await connection.getRepository(Tags).save(tagsSave)
+  } catch (error) {
+    logger.info('Tag create error', error)
+    throw error
+  }
 }
 
 // check done

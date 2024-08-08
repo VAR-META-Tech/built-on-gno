@@ -1,3 +1,11 @@
+include:
+  - project: foundation/templates/ci-template
+    file: backend-ci.yml
+    inputs:
+      branch: develop
+  - project: foundation/templates/ci-template
+    file: update-manifest.yml
+
 # stages:
 #   - test
 #   - build
@@ -22,7 +30,7 @@
 #   image: $RUNNER_IMAGE
 #   script:
 #     - sh ./scripts/test.sh
-#   cache: 
+#   cache:
 #     - <<: *global_cache_node_mods
 #   tags:
 #     - vm-docker
@@ -33,7 +41,7 @@
 # .build_template: &build
 #   stage: build
 #   image: $RUNNER_IMAGE
-#   cache: 
+#   cache:
 #     - <<: *global_cache_node_mods
 #   script:
 #     - sh ./scripts/build.sh
@@ -52,14 +60,14 @@
 #   image: $KANIKO_RUNNER_IMAGE
 #   script:
 #     - sh ./scripts/dockerize.sh
-#   cache: 
+#   cache:
 #     - <<: *global_cache_node_mods
 #   tags:
 #     - vm-docker
 #   allow_failure: false
 #   when: on_success
 
-# ##### node_module install step 
+# ##### node_module install step
 # ## Stage: .pre
 # ######
 # install:
@@ -76,7 +84,7 @@
 #     # - nvm use
 #     - pnpm install
 #     - turbo prune server --docker
-#   tags: 
+#   tags:
 #     - vm-docker
 #   rules:  #add this to bypass merge requests
 #     - if: '$CI_PIPELINE_SOURCE =~ /.*/'
@@ -120,7 +128,7 @@
 #   only:   # update this for staging
 #     - dev
 #     - develop
-#   needs: 
+#   needs:
 #     - job: build:be
 #       artifacts: true
 
@@ -132,7 +140,7 @@
 #   only:   # update this for staging
 #     - dev
 #     - develop
-#   needs: 
+#   needs:
 #     - job: build:fe
 #       artifacts: true
 
@@ -155,7 +163,7 @@ dockerize:be:
   variables:
     REGISTRY: $REGISTRY_BE
     DOCKERFILE_DIR: apps/server
-  only:   # update this for staging
+  only: # update this for staging
     - develop
 
 dockerize:fe:
@@ -163,5 +171,5 @@ dockerize:fe:
   variables:
     REGISTRY: $REGISTRY_FE
     DOCKERFILE_DIR: apps/web
-  only:   # update this for staging
+  only: # update this for staging
     - develop

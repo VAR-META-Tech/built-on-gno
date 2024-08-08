@@ -1,8 +1,9 @@
+import { logger } from '@/utils/logger'
 import 'dotenv/config'
-import { filterNewParent } from './utils/filterNewParent'
-import { filterNewSub } from './utils/filterNewSub'
-import { filterNewSocial } from './utils/filterNewSocials'
 import { filterNewFeaturesAndGlossaries } from './utils/filterNewFeaturesAndGlossaries'
+import { filterNewParent } from './utils/filterNewParent'
+import { filterNewSocial } from './utils/filterNewSocials'
+import { filterNewSub } from './utils/filterNewSub'
 import { filterProject } from './utils/filterProject'
 import { removeTrash } from './utils/removeTrash'
 
@@ -20,14 +21,18 @@ export async function classificationCase(
   fileChanges: Array<string>,
 ): Promise<DataReturn> {
   // fileChange is an array of file path
+  try {
+    const dataReturn = new DataReturn()
+    const fileLay0 = removeTrash(fileChanges)
+    const fileLay1 = filterNewSocial(dataReturn, fileLay0)
+    const fileLay2 = await filterNewParent(dataReturn, fileLay1)
+    const fileLay3 = filterNewFeaturesAndGlossaries(dataReturn, fileLay2)
+    const fileLay4 = await filterNewSub(dataReturn, fileLay3)
+    await filterProject(dataReturn, fileLay4)
 
-  const dataReturn = new DataReturn()
-  const fileLay0 = removeTrash(fileChanges)
-  const fileLay1 = filterNewSocial(dataReturn, fileLay0)
-  const fileLay2 = await filterNewParent(dataReturn, fileLay1)
-  const fileLay3 = filterNewFeaturesAndGlossaries(dataReturn, fileLay2)
-  const fileLay4 = await filterNewSub(dataReturn, fileLay3)
-  await filterProject(dataReturn, fileLay4)
-
-  return dataReturn
+    return dataReturn
+  } catch (error) {
+    logger.info('Classification case error', error)
+    throw error
+  }
 }

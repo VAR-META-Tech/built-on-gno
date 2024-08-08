@@ -1,18 +1,19 @@
-import 'dotenv/config'
-import { DataReturn } from './classificationCase'
+import { creatorFeature } from '@/creator/creatorFeature'
+import { creatorGlossary } from '@/creator/creatorGlossary'
 import { creatorParentCategory } from '@/creator/creatorParentCategory'
-import { creatorSubCategory } from '@/creator/creatorSubCategory'
-import { fsWrapper } from '@/utils/fs/fsWrapper'
-import { deleteProject } from './utils/deleteProject'
 import { creatorProject } from '@/creator/creatorProject'
+import { creatorSocial } from '@/creator/creatorSocial'
+import { creatorSubCategory } from '@/creator/creatorSubCategory'
 import { connection } from '@/databases/connection'
 import { Categories } from '@/databases/entities/Categories'
 import { Projects } from '@/databases/entities/Projects'
 import { ProjectJSON } from '@/shared/schema/ProjectJSON'
-import { creatorSocial } from '@/creator/creatorSocial'
-import { creatorFeature } from '@/creator/creatorFeature'
-import { creatorGlossary } from '@/creator/creatorGlossary'
+import { fsWrapper } from '@/utils/fs/fsWrapper'
 import { getFileName } from '@/utils/getFileName'
+import { logger } from '@/utils/logger'
+import 'dotenv/config'
+import { DataReturn } from './classificationCase'
+import { deleteProject } from './utils/deleteProject'
 
 function getCategoryName(projectFolder: string): string {
   const array = projectFolder.split('/')
@@ -31,64 +32,113 @@ async function getCategory(projectFolder: string) {
 
 export async function handleCase(caseData: DataReturn) {
   if (caseData.isSocialCreate == true) {
-    creatorSocial()
+    try {
+      await creatorSocial()
+    } catch (error) {
+      logger.info('Social create error', error)
+      throw error
+    }
   }
 
   if (caseData.parentCategory.length !== 0) {
-    caseData.parentCategory.map((parent) => {
-      creatorParentCategory(`/${parent}`)
-    })
+    try {
+      await Promise.all(
+        caseData.parentCategory.map(async (parent) => {
+          await creatorParentCategory(`/${parent}`)
+        }),
+      )
+    } catch (error) {
+      logger.info('Parent category create error', error)
+      throw error
+    }
   }
 
   if (caseData.features.length !== 0) {
-    caseData.features.map(async (filePath) => {
-      const array = filePath.split('/')
-      const path = `/${array[0]}/${array[1]}`
-      await creatorFeature(path)
-    })
+    try {
+      await Promise.all(
+        caseData.features.map(async (filePath) => {
+          const array = filePath.split('/')
+          const path = `/${array[0]}/${array[1]}`
+          await creatorFeature(path)
+        }),
+      )
+    } catch (error) {
+      logger.info('Feature create error', error)
+      throw error
+    }
   }
 
   if (caseData.glossaries.length !== 0) {
-    caseData.glossaries.map(async (filePath) => {
-      const array = filePath.split('/')
-      const path = `/${array[0]}/${array[1]}`
-      await creatorGlossary(path)
-    })
+    try {
+      await Promise.all(
+        caseData.glossaries.map(async (filePath) => {
+          const array = filePath.split('/')
+          const path = `/${array[0]}/${array[1]}`
+          await creatorGlossary(path)
+        }),
+      )
+    } catch (error) {
+      logger.info('Glossary create error', error)
+      throw error
+    }
   }
 
   if (caseData.subCategory.length !== 0) {
-    caseData.subCategory.map((subPath) => {
-      creatorSubCategory(`/${subPath}`)
-    })
+    try {
+      await Promise.all(
+        caseData.subCategory.map((subPath) => {
+          creatorSubCategory(`/${subPath}`)
+        }),
+      )
+    } catch (error) {
+      logger.info('Sub category create error', error)
+      throw error
+    }
   }
 
   if (caseData.projectUpdate.length !== 0) {
-    caseData.projectUpdate.map(async (projectPath) => {
-      const detailRaw = await fsWrapper.readFile(`/${projectPath}/info.json`)
-      const detail: ProjectJSON = JSON.parse(detailRaw)
+    try {
+      await Promise.all(
+        caseData.projectUpdate.map(async (projectPath) => {
+          const detailRaw = await fsWrapper.readFile(
+            `/${projectPath}/info.json`,
+          )
+          const detail: ProjectJSON = JSON.parse(detailRaw)
 
-      const project = await connection
-        .getRepository(Projects)
-        .findOneBy({ name: detail.display_term })
+          const project = await connection
+            .getRepository(Projects)
+            .findOneBy({ name: detail.display_term })
 
-      if (project) {
-        await deleteProject(project)
-      }
+          if (project) {
+            await deleteProject(project)
+          }
 
-      const category = await getCategory(projectPath)
+          const category = await getCategory(projectPath)
 
-      creatorProject(`/${projectPath}`, category)
-    })
+          creatorProject(`/${projectPath}`, category)
+        }),
+      )
+    } catch (error) {
+      logger.info('Project update error', error)
+      throw error
+    }
   }
 
   if (caseData.projectDelete.length !== 0) {
-    caseData.projectDelete.map(async (path) => {
-      const name = getFileName(path)
-      const project = await connection
-        .getRepository(Projects)
-        .findOneBy({ name })
+    try {
+      await Promise.all(
+        caseData.projectDelete.map(async (path) => {
+          const name = getFileName(path)
+          const project = await connection
+            .getRepository(Projects)
+            .findOneBy({ name })
 
-      deleteProject(project)
-    })
+          await deleteProject(project)
+        }),
+      )
+    } catch (error) {
+      logger.info('Project delete error', error)
+      throw error
+    }
   }
 }

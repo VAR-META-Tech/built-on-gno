@@ -3,24 +3,32 @@ import { Projects } from '@/databases/entities/Projects'
 import { ProjectSocials } from '@/databases/entities/ProjectSocials'
 import { Socials } from '@/databases/entities/Socials'
 import { ProjectJSON } from '@/shared/schema/ProjectJSON'
+import { logger } from '@/utils/logger'
 
-export function creatorProjectSocial(project: Projects, detail: ProjectJSON) {
-  const indexs = Object.keys(detail.social)
-  if (indexs.length == 0) return
+export async function creatorProjectSocial(
+  project: Projects,
+  detail: ProjectJSON,
+) {
+  const codes = Object.keys(detail.social)
+  if (codes.length == 0) return
+  try {
+    await Promise.all(
+      codes.map(async (code) => {
+        const social = await connection
+          .getRepository(Socials)
+          .findOneBy({ code })
+        if (!social) return
 
-  indexs.map((index) => {
-    const code = index
-    connection
-      .getRepository(Socials)
-      .findOneBy({ code })
-      .then((social) => {
         const projectSocial = new ProjectSocials()
         projectSocial.project = project
         projectSocial.social = social
-        projectSocial.url = detail.social[index]
+        projectSocial.url = detail.social[code]
 
-        connection.getRepository(ProjectSocials).save(projectSocial)
-      })
-      .catch((error) => console.log('Social parent category data wrong'))
-  })
+        await connection.getRepository(ProjectSocials).save(projectSocial)
+      }),
+    )
+  } catch (error) {
+    logger.info('Social create error', error)
+    throw error
+  }
 }
