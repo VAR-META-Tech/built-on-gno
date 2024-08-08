@@ -21,6 +21,8 @@ export function getURL(data: string) {
   return `${server}/api/v1/crawl${data}`
 }
 
+// comment
+
 async function main() {
   // get list file change
   const fileChanges = await getListFileChange()
