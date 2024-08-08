@@ -53,7 +53,7 @@ const DetailProject = () => {
           ))}
         </Accordion>
       </div>
-      {data?.projectTags.length ?? 0 > 0 ? (
+      {(data?.projectTags.length ?? 0 > 0) ? (
         <Compare
           projectTags={data?.projectTags}
           name={data?.name}

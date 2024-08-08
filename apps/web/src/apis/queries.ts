@@ -124,7 +124,7 @@ export const useInfiniteProjects = (
       return isLastPage ? undefined : currentPage + 1
     },
     initialData: () => {
-      return undefined 
+      return undefined
     },
     ...option,
   })

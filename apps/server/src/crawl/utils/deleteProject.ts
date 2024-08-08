@@ -1,7 +1,8 @@
 import { connection } from '@/databases/connection'
 import { Projects } from '@/databases/entities/Projects'
+import { logger } from '@/utils/logger'
 
-export function deleteProject(project: Projects) {
+export async function deleteProject(project: Projects) {
   const projectSocialQuery = `
     DELETE FROM project_socials
     WHERE project_socials.project_id = ${project.id};
@@ -36,7 +37,7 @@ export function deleteProject(project: Projects) {
     WHERE projects.id = ${project.id}
   `
 
-  Promise.all([
+  await Promise.all([
     connection.manager.query(projectSocialQuery),
     connection.manager.query(partnershipQuery),
     connection.manager.query(projectTagQuery),
@@ -47,5 +48,5 @@ export function deleteProject(project: Projects) {
     .then(() => {
       connection.manager.query(projectQuery)
     })
-    .catch((error) => console.log(error))
+    .catch(logger.info)
 }
