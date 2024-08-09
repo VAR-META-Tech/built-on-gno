@@ -86,8 +86,8 @@ export async function handleCase(caseData: DataReturn) {
   if (caseData.subCategory.length !== 0) {
     try {
       await Promise.all(
-        caseData.subCategory.map((subPath) => {
-          creatorSubCategory(`/${subPath}`)
+        caseData.subCategory.map(async (subPath) => {
+          await creatorSubCategory(`/${subPath}`)
         }),
       )
     } catch (error) {
@@ -115,7 +115,7 @@ export async function handleCase(caseData: DataReturn) {
 
           const category = await getCategory(projectPath)
 
-          creatorProject(`/${projectPath}`, category)
+          await creatorProject(`/${projectPath}`, category)
         }),
       )
     } catch (error) {

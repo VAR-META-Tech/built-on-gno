@@ -36,10 +36,7 @@ export async function creatorSubCategory(subPath: string) {
     category.description = detail.description
     category.parentId = cat.id
 
-    const created = await connection
-      .getRepository(Categories)
-      .save(category)
-      .catch((error) => console.log(error))
+    const created = await connection.getRepository(Categories).save(category)
 
     const datas = await fsWrapper.readdir(`${subPath}`)
     await Promise.all(

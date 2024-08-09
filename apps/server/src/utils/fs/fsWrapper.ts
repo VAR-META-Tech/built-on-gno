@@ -1,19 +1,31 @@
 import 'dotenv/config'
-import { exec } from 'child_process'
+import { logger } from '../logger'
 
 const token = process.env.GITHUB_TOKEN
 const owner = process.env.GITHUB_OWNER
 const repo = process.env.GITHUB_REPO
 const branch = process.env.GITHUB_BRANCH
 
-function fsGithubRequest(path: string): string {
-  const request = `curl -L \
-  -H "Accept: application/vnd.github+json" \
-  -H "Authorization: Bearer ${token}" \
-  -H "X-GitHub-Api-Version: 2022-11-28" \
-  https://api.github.com/repos/${owner}/${repo}/contents${path}?ref=${branch}`
-
-  return request
+async function fsGithubRequest(path: string): Promise<string> {
+  try {
+    const url = `https://api.github.com/repos/${owner}/${repo}/contents${path}?ref=${branch}`
+    const options = {
+      headers: {
+        Accept: 'application/vnd.github+json',
+        Authorization: `Bearer ${token}`,
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+    }
+    const data = await fetch(url, options)
+    const result = await data.json()
+    if (!data.ok) {
+      throw result?.message ?? 'Error when working with github'
+    }
+    return JSON.stringify(result)
+  } catch (error) {
+    logger.info('Error when call github' + error)
+    throw error
+  }
 }
 
 function handleDirRaw(output: string): Array<string> {
@@ -30,34 +42,30 @@ function handleFileRaw(output: string) {
 }
 
 export class fsWrapper {
-  // path is the path from /
-  static readdir(path: string): Promise<Array<string>> {
-    return new Promise((res, rej) => {
-      const request = fsGithubRequest(path)
-      exec(request, (error, stdout, stderr) => {
-        const dir = handleDirRaw(stdout)
-        res(dir)
-      })
-    })
+  static async readdir(path: string): Promise<Array<string>> {
+    try {
+      const data = await fsGithubRequest(path)
+      return handleDirRaw(data)
+    } catch (error) {
+      throw error
+    }
   }
 
-  static readFile(path: string): Promise<string> {
-    return new Promise((res, rej) => {
-      const request = fsGithubRequest(path)
-      exec(request, (error, stdout, stderr) => {
-        res(handleFileRaw(stdout))
-      })
-    })
+  static async readFile(path: string): Promise<string> {
+    try {
+      const data = await fsGithubRequest(path)
+      return handleFileRaw(data)
+    } catch (error) {
+      throw error
+    }
   }
 
-  static checkFileExist(path: string): Promise<boolean> {
-    return new Promise((res, rej) => {
-      const request = fsGithubRequest(path)
-      exec(request, (error, stdout, stderr) => {
-        const data = JSON.parse(stdout)
-        if (data.message == 'Not Found') res(false)
-        else res(true)
-      })
-    })
+  static async checkFileExist(path: string): Promise<boolean> {
+    try {
+      await fsGithubRequest(path)
+      return true
+    } catch (error) {
+      return false
+    }
   }
 }
