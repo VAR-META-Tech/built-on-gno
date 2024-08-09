@@ -1,0 +1,40 @@
+{
+  "industry": [
+    "Wallets",
+    "Dex"
+  ],
+  "display_term": "Wallets",
+  "term": "Wallets",
+  "tags": [
+    "AMM",
+    "CLMM",
+    "Swaps",
+    "NFT",
+    "Liquidity Manager",
+    "Yield Farming",
+    "Yield Optimizer"
+  ],
+  "glossaries": [
+    "Wallets",
+    "AMM"
+  ],
+  "short_description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com.",
+  "partnerships": [
+    {
+      "name": "Telegram",
+      "image": "https://www.svgrepo.com/show/452115/telegram.svg"
+    },
+    {
+      "name": "Discord",
+      "image": "https://www.svgrepo.com/show/353655/discord-icon.svg"
+    }
+  ],
+  "author": "builtongno",
+  "social": {
+    "website": "https://Wallets.com",
+    "twitter": "https://twitter.com/Wallets",
+    "github": "https://github.com/Wallets",
+    "discord": "https://discord.com/invite/Wallets",
+    "telegram": "https://t.me/Wallets"
+  }
+}
