@@ -1,4 +1,4 @@
-import { fsWrapper } from '@/utils/fs/fsWrapper'
+import { fsWrapper, githubRawFileUrl } from '@/utils/fs/fsWrapper'
 import 'dotenv/config'
 // import { creatorSocial } from './sub/creatorSocial'
 import { connection } from '@/databases/connection'
@@ -20,7 +20,7 @@ export async function creatorProject(folderPath: string, category) {
 
     const project = new Projects()
     project.name = detail.display_term
-    project.logoUrl = ''
+    project.logoUrl = githubRawFileUrl(`${folderPath}/logo.png`)
     project.shortDescription = detail.short_description
     project.author = detail.author
     project.category = category
