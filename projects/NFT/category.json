@@ -1,0 +1,34 @@
+{
+  "name": "NFT",
+  "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com.",
+  "pathname": "NFT",
+  "status": "active",
+  "tags": [
+    "NFT",
+    "Education",
+    "Videos",
+    "Merchandise",
+    "Learn",
+    "AMM",
+    "CLMM",
+    "Swaps",
+    "NFT",
+    "Liquidity Manager",
+    "Yield Farming",
+    "Yield Optimizer"
+  ],
+  "sub_categories": [
+    {
+      "name": "ART",
+      "pathname": "ART",
+      "status": "active",
+      "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com."
+    },
+    {
+      "name": "Music",
+      "pathname": "Music",
+      "status": "active",
+      "description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com."
+    }
+  ]
+}

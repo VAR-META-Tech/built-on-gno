@@ -1,0 +1,40 @@
+{
+  "industry": [
+    "Song",
+    "Dex"
+  ],
+  "display_term": "Song",
+  "term": "Song",
+  "tags": [
+    "AMM",
+    "CLMM",
+    "Swaps",
+    "NFT",
+    "Liquidity Manager",
+    "Yield Farming",
+    "Yield Optimizer"
+  ],
+  "glossaries": [
+    "Song",
+    "AMM"
+  ],
+  "short_description": "Acala provides backend infrastructure for traditional finance that is trusted by institutions like Coinbase, Figment, and Current.com.",
+  "partnerships": [
+    {
+      "name": "Telegram",
+      "image": "https://www.svgrepo.com/show/452115/telegram.svg"
+    },
+    {
+      "name": "Discord",
+      "image": "https://www.svgrepo.com/show/353655/discord-icon.svg"
+    }
+  ],
+  "author": "builtongno",
+  "social": {
+    "website": "https://Song.com",
+    "twitter": "https://twitter.com/Song",
+    "github": "https://github.com/Song",
+    "discord": "https://discord.com/invite/Song",
+    "telegram": "https://t.me/Song"
+  }
+}

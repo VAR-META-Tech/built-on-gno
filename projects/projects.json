@@ -5,6 +5,10 @@
     {
       "name": "DeFi",
       "pathname": "DeFi"
+    },
+    {
+      "name": "NFT",
+      "pathname": "NFT"
     }
   ]
 }
