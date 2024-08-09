@@ -6,6 +6,10 @@ const owner = process.env.GITHUB_OWNER
 const repo = process.env.GITHUB_REPO
 const branch = process.env.GITHUB_BRANCH
 
+export function githubRawFileUrl(path: string): string {
+  return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}${path}`
+}
+
 async function fsGithubRequest(path: string): Promise<string> {
   try {
     const url = `https://api.github.com/repos/${owner}/${repo}/contents${path}?ref=${branch}`
