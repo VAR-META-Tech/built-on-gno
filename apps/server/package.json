@@ -5,7 +5,12 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon dist/index.js"
+    "dev": "nodemon -x pnpm start:watch",
+    "start:watch": "ts-node -r tsconfig-paths/register src/index.ts",
+    "start": "node -r ./tsconfig-paths.js dist/index.js",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "crawl": "ts-node -r tsconfig-paths/register src/crawl.ts",
+    "test": "ts-node -r tsconfig-paths/register src/test.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,13 +21,23 @@
     "@typescript-eslint/parser": "^7.1.0",
     "concurrently": "^8.2.2",
     "eslint": "^9.6.0",
+    "reflect-metadata": "^0.2.2",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.3"
   },
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "class-transformer": "^0.5.1",
+    "class-transformer-validator": "^0.9.1",
+    "class-validator": "^0.14.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "nodemon": "^3.1.4"
+    "mysql2": "^3.10.3",
+    "nodemon": "^3.1.4",
+    "typeorm": "^0.3.20",
+    "winston": "^3.13.1",
+    "winston-daily-rotate-file": "^5.0.0"
   }
 }

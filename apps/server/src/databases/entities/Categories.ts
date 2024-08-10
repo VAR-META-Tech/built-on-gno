@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Projects } from "./Projects";
 
 @Entity("categories")
@@ -37,4 +37,8 @@ export class Categories {
 
   @OneToMany(() => Projects, (projects) => projects.category)
   projects: Projects[];
+
+  @ManyToOne(() => Categories, (category) => category.id)
+  @JoinColumn([{ name: "parent_id", referencedColumnName: "id" }])
+  parent: Categories;
 }

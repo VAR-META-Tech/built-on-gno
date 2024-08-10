@@ -2,68 +2,115 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  @keyframes bounce2 {
+:root {
+  --primary-color: #110F12;
+  --secondary-color: #0059ff;
+}
 
-    0%,
-    100% {
-      transform: translateY(-100%);
-    }
+body {
+  font-family: var(--font-karla);
+  @apply text-white;
+}
 
-    50% {
-      transform: translateY(100%);
-    }
+@layer {
+  .slick-prev::before,
+  .slick-next::before {
+    @apply !text-secondary !text-3xl;
   }
 
-  .animate-bounce2 {
-    animation: bounce2 3s infinite;
+  .slick-list {
+    @apply mx-1;
   }
 
-  @keyframes bounce3 {
-
-    0%,
-    100% {
-      transform: translateX(-100%);
-    }
-
-    50% {
-      transform: translateX(100%);
-    }
+  .slick-list .slick-slide > div {
+    @apply px-1.5;
   }
 
-  .animate-bounce3 {
-    animation: bounce3 5s infinite;
+  .falling {
+    position: relative;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
+    box-shadow: 9999px 0 0 0 var(--secondary-color);
+    animation: falling 1s infinite linear;
+    animation-delay: 0.1s;
   }
 
-  @keyframes bounce4 {
-
-    100%,
-    0% {
-      transform: translateX(200%);
-    }
-
-    50% {
-      transform: translateX(-200%);
-    }
+  .falling::before,
+  .falling::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
   }
 
-  .animate-bounce4 {
-    animation: bounce4 10s infinite;
+  .falling::before {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
+    animation: falling-before 1s infinite linear;
+    animation-delay: 0s;
   }
 
-  @keyframes bounceimg {
+  .falling::after {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
+    animation: falling-after 1s infinite linear;
+    animation-delay: 0.2s;
+  }
+}
 
-    0%,
-    100% {
-      transform: translateX(-20%);
-    }
-
-    50% {
-      transform: translateX(20%);
-    }
+@keyframes falling {
+  0% {
+    box-shadow: 0px -20px 0 0 rgba(152, 128, 255, 0);
   }
 
-  .animate-bounce-img {
-    animation: bounceimg 10s infinite;
+  25%,
+  50%,
+  75% {
+    box-shadow: 0px 0 0 0 var(--secondary-color);
+  }
+
+  100% {
+    box-shadow: 0px 20px 0 0 rgba(152, 128, 255, 0);
+  }
+}
+
+@keyframes falling-before {
+  0% {
+    box-shadow: -38px -20px 0 0 rgba(152, 128, 255, 0);
+  }
+
+  25%,
+  50%,
+  75% {
+    box-shadow: -38px 0 0 0 var(--secondary-color);
+  }
+
+  100% {
+    box-shadow: -38px 20px 0 0 rgba(152, 128, 255, 0);
+  }
+}
+
+@keyframes falling-after {
+  0% {
+    box-shadow: 38px -20px 0 0 rgba(152, 128, 255, 0);
+  }
+
+  25%,
+  50%,
+  75% {
+    box-shadow: 38px 0 0 0 var(--secondary-color);
+  }
+  100% {
+    box-shadow: 38px 20px 0 0 rgba(152, 128, 255, 0);
   }
 }

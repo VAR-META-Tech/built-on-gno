@@ -1,110 +1,77 @@
-"use client";
-import { fadeIn } from "@/constants/variants";
-import { Heading } from "@var-meta/ui";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import {
-  MouseParallaxChild,
-  MouseParallaxContainer,
-} from "react-parallax-mouse";
-import { TypeAnimation } from "react-type-animation";
-
-const data = [
-  "Blockchain",
-  3000,
-  "VR-AR",
-  3000,
-  "Artificial Intelligence",
-  3000,
-  "Game",
-  3000,
-  "Software Consulting",
-];
+'use client'
+import { Button, Github, Rectangle } from '@repo/ui'
+import { PlaneIcon } from '@var-meta/icons'
+import { Heading } from '@var-meta/ui'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const HeroSection = () => {
   return (
-    <section className="h-[calc(100vh-64px)] bg-[#312cc9]">
-      <div className="container relative mx-auto h-full flex justify-center items-center lg:justify-start">
-        <div className="h-full flex flex-col justify-center items-center lg:items-start z-20 pt-12">
-          <MouseParallaxContainer
-            globalFactorX={0.1}
-            globalFactorY={0.2}
-            resetOnLeave
-            className="relative flex items-center h-[120px] lg:h-max lg:w-[640px] xl:w-[840px]"
-          >
-            <MouseParallaxChild
-              factorX={0.2}
-              factorY={0.4}
-              className="relative"
-            >
-              <motion.div
-                variants={fadeIn("up", 0.4)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.3 }}
-                className="w-[250px] h-[101.37px] lg:w-[425px] lg:h-[199.97px] xl:w-[625px] xl:h-[244.97px]"
-              >
-                <Heading weight="bold" size="9xl" className="uppercase inline" color="#111111">BUILT</Heading>
-              </motion.div>
-            </MouseParallaxChild>
-            <MouseParallaxChild
-              factorX={0.9}
-              factorY={0.9}
-              className="absolute lg:left-6 z-30"
-            >
-              <motion.div
-                variants={fadeIn("up", 0.7)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.3 }}
-                className="w-[250px] h-[101.37px] lg:w-[425px] lg:h-[199.97px] xl:w-[525px] xl:h-[244.97px]"
-              >
-                <Heading weight="semibold" size="6xl" className="text-white my-12">On Gno</Heading>
-              </motion.div>
-            </MouseParallaxChild>
-          </MouseParallaxContainer>
-
-        </div>
-        <motion.div
-          variants={fadeIn("left", 0.2)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.7 }}
-          className="hidden lg:flex absolute right-0"
-        >
-          <div className="relative flex flex-col items-center">
-            <Image
-              src="/var-meta-logo.png"
-              className="z-50 w-[400px] h-[300px] xl:w-[400px] xl:h-[300px]"
-              width={600}
-              height={600}
-              alt="bear"
-            />
-            <motion.div
-              variants={fadeIn("up", 1)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: false, amount: 0.7 }}
-              className="min-h-[60px] flex items-center mb-6 text-[26px]"
-            >
-              <div className="hidden lg:flex items-center lg:gap-x-0">
-                <div>VAR META</div>
-                <div className="relative w-2 h-2 mx-2 rounded-full bg-slate-500" />
-              </div>
-              <TypeAnimation
-                sequence={data}
-                wrapper="div"
-                speed={10}
-                deletionSpeed={10}
-                repeat={Infinity}
-                cursor={false}
-              ></TypeAnimation>
-            </motion.div>
-          </div>
-        </motion.div>
+    <div className="relative flex h-[100vh] min-h-96 w-full flex-col items-center justify-center">
+      <div className="bg-primary absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#80808020_2px,transparent_2px),linear-gradient(to_bottom,#80808020_2px,transparent_2px)] bg-[size:128px_128px]" />
+      <div className="absolute left-[calc(50%_-_160%_/_2)] top-0 z-10 h-[1080px] w-[160%] flex-none overflow-hidden bg-[radial-gradient(50%_50%_at_50%_0%,_rgba(0,_89,_255,_.48)_0%,_rgba(0,_89,_255,_0)_100%)]" />
+      <div className="absolute bottom-[10%] left-[30%] hidden overflow-visible md:flex">
+        <Image
+          src="/gnoscan.png"
+          alt=""
+          width={200}
+          height={20}
+          className="h-full w-full"
+        />
       </div>
-    </section>
-  );
-};
+      <div className="flex w-full flex-row items-start justify-between bg-transparent">
+        <div className="relative z-0 hidden md:flex">
+          <div className="absolute left-12 overflow-visible lg:left-56">
+            <div className="w-0.25 mx-auto h-32 bg-gray-400"></div>
+            <Rectangle src="/gno.logo.png" />
+          </div>
+        </div>
+        <div className="container relative z-10 flex w-full flex-col items-center justify-around gap-8">
+          <Heading
+            size="6xl"
+            weight="semibold"
+            className="text-white"
+            align="center"
+          >
+            Built on Gno
+          </Heading>
+          <p className="max-w-screen-md text-center text-lg text-white">
+            Listed below are the top crypto coins and tokens used for the
+            Gno.land Ecosystem. They are listed in size by many contributors. We
+            welcome you to contribute your projects to the system, please create
+            a pull request to{' '}
+            <Link
+              href="https://github.com/VAR-META-Tech/built-on-gno"
+              target="_blank"
+              className="inline-flex w-fit items-start gap-1 text-white"
+            >
+              <Github className="h-5 w-5" color="#0059ff" />{' '}
+              <span className="text-lg text-[#0059ff]">github</span>
+            </Link>{' '}
+            if you have one or many projects/tools built with gno.land.
+          </p>
 
-export default HeroSection;
+          <Link href="/ecosystem/project/all">
+            <Button
+              startIcon={<PlaneIcon />}
+              radius="full"
+              size="xl"
+              variant="outline"
+              className="bg-secondary hover:bg-primary/50 border-secondary focus:bg-primary rounded-lg text-white hover:text-white/90"
+            >
+              Explore all
+            </Button>
+          </Link>
+        </div>
+        <div className="relative z-0 hidden md:flex">
+          <div className="absolute right-12 overflow-visible lg:right-56">
+            <div className="w-0.25 mx-auto h-32 bg-gray-400"></div>
+            <Rectangle src="/adena.svg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default HeroSection
