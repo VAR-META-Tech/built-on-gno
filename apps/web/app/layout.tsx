@@ -3,12 +3,12 @@ import { Footer, Header } from '@/layouts'
 import '@/styles/global.css'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Karla } from 'next/font/google'
+import { Noto_Sans } from 'next/font/google'
 
-const karla = Karla({
+const noto = Noto_Sans({
   subsets: ['latin'],
   weight: ['200', '300', '400', '500', '600', '700', '800'],
-  variable: '--font-karla',
+  variable: '--font-noto',
 })
 
 const queryClient = new QueryClient({
@@ -33,7 +33,7 @@ const RootLayout = ({
         <meta name="apple-mobile-web-app-title" content="BuiltOnGno" />
       </head>
       <body
-        className={`${karla.variable} bg-primary dark relative min-h-screen overflow-x-hidden`}
+        className={`${noto.variable} bg-primary dark relative min-h-screen overflow-x-hidden`}
       >
         <QueryClientProvider client={queryClient}>
           <>

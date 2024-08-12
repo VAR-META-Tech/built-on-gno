@@ -33,14 +33,11 @@ const Header = () => {
   return (
     <header className="shadow-xs border-b-gray fixed left-0 right-0 top-0 z-20 flex h-20 w-full justify-center border-b-[0.25px] before:absolute before:h-20 before:w-full before:backdrop-blur-[15px]">
       <HStack className="container relative z-30 flex w-full flex-nowrap justify-between">
-        <Link
-          href="/"
-          className="flex flex-nowrap items-center text-4xl font-normal"
-        >
-          <Image src="/gno.logo.png" alt="" width={100} height={60} />
-          <span className="bg-gradient-to-r from-gray-700 to-white bg-clip-text text-transparent">
-            Ecosystem
+        <Link href="/" className="flex flex-nowrap items-center">
+          <span className="bg-text-[#FCFCFD] hidden pb-3.5 text-[42px] font-normal tracking-wide sm:flex">
+            Built on gn
           </span>
+          <Image src="/gno.logo.svg" alt="" width={42} height={42} />
         </Link>
         <div className="flex w-auto items-center justify-end gap-2 md:gap-4 xl:gap-6">
           <Search
@@ -50,7 +47,7 @@ const Header = () => {
             search={search}
           />
           <Link
-            href="https://github.com/vAR-META-Tech/built-on-gno"
+            href="https://github.com/VAR-META-Tech/built-on-gno/issues"
             target="_blank"
           >
             <Github className="h-6 w-6" color="#ffffff" />
