@@ -1,5 +1,5 @@
 import { Facebook, Github, LinkedIn, Twitter } from '@repo/ui'
-import { Button } from '@var-meta/ui'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -12,19 +12,19 @@ const Footer = () => {
           </span>
         </div>
         <div className="col-span-2 flex flex-col items-center gap-4 lg:col-span-1 lg:items-end">
-          <div className="flex justify-center gap-2">
-            <Button iconOnly variant="link">
+          <div className="flex justify-center gap-4">
+            <Link href="https://www.facebook.com/varmeta.techcompany">
               <Facebook color="#0059ff7a" className="h-7 w-7" />
-            </Button>
-            <Button iconOnly variant="link">
+            </Link>
+            <Link href="https://www.linkedin.com/company/var-meta">
               <LinkedIn color="#0059ff7a" className="h-7 w-7" />
-            </Button>
-            <Button iconOnly variant="link">
+            </Link>
+            <Link href="https://x.com/var_meta">
               <Twitter color="#0059ff7a" className="h-7 w-7" />
-            </Button>
-            <Button iconOnly variant="link">
+            </Link>
+            <Link href="https://github.com/var-META-Tech">
               <Github color="#0059ff7a" className="h-7 w-7" />
-            </Button>
+            </Link>
           </div>
         </div>
       </div>
