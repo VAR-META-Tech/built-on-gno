@@ -1,0 +1,137 @@
+[
+  {
+    "name": "Website",
+    "code": "website",
+    "icon_url": "https://i.ibb.co/zNw5Pz5/globe-light.png"
+  },
+  {
+    "name": "Apple",
+    "code": "apple",
+    "icon_url": "https://i.ibb.co/h9jQbh2/Apple.png"
+  },
+  {
+    "name": "Clubhouse",
+    "code": "clubhouse",
+    "icon_url": "https://i.ibb.co/HGC1v81/Clubhouse.png"
+  },
+  {
+    "name": "Discord",
+    "code": "discord",
+    "icon_url": "https://i.ibb.co/xMfN47J/Discord.png"
+  },
+  {
+    "name": "Dribbble",
+    "code": "dribbble",
+    "icon_url": "https://i.ibb.co/rQRkjyK/Dribbble.png"
+  },
+  {
+    "name": "Facebook",
+    "code": "facebook",
+    "icon_url": "https://i.ibb.co/ysgw3Hs/Facebook.png"
+  },
+  {
+    "name": "Figma",
+    "code": "figma",
+    "icon_url": "https://i.ibb.co/j32mZvm/Figma.png"
+  },
+  {
+    "name": "Github",
+    "code": "github",
+    "icon_url": "https://i.ibb.co/WfrPJZd/Github.png"
+  },
+  {
+    "name": "Google",
+    "code": "google",
+    "icon_url": "https://i.ibb.co/QvKStNR/Google.png"
+  },
+  {
+    "name": "Instagram",
+    "code": "instagram",
+    "icon_url": "https://i.ibb.co/q9YzScP/Instagram.png"
+  },
+  {
+    "name": "LinkedIn",
+    "code": "linkedin",
+    "icon_url": "https://i.ibb.co/rfdK4TW/LinkedIn.png"
+  },
+  {
+    "name": "Medium",
+    "code": "medium",
+    "icon_url": "https://i.ibb.co/fFdgjwZ/Medium.png"
+  },
+  {
+    "name": "Messenger",
+    "code": "messenger",
+    "icon_url": "https://i.ibb.co/rxrXW2Q/Messenger.png"
+  },
+  {
+    "name": "Pinterest",
+    "code": "pinterest",
+    "icon_url": "https://i.ibb.co/tHhTPPM/Pinterest.png"
+  },
+  {
+    "name": "Reddit",
+    "code": "reddit",
+    "icon_url": "https://i.ibb.co/Ks7Qysh/Reddit.png"
+  },
+  {
+    "name": "Signal",
+    "code": "signal",
+    "icon_url": "https://i.ibb.co/hMbP0dk/Signal.png"
+  },
+  {
+    "name": "Snapchat",
+    "code": "snapchat",
+    "icon_url": "https://i.ibb.co/kxdQnQD/Snapchat.png"
+  },
+  {
+    "name": "Spotify",
+    "code": "spotify",
+    "icon_url": "https://i.ibb.co/LvLRf8Y/Spotify.png"
+  },
+  {
+    "name": "Telegram",
+    "code": "telegram",
+    "icon_url": "https://i.ibb.co/gJNCJxf/Telegram.png"
+  },
+  {
+    "name": "Threads",
+    "code": "threads",
+    "icon_url": "https://i.ibb.co/c1Tz3c2/Threads.png"
+  },
+  {
+    "name": "TikTok",
+    "code": "tiktok",
+    "icon_url": "https://i.ibb.co/VT2HkJN/TikTok.png"
+  },
+  {
+    "name": "Tumblr",
+    "code": "tumblr",
+    "icon_url": "https://i.ibb.co/y0SJdV4/Tumblr.png"
+  },
+  {
+    "name": "Twitch",
+    "code": "twitch",
+    "icon_url": "https://i.ibb.co/F80HBSN/Twitch.png"
+  },
+  {
+    "name": "VK",
+    "code": "vk",
+    "icon_url": "https://i.ibb.co/CsD7Cy6/VK.png"
+  },
+  {
+    "name": "WhatsApp",
+    "code": "whatsapp",
+    "icon_url": "https://i.ibb.co/304WMNg/WhatsApp.png"
+  },
+  {
+    "name": "X-Twitter",
+    "code": "x-twitter",
+    "icon_url": "https://i.ibb.co/s9HrkzH/X-Twitter.png"
+  },
+  {
+    "name": "YouTube",
+    "code": "youtube",
+    "icon_url": "https://i.ibb.co/Y3FR8Sm/YouTube.png"
+  }
+]
