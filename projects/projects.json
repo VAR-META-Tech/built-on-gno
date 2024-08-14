@@ -9,6 +9,10 @@
     {
       "name": "Wallets",
       "pathname": "Wallets"
+    },
+    {
+      "name": "DeveloperTools",
+      "pathname": "DeveloperTools"
     }
   ]
 }
