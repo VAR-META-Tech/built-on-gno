@@ -1,0 +1,21 @@
+{
+  "name": "Developer Tools",
+  "description": "Developer tools are primarily used to make the coding and programming process more efficient and optimized for specific tasks.",
+  "pathname": "Developer Tools",
+  "status": "active",
+  "tags": [
+    "Blockchain Operations",
+    "Wallet",
+    "Toolkit",
+    "Mobile",
+    "Extensions"
+  ],
+  "sub_categories": [
+    {
+      "name": "DEV Tools",
+      "pathname": "DEV Tools",
+      "status": "active",
+      "description": "It's a powerful toolkit that lets you inspect, edit, and debug your code and measure your pages' performance."
+    }
+  ]
+}
