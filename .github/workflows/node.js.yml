@@ -40,16 +40,16 @@ jobs:
           output=$(npm run crawl --silent)
           echo "output=$output" >> "$GITHUB_OUTPUT"
 
-  send-rest-api:
-    needs: handle-commit
-    runs-on: ubuntu-latest
-    steps:
-      - name: Output of previous step
-        env:
-          output: ${{needs.handle-commit.outputs.output}}
-        run: |
-          echo $output
-          echo "$output"
-          curl --request GET \
-          --url "$output" \
-          --header "Authorization: Bearer $AUTH_TOKEN"
+  # send-rest-api:
+  #   needs: handle-commit
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Output of previous step
+  #       env:
+  #         output: ${{needs.handle-commit.outputs.output}}
+  #       run: |
+  #         echo $output
+  #         echo "$output"
+  #         curl --request GET \
+  #         --url "$output" \
+  #         --header "Authorization: Bearer $AUTH_TOKEN"

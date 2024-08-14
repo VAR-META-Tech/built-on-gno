@@ -1,0 +1,10 @@
+[
+  {
+    "name": "Wallets",
+    "description": "If you’re searching for where to store Gno, ada, you’ve come to the right page. The best Gno wallet is a hotly debated topic in the Gno community, and there are many types of Gno wallet, all listed here, available to users. The only Gno desktop wallet available is Daedalus, a full node wallet that downloads the complete Gno blockchain, ~100GB. By far the most popular type of wallet is a Gno light wallet and there are many of these for you to choose from. The second most popular type of wallet is a Gno web wallet. Most Gno wallets will show the Gno price, and a few have even the integrated the ability for you to buy Gno, ada, directly in the wallet! Almost all the wallets listed above allow you participate in the Gno staking protocol, Ouroboros, where you can help to secure the network and earn passive income in the form of staking rewards. Many of the wallets listed above will also allow you to search for which pool to stake your Gno, ada, to right in the wallet itself. Finally, there are multiple Gno cold storage wallets for you to choose from. There are five hardware wallets that offer native support for where to store ada, and two of them, the Ledger and Trezor are supported by multiple light wallets allowing you to use your favorite interface to keep your coins secure in cold storage."
+  },
+  {
+    "name": "AMM",
+    "description": "AMM stands for Automated Market Maker. This is an algorithm, often supplemented by oracles, that facilitates the pricing and exchange of assets between users. Assets are exchanged at market value through liquidity pools. These pools are created by Liquidity providers, LPs, who deposit assets to the exchange in pairs. This “asset pair” then allows users to swap one asset for the other through the liquidity pool. Fees are paid to the LPs who provided the liquidity. The more liquidity a pair has the less “slippage” a user experiences, meaning the less likely the user is to experience a price change in their trade."
+  }
+]
