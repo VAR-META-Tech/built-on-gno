@@ -1,0 +1,26 @@
+[
+  {
+    "key": "access",
+    "value": true
+  },
+  {
+    "key": "explore",
+    "value": true
+  },
+  {
+    "key": "interact",
+    "value": true
+  },
+  {
+    "key": "evaluate",
+    "value": true
+  },
+  {
+    "key": "share",
+    "value": true
+  },
+  {
+    "key": "track",
+    "value": true
+  }
+]
