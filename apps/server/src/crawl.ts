@@ -27,9 +27,11 @@ async function main() {
   // get list file change
   const fileChanges = await getListFileChange()
 
-  const query: string = fromFileChangesToQuery(fileChanges)
+  console.log(fileChanges)
 
-  console.log(`${getURL(query)}`)
+  // const query: string = fromFileChangesToQuery(fileChanges)
+
+  // console.log(`${getURL(query)}`)
 }
 
 main()
