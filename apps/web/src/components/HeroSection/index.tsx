@@ -9,7 +9,7 @@ const HeroSection = () => {
     <div className="relative flex h-[100vh] min-h-96 w-full flex-col items-center justify-center">
       <div className="bg-primary absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#80808020_2px,transparent_2px),linear-gradient(to_bottom,#80808020_2px,transparent_2px)] bg-[size:128px_128px]" />
       <div className="absolute left-[calc(50%_-_100%_/_2)] top-0 z-10 h-[100vh] w-[100%] flex-none overflow-hidden bg-[radial-gradient(50%_50%_at_50%_0%,_rgba(0,_89,_255,_.48)_0%,_rgba(0,_89,_255,_0)_100%)]" />
-      <div className="absolute bottom-[10%] left-[30%] hidden overflow-visible md:flex">
+      <div className="absolute bottom-[10%] hidden overflow-visible md:flex">
         <Image
           src="/gnoscan.png"
           alt=""

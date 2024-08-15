@@ -14,9 +14,9 @@ export const CardProject = ({
   return (
     <Link
       href={'/ecosystem/project/' + id}
-      className="shadow-xs shadow-secondary flex h-full w-full cursor-pointer rounded-lg border border-gray-400 p-4"
+      className="shadow-xs shadow-secondary flex w-full cursor-pointer rounded-lg border border-gray-400 p-4 min-h-[20.625rem] lg:min-h-[12.1875rem] my-2"
     >
-      <VStack className="gap-4">
+      <VStack className="gap-4 justify-around">
         <HStack className="flex flex-col flex-nowrap items-start sm:flex-row">
           <div className="basics-1/3">
             <div className="relative z-[0] flex h-24 w-24 overflow-hidden rounded-full border-2 border-gray-400 md:h-28 md:w-28">
@@ -31,11 +31,11 @@ export const CardProject = ({
           </div>
           <div className="flex flex-col gap-2 p-0 px-2">
             <h2 className="text-lg font-semibold">{name}</h2>
-            <p className="text-sm text-gray-300">{shortDescription}</p>
+            <p className="text-sm text-gray-300 line-clamp-4">{shortDescription}</p>
           </div>
         </HStack>
         <HStack>
-          {projectTags.map((item) => (
+          {projectTags?.slice(0, 3).map((item) => (
             <div
               key={item.id}
               className="delay-50 hover:-translate-y-0.25 group transition duration-200 ease-in-out hover:scale-110"
