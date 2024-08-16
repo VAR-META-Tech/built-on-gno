@@ -37,7 +37,7 @@ const Compare = ({ projectTags = [], name, id }: Partial<IProjectDetail>) => {
 
   return (
     <div className="col-span-12 flex flex-col justify-start gap-8 py-10">
-      <p className="max-w-lg px-4 text-2xl font-bold leading-none lg:text-4xl">
+      <p className="px-4 text-2xl font-bold leading-none lg:text-4xl">
         Compare similar projects to
         <span className="text-[#0059ff]"> {name}</span>
       </p>
