@@ -13,6 +13,14 @@
     {
       "name": "DeveloperTools",
       "pathname": "DeveloperTools"
+    },
+    {
+      "name": "CommunityAndLearning",
+      "pathname": "CommunityAndLearning"
+    },
+    {
+      "name": "Games",
+      "pathname": "Games"
     }
   ]
 }

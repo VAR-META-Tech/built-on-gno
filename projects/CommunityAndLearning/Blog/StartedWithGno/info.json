@@ -1,0 +1,19 @@
+{
+  "industry": [
+    "Community & Learning",
+    "Blog"
+  ],
+  "display_term": "Started out with Gno",
+  "term": "Started out with Gno",
+  "tags": [
+    "News"
+  ],
+  "glossaries": [],
+  "short_description": "Presentation outlines some of the things I wish I knew when I started out with Gno, when coming from a Go background​",
+  "partnerships": [],
+  "author": "builtongno",
+  "social": {
+    "website": "https://remarkjs.com/#1",
+    "github": "https://github.com/gnab/remark"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "industry": [
+    "Games & Gaming",
+    "Board Game"
+  ],
+  "display_term": "GnoChess",
+  "term": "GnoChess",
+  "tags": [
+    "NFT",
+    "Interactive",
+    "On-chain",
+    "NFT Collections"
+  ],
+  "glossaries": [],
+  "short_description": "​",
+  "partnerships": [],
+  "author": "builtongno",
+  "social": {
+    "website": "https://gnochess.com/",
+    "x-twitter": "https://twitter.com/_gnoland",
+    "github": "https://github.com/gnolang/gnochess",
+    "discord": "https://discord.com/invite/S8nKUqwkPn"
+  }
+}

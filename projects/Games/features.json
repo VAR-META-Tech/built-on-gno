@@ -1,0 +1,317 @@
+[
+  {
+    "key": "3d_art",
+    "label": "3D Art",
+    "status": "active"
+  },
+  {
+    "key": "ar",
+    "label": "AR",
+    "status": "active"
+  },
+  {
+    "key": "art",
+    "label": "Art",
+    "status": "active"
+  },
+  {
+    "key": "auction",
+    "label": "Auction",
+    "status": "active"
+  },
+  {
+    "key": "board_game",
+    "label": "Board Game",
+    "status": "active"
+  },
+  {
+    "key": "buy",
+    "label": "Buy",
+    "status": "active"
+  },
+  {
+    "key": "charity",
+    "label": "Charity",
+    "status": "active"
+  },
+  {
+    "key": "collectible",
+    "label": "Collectible",
+    "status": "active"
+  },
+  {
+    "key": "collection",
+    "label": "Collection",
+    "status": "active"
+  },
+  {
+    "key": "data",
+    "label": "Data",
+    "status": "active"
+  },
+  {
+    "key": "gallery",
+    "label": "Gallery",
+    "status": "active"
+  },
+  {
+    "key": "games_and_gaming",
+    "label": "Games & Gaming",
+    "status": "active"
+  },
+  {
+    "key": "generative_art",
+    "label": "Generative Art",
+    "status": "active"
+  },
+  {
+    "key": "interactive",
+    "label": "Interactive",
+    "status": "active"
+  },
+  {
+    "key": "meme",
+    "label": "Meme",
+    "status": "active"
+  },
+  {
+    "key": "nft",
+    "label": "NFT",
+    "status": "active"
+  },
+  {
+    "key": "nft_collections",
+    "label": "NFT Collections",
+    "status": "active"
+  },
+  {
+    "key": "on_chain",
+    "label": "On-chain",
+    "status": "active"
+  },
+  {
+    "key": "sell",
+    "label": "Sell",
+    "status": "active"
+  },
+  {
+    "key": "dao",
+    "label": "DAO",
+    "status": "active"
+  },
+  {
+    "key": "defi",
+    "label": "DeFi",
+    "status": "active"
+  },
+  {
+    "key": "development",
+    "label": "Development",
+    "status": "active"
+  },
+  {
+    "key": "ecosystem",
+    "label": "Ecosystem",
+    "status": "active"
+  },
+  {
+    "key": "fantasy",
+    "label": "Fantasy",
+    "status": "active"
+  },
+  {
+    "key": "fractional_ownership",
+    "label": "Fractional Ownership",
+    "status": "active"
+  },
+  {
+    "key": "gallery",
+    "label": "Gallery",
+    "status": "active"
+  },
+  {
+    "key": "games",
+    "label": "Games",
+    "status": "active"
+  },
+  {
+    "key": "gaming",
+    "label": "Gaming",
+    "status": "active"
+  },
+  {
+    "key": "governance",
+    "label": "Governance",
+    "status": "active"
+  },
+  {
+    "key": "ido",
+    "label": "IDO",
+    "status": "active"
+  },
+  {
+    "key": "incubator",
+    "label": "Incubator",
+    "status": "active"
+  },
+  {
+    "key": "industry_solutions",
+    "label": "Industry Solutions",
+    "status": "active"
+  },
+  {
+    "key": "interactive",
+    "label": "Interactive",
+    "status": "active"
+  },
+  {
+    "key": "investment_management",
+    "label": "Investment Management",
+    "status": "active"
+  },
+  {
+    "key": "jobs",
+    "label": "Jobs",
+    "status": "active"
+  },
+  {
+    "key": "kyc",
+    "label": "KYC",
+    "status": "active"
+  },
+  {
+    "key": "meetups_and_events",
+    "label": "Meetups & Events",
+    "status": "active"
+  },
+  {
+    "key": "metaverse",
+    "label": "Metaverse",
+    "status": "active"
+  },
+  {
+    "key": "mini_games",
+    "label": "Mini-games",
+    "status": "active"
+  },
+  {
+    "key": "multiplayer",
+    "label": "Multiplayer",
+    "status": "active"
+  },
+  {
+    "key": "nft",
+    "label": "NFT",
+    "status": "active"
+  },
+  {
+    "key": "nft_collections",
+    "label": "NFT Collections",
+    "status": "active"
+  },
+  {
+    "key": "nft_minting",
+    "label": "NFT Minting",
+    "status": "active"
+  },
+  {
+    "key": "nft_tools",
+    "label": "NFT Tools",
+    "status": "active"
+  },
+  {
+    "key": "on_chain",
+    "label": "On-chain",
+    "status": "active"
+  },
+  {
+    "key": "pixel_art",
+    "label": "Pixel Art",
+    "status": "active"
+  },
+  {
+    "key": "play_and_earn",
+    "label": "Play And Earn",
+    "status": "active"
+  },
+  {
+    "key": "play_to_earn",
+    "label": "Play-to-earn",
+    "status": "active"
+  },
+  {
+    "key": "proof_of_fact",
+    "label": "Proof-of-fact",
+    "status": "active"
+  },
+  {
+    "key": "proof_of_ownership",
+    "label": "Proof-of-ownership",
+    "status": "active"
+  },
+  {
+    "key": "quests",
+    "label": "Quests",
+    "status": "active"
+  },
+  {
+    "key": "rpg",
+    "label": "RPG",
+    "status": "active"
+  },
+  {
+    "key": "smart_contract",
+    "label": "Smart Contract",
+    "status": "active"
+  },
+  {
+    "key": "startup",
+    "label": "Startup",
+    "status": "active"
+  },
+  {
+    "key": "store_of_value",
+    "label": "Store Of Value",
+    "status": "active"
+  },
+  {
+    "key": "supply_chain_management",
+    "label": "Supply Chain Management",
+    "status": "active"
+  },
+  {
+    "key": "ticketing",
+    "label": "Ticketing",
+    "status": "active"
+  },
+  {
+    "key": "token_burning",
+    "label": "Token Burning",
+    "status": "active"
+  },
+  {
+    "key": "token_distribution",
+    "label": "Token Distribution",
+    "status": "active"
+  },
+  {
+    "key": "token_minting",
+    "label": "Token Minting",
+    "status": "active"
+  },
+  {
+    "key": "treasury",
+    "label": "Treasury",
+    "status": "active"
+  },
+  {
+    "key": "voting",
+    "label": "Voting",
+    "status": "active"
+  },
+  {
+    "key": "wrapped_assets",
+    "label": "Wrapped Assets",
+    "status": "active"
+  }
+]

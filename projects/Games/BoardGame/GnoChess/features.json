@@ -1,0 +1,26 @@
+[
+  {
+    "key": "games_and_gaming",
+    "value": true
+  },
+  {
+    "key": "interactive",
+    "value": true
+  },
+  {
+    "key": "nft",
+    "value": true
+  },
+  {
+    "key": "nft_collections",
+    "value": true
+  },
+  {
+    "key": "on_chain",
+    "value": true
+  },
+  {
+    "key": "board_game",
+    "value": true
+  }
+]

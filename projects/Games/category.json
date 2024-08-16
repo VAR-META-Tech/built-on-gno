@@ -1,0 +1,36 @@
+{
+  "name": "Game & Gaming",
+  "description": "A category focused on games and gaming experiences, including on-chain games, NFT-based games, and interactive entertainment. This category highlights the intersection of gaming with blockchain technology and digital art.",
+  "pathname": "Games",
+  "status": "active",
+  "tags": [
+    "NFT",
+    "Interactive",
+    "On-chain",
+    "NFT Collections",
+    "3D Art",
+    "AR",
+    "Art",
+    "Auction",
+    "Board Game",
+    "Buy",
+    "Charity",
+    "Collectible",
+    "Collection",
+    "Data",
+    "Gallery",
+    "Games & Gaming",
+    "Generative Art",
+    "Interactive",
+    "Meme",
+    "Sell"
+  ],
+  "sub_categories": [
+    {
+      "name": "Board Game",
+      "pathname": "BoardGame",
+      "status": "active",
+      "description": "A sub-category dedicated to board games that leverage blockchain technology, including digital versions of classic board games and new on-chain board game experiences."
+    }
+  ]
+}
