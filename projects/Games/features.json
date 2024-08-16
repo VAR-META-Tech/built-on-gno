@@ -313,5 +313,15 @@
     "key": "wrapped_assets",
     "label": "Wrapped Assets",
     "status": "active"
+  },
+  {
+    "key": "airdrop",
+    "label": "Airdrop",
+    "status": "active"
+  },
+  {
+    "key": "retro",
+    "label": "Retro",
+    "status": "active"
   }
 ]

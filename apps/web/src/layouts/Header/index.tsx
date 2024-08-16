@@ -6,17 +6,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { useDebouncedValue } from '@mantine/hooks';
 
 const Header = () => {
   const { mutateAsync, isPending } = useRandomProject()
   const [search, setSearch] = useState('')
+  const [searchDebounced] = useDebouncedValue(search, 200);
   const { data: projects = { data: [] } } = useProjects(
-    { search },
-    { enabled: !!search },
+    { search: searchDebounced },
+    { enabled: !!searchDebounced },
   )
   const { data: tags = { data: [] } } = useTags(
-    { search },
-    { enabled: !!search },
+    { search: searchDebounced },
+    { enabled: !!searchDebounced },
   )
 
   const { push } = useRouter()

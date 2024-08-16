@@ -25,6 +25,8 @@ const settings: Settings = {
       breakpoint: 768,
       settings: {
         slidesToShow: 1,
+        arrows: false,
+        swipe: true,
       },
     },
   ],

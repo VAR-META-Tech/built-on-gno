@@ -1,6 +1,6 @@
 **Chess: The Gnolang Way**
 
-GnoChess là một triển khai máy chủ cờ vua trực tuyến với Gno. Nó được sử dụng để thể hiện khả năng của Gno trong việc phát triển các dApp bán phức tạp. Nó đi kèm với một giao diện người dùng và một vòi để dễ tham gia, đồng thời phần phụ trợ và giao diện người dùng triển khai nhiều tính năng thường thấy trong các máy chủ cờ vua (triển khai bộ quy tắc đầy đủ, bảng xếp hạng, kiểm soát thời gian, xếp hạng Glicko2).
+GnoChess is an online chess server implementation with Gno. It is used to demonstrate Gno's capability in developing semi-complex dApps. It comes with a user interface and a faucet for easy participation, and both the backend and frontend implement many features commonly found in chess servers (full rules implementation, leaderboards, time control, Glicko2 rating).
 
 GopherCon is the most hotly anticipated event on the gopher community’s calendar. A place where gophers from around the world get together to exchange ideas, share their work, and expand the Go network. What better place to spread the word about Gno.land and show web2 developers how easily they can port their apps to web3 or build new ones from scratch? And why not have a little fun while doing it?
 

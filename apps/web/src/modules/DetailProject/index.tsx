@@ -45,14 +45,16 @@ const DetailProject = () => {
           divider
           defaultValue={[String(data?.glossaryProjects[0]?.id ?? '')]}
         >
-          {data?.glossaryProjects?.map(({ glossary, id }) => (
-            <AccordionItem value={String(id)} key={id}>
-              <AccordionTrigger className="text-xl font-bold uppercase">
-                {glossary.name}
-              </AccordionTrigger>
-              <AccordionContent>{glossary.description}</AccordionContent>
-            </AccordionItem>
-          ))}
+          <div className='space-y-4'>
+            {data?.glossaryProjects?.map(({ glossary, id }) => (
+              <AccordionItem value={String(id)} key={id} className='!border !border-gray rounded-lg shadow-xs shadow-secondary'>
+                <AccordionTrigger className="text-xl font-bold uppercase">
+                  {glossary.name}
+                </AccordionTrigger>
+                <AccordionContent>{glossary.description}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </div>
         </Accordion>
       </div>
       {(data?.projectTags.length ?? 0 > 0) ? (

@@ -1,10 +1,10 @@
 {
   "industry": [
     "Community & Learning",
-    "Meetups & Events"
+    "Development"
   ],
-  "display_term": "GNOLANG 101",
-  "term": "GNOLANG 101",
+  "display_term": "Gno Chinese Station",
+  "term": "Gno Chinese Station",
   "tags": [
     "Education",
     "News",
@@ -12,13 +12,13 @@
     "Community"
   ],
   "glossaries": [],
-  "short_description": "This course is designed for aspiring programmers who are looking to become a smart contract developer on Gnoland, a scalable layer 1 with built-in concurrency.​",
+  "short_description": "A website for Chinese Developers, providing tutorials, documents, and gno news.​",
   "partnerships": [],
   "author": "builtongno",
   "social": {
+    "website": "https://www.gnoland.cn/",
     "x-twitter": "https://twitter.com/_gnoland",
     "discord": "https://discord.com/channels/957002220384182312/957704857261834340",
-    "github": "https://github.com/onbloc/gnolang-101",
     "telegram": "https://t.me/gnoland"
   }
 }
