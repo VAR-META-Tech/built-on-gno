@@ -14,7 +14,7 @@ function CardPreview({
   return (
     <Link
       href={'/ecosystem/project/' + id}
-      className="shadow-xs shadow-secondary flex w-full cursor-pointer flex-col justify-between gap-2 rounded-lg border border-gray-500 p-3 md:w-[48%] lg:w-[23.6%]"
+      className="shadow-xs shadow-secondary flex w-full cursor-pointer flex-col justify-between gap-2 rounded-lg border border-gray-500 p-3 md:w-[48%] lg:w-[27%]"
     >
       <div className="flex flex-row flex-nowrap items-start">
         <div className="basics-1/3">
@@ -36,7 +36,7 @@ function CardPreview({
         </div>
       </div>
       <div className="flex w-full gap-1 overflow-hidden p-1">
-        {projectTags.map((item) => (
+        {projectTags?.slice(0, 3).map((item) => (
           <div
             key={item.id}
             className="delay-50 hover:-translate-y-0.25 group transition duration-200 ease-in-out hover:scale-110"
