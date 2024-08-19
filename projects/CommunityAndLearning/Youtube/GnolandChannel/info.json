@@ -1,0 +1,26 @@
+{
+  "industry": [
+    "Community & Learning",
+    "Youtube Channel"
+  ],
+  "display_term": "Gnoland Channel",
+  "term": "Gnoland Channel",
+  "tags": [
+    "Youtube Content Creator",
+    "News",
+    "Videos",
+    "Guides",
+    "Interviewer"
+  ],
+  "glossaries": [],
+  "short_description": "the first open-source smart contract system, using Gno, an interpreted and fully deterministic variation of the Go programming language for succinct and composable smart contracts.​",
+  "partnerships": [],
+  "author": "builtongno",
+  "social": {
+    "website": "https://www.youtube.com/@_gnoland",
+    "x-twitter": "https://twitter.com/_gnoland",
+    "discord": "https://discord.com/channels/957002220384182312/957704857261834340",
+    "github": "https://github.com/onbloc/gnolang-101",
+    "telegram": "https://t.me/gnoland"
+  }
+}

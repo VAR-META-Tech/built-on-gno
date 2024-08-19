@@ -27,6 +27,7 @@
     "react-parallax-mouse": "^2.1.0",
     "react-slick": "^0.30.2",
     "react-type-animation": "^3.2.0",
+    "remark-gfm": "^4.0.0",
     "slick-carousel": "^1.8.1",
     "tailwind-variants": "^0.2.1",
     "tailwindcss": "^3.4.4"

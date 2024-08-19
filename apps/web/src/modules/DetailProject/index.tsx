@@ -9,6 +9,8 @@ import {
 } from '@var-meta/ui'
 import { notFound, useParams } from 'next/navigation'
 import ReactMarkDown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+
 import Compare from './Compare'
 
 const DetailProject = () => {
@@ -30,7 +32,7 @@ const DetailProject = () => {
               {data?.name ?? ''}
             </h2>
           </div>
-          <ReactMarkDown>
+          <ReactMarkDown remarkPlugins={[remarkGfm]}>
             {data?.projectDescriptions?.description ?? ''}
           </ReactMarkDown>
         </div>

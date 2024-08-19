@@ -1,0 +1,22 @@
+[
+  {
+    "key": "community_and_learning",
+    "value": true
+  },
+  {
+    "key": "news",
+    "value": true
+  },
+  {
+    "key": "social_media",
+    "value": true
+  },
+  {
+    "key": "media",
+    "value": true
+  },
+  {
+    "key": "blog",
+    "value": true
+  }
+]
