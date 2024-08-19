@@ -10,6 +10,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "dependencies": {
+    "@mantine/hooks": "^7.12.1",
     "@repo/ui": "workspace:*",
     "@tanstack/react-query": "^5.49.2",
     "@types/react-slick": "^0.23.13",

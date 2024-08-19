@@ -1,5 +1,18 @@
 {
   "projects": "Built on gno",
   "description": "Built on gnosis",
-  "categories": []
+  "categories": [
+    {
+      "name": "DeFi",
+      "pathname": "DeFi"
+    },
+    {
+      "name": "Wallets",
+      "pathname": "Wallets"
+    },
+    {
+      "name": "DeveloperTools",
+      "pathname": "DeveloperTools"
+    }
+  ]
 }
