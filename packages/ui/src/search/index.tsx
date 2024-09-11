@@ -57,20 +57,20 @@ export const Search = ({ projects, terms, search, onSearch }: IProps) => {
         <div className="container fixed left-0 right-0 top-28 z-30 w-full">
           <div
             ref={ref}
-            className="border-secondary rounded-lg border bg-[#0059ff48] px-6 py-6 backdrop-blur-[15px] md:px-32 md:py-20 lg:px-64"
+            className="border-secondary rounded-lg border px-6 py-6 backdrop-blur-[15px] md:px-32 md:py-20 lg:px-64"
           >
             <Input
-              className="focus-within:border-0.5 focus-within:border-secondary/20 ring-secondary/20 h-12 border-2 ring-8"
+              className="focus-within:border-0.5 focus-within:border-primary/20 ring-secondary h-12 border-2 ring-8"
               size="md"
               radius="sm"
               value={search}
               onChange={(e) => onSearch(e.target.value)}
-              placeholder="Start typing search"
+              placeholder="Search applications"
               suffixClassName="bg-transparent"
               suffix={<SearchLgIcon color="white" />}
             />
             {search && (
-              <div className="bg-primary/70 z-10 m-auto mt-3 h-auto w-full overflow-hidden rounded-lg p-6 shadow-md">
+              <div className="z-10 m-auto mt-3 h-auto w-full overflow-hidden rounded-lg p-6 shadow-md">
                 <div className="flex flex-col gap-3">
                   <h4 className="text-base font-medium">Tags</h4>
                   <div className="flex flex-wrap gap-2 transition-all duration-300 ease-in-out">
@@ -83,7 +83,7 @@ export const Search = ({ projects, terms, search, onSearch }: IProps) => {
                         <Tag
                           size="sm"
                           radius="lg"
-                          className="cursor-pointer border-none bg-white/30 p-3 group-hover:bg-white/70"
+                          className="cursor-pointer border-none bg-secondary p-3 group-hover:bg-secondary"
                           contentClassName="text-nowrap text-xs font-medium group-hover:text-white"
                         >
                           {name}
@@ -104,7 +104,7 @@ export const Search = ({ projects, terms, search, onSearch }: IProps) => {
                         <Tag
                           size="sm"
                           radius="lg"
-                          className="group-hover:bg-secondary bg-secondary/30 cursor-pointer border-none p-3"
+                          className="group-hover:bg-secondary bg-secondary cursor-pointer border-none p-3"
                           contentClassName="text-nowrap text-xs font-medium group-hover:text-white"
                         >
                           {name}

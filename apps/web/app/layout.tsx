@@ -3,6 +3,7 @@ import { Footer, Header } from '@/layouts'
 import '@/styles/global.css'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ThemeProvider } from 'next-themes'
 import { Noto_Sans } from 'next/font/google'
 
 const noto = Noto_Sans({
@@ -33,15 +34,19 @@ const RootLayout = ({
         <meta name="apple-mobile-web-app-title" content="BuiltOnGno" />
       </head>
       <body
-        className={`${noto.variable} bg-primary dark relative min-h-screen overflow-x-hidden`}
+        className={`${noto.variable} relative min-h-screen overflow-x-hidden`}
       >
-        <QueryClientProvider client={queryClient}>
-          <>
-            <Header />
-            {children}
-            <Footer />
-          </>
-        </QueryClientProvider>
+        <ThemeProvider attribute="class" defaultTheme='light'>
+          <QueryClientProvider client={queryClient}>
+            <>
+              <Header />
+              <div className='pt-28 bg-light dark:bg-primary h-[100vh]'>
+                {children}
+              </div>
+              <Footer />
+            </>
+          </QueryClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

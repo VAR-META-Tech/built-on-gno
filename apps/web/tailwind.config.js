@@ -14,7 +14,8 @@ const config = {
     extend: {
       colors: {
         primary: '#110F12',
-        secondary: '#0059ff7a',
+        secondary: '#00A0F0',
+        light: '#F9F9FB'
       },
     },
   },

@@ -1,6 +1,6 @@
 'use client'
 import { useProjects } from '@/apis'
-import HeroSection from '@/components/HeroSection'
+import HeroSection from '@/modules/Home/HeroSection'
 import { DEFAULT_API_RETURN } from '@/constants'
 import { Loading } from '@repo/ui'
 import CardPreview from '@repo/ui/src/card/CardPreview'

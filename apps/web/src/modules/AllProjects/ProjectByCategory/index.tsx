@@ -1,5 +1,6 @@
 import { useProjects } from '@/apis'
 import { DEFAULT_API_RETURN } from '@/constants'
+import { ROUTES } from '@/lib/routes'
 import { ICategory } from '@repo/ui'
 import { Avatar, Skeleton } from '@var-meta/ui'
 import Link from 'next/link'
@@ -27,7 +28,7 @@ export const ProjectByCategory = ({ id, name }: ICategory) => {
             {data.data.map(({ logoUrl, name, id }) => (
               <Link
                 key={id}
-                href={'/ecosystem/project/' + id}
+                href={`${ROUTES.PROJECT}/'${id}`}
                 className="col-span-3 flex flex-nowrap items-center justify-center gap-0.5"
               >
                 <Avatar

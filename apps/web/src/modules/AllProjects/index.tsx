@@ -1,6 +1,6 @@
 'use client'
 import { useInfiniteProjects } from '@/apis'
-import HeroSection from '@/components/HeroSection'
+import HeroSection from '@/modules/Home/HeroSection'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import { IProject, IProjectsResponse, Loading } from '@repo/ui'
 import CardPreview from '@repo/ui/src/card/CardPreview'
