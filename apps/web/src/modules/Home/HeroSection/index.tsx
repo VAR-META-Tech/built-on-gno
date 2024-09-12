@@ -13,6 +13,7 @@ import {
   ForwardRefExoticComponent,
   RefAttributes,
   SVGProps,
+  useEffect,
   useState,
 } from 'react'
 import Slider, { Settings } from 'react-slick'
@@ -74,13 +75,17 @@ const settingsTab: Settings = {
 }
 
 type Props = {
-  categories?: ICategoriesResponse;
-  totalProjects?: number;
+  categories?: ICategoriesResponse
+  totalProjects?: number
 }
 
-const HeroSection = ({ categories, totalProjects = 0 }: Props) => {
+const HeroSection = ({ categories, totalProjects }: Props) => {
   const defaultValue = `${totalProjects} apps`
   const [qty, setQty] = useState(defaultValue)
+
+  useEffect(() => {
+    setQty(defaultValue);
+  }, [totalProjects])
 
   const handleMouseEnter = (tab: ICategory) => {
     setQty(`${tab.name}`)
@@ -91,7 +96,7 @@ const HeroSection = ({ categories, totalProjects = 0 }: Props) => {
   }
 
   return (
-    <div className="container w-full">
+    <div className="w-full">
       <p className="text-center text-[3rem] font-bold transition-all">
         Explore <span className="!text-secondary lowercase">{qty}</span> in GNO
         Ecosystem
@@ -104,7 +109,7 @@ const HeroSection = ({ categories, totalProjects = 0 }: Props) => {
               <div
                 onMouseEnter={() => handleMouseEnter(cat)}
                 onMouseLeave={handleMouseLeave}
-                className="cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] dark:bg-primary/70 px-4 py-1 text-center transition-all hover:bg-white"
+                className="dark:bg-primary/70 cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all hover:bg-white"
               >
                 {cat.name}
               </div>
@@ -112,13 +117,13 @@ const HeroSection = ({ categories, totalProjects = 0 }: Props) => {
           </Slider>
         </div>
       ) : (
-        <div className="py-10 flex items-center justify-center gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4 py-10">
           {categories?.data.map((cat) => (
             <div
               key={cat.id}
               onMouseEnter={() => handleMouseEnter(cat)}
               onMouseLeave={handleMouseLeave}
-              className="cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] dark:bg-[#333335] px-4 py-1 text-center transition-all hover:bg-white"
+              className="cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all hover:bg-white dark:bg-[#333335]"
             >
               {cat.name}
             </div>

@@ -1,13 +1,25 @@
 'use client'
 import { useCategory } from '@/apis'
-import HeroSection from '@/modules/Home/HeroSection'
 import { notFound, useParams } from 'next/navigation'
 import CardSubcategory from './CardSubcategory'
 import { Loading } from '@repo/ui'
+import { ROUTES } from '@/lib/routes'
+import BreadCrumb, { IBreadCrumbData } from '@/components/BreadCrumb'
 
 const DetailCategory = () => {
   const { category } = useParams()
   const { data, isError, isLoading } = useCategory(String(category))
+
+  const breadcrumbList: IBreadCrumbData[] = [
+    {
+      label: 'Home',
+      href: ROUTES.HOME,
+    },
+    {
+      label: String(data?.name),
+      href: '',
+    },
+  ]
 
   if (isError) {
     notFound()
@@ -16,9 +28,10 @@ const DetailCategory = () => {
   if (isLoading) return <Loading />
 
   return (
-    <>
-      <HeroSection />
-      <div className="container my-10 grid w-full grid-cols-6 justify-center gap-8 sm:my-20 md:my-32">
+    <div className="container space-y-6">
+      <BreadCrumb data={breadcrumbList} />
+
+      <div className="grid w-full grid-cols-6 justify-center gap-8">
         {(data?.subCategories ?? []).map((category) => (
           <CardSubcategory
             key={category.id}
@@ -27,7 +40,7 @@ const DetailCategory = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   )
 }
 
