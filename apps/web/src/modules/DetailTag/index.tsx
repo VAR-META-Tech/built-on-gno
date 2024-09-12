@@ -35,12 +35,12 @@ const DetailTag = () => {
 
   return (
     <>
-      <HeroSection />
-      <div className="container my-10 flex w-full flex-col items-start justify-start gap-4 p-2 sm:my-20 md:my-32">
+      {/* <HeroSection /> */}
+      <div className="container flex w-full flex-col items-start justify-start gap-4 p-2">
         <h3 className="text-ellipsis text-lg font-bold lg:text-2xl">
           {tagName}
         </h3>
-        <div className="flex w-full flex-wrap justify-start gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.data.map((project, index) => (
             <CardPreview key={project.id} {...project} index={index}/>
           ))}
