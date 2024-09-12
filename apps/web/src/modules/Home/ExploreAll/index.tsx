@@ -1,3 +1,4 @@
+import { ROUTES } from '@/lib/routes'
 import { Button } from '@repo/ui'
 import { Grid01Icon } from '@var-meta/icons'
 import Link from 'next/link'
@@ -14,7 +15,7 @@ export const ExploreAll = () => {
         and dive into the Web3 world!
       </p>
 
-      <Link href={'/'}>
+      <Link href={ROUTES.CATEGORIES}>
         <Button
           size="xl"
           variant="link"
