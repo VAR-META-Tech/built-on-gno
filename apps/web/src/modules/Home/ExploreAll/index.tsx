@@ -9,7 +9,7 @@ export const ExploreAll = () => {
         Explore all categories
       </p>
       <p className="text-md lg:text-lg text-center md:max-w-[50%]">
-        Discover The Open Network with the help of TON App. Explore trending
+        Explore the ecosystem of GNO. Explore trending
         dApps, NFT collections, marketplaces, DeFi tools and much more. Go ahead
         and dive into the Web3 world!
       </p>
