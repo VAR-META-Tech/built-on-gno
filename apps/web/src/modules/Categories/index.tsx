@@ -18,7 +18,7 @@ const breadcrumbList: IBreadCrumbData[] = [
 
 const CategoriesPage = () => {
   return (
-    <div className="container min-h-screen pb-36">
+    <div className="container min-h-screen pb-5">
       <div className="pb-8">
         <BreadCrumb data={breadcrumbList} />
       </div>
