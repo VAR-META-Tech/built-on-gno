@@ -1,5 +1,6 @@
 import { useProjects } from '@/apis'
 import { DEFAULT_API_RETURN } from '@/constants'
+import { ROUTES } from '@/lib/routes'
 import { ICategory } from '@repo/ui'
 import { Avatar, Skeleton } from '@var-meta/ui'
 import Link from 'next/link'
@@ -22,7 +23,7 @@ export const Category = ({ id, name }: ICategory) => {
     <>
       {isLoading && <Skeleton className="h-40 w-80" />}
       {data.pagination.total_items > 0 && (
-        <Link href={'/ecosystem/' + id}>
+        <Link href={`${ROUTES.CATEGORY}/${id}`}>
           <div className="shadow-xs shadow-secondary flex h-full flex-col gap-4 rounded-lg border border-gray-500 p-6">
             <div className="text-lg font-bold lg:text-2xl">{name}</div>
             <div className="flex gap-0.5">

@@ -1,6 +1,6 @@
 'use client'
 import { useCategory } from '@/apis'
-import HeroSection from '@/components/HeroSection'
+import HeroSection from '@/modules/Home/HeroSection'
 import { notFound, useParams } from 'next/navigation'
 import CardSubcategory from './CardSubcategory'
 import { Loading } from '@repo/ui'

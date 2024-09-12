@@ -4,12 +4,18 @@
 
 :root {
   --primary-color: #110F12;
-  --secondary-color: #0059ff;
+  --secondary-color: #00A0F0;
+  --background: #E8E9ED;
+  --foreground: black;
+}
+
+[data-theme='dark'] {
+  --background: #110F12;
+  --foreground: white;
 }
 
 body {
   font-family: var(--font-karla);
-  @apply text-white;
 }
 
 @layer {
@@ -18,12 +24,20 @@ body {
     @apply !text-secondary !text-3xl;
   }
 
+  .slick-track {
+    @apply !w-full;
+  }
+
   .slick-list {
-    @apply mx-1;
+    @apply mx-1 !pt-3 !flex;
   }
 
   .slick-list .slick-slide > div {
     @apply px-1.5;
+  }
+
+  .slick-slide {
+    @apply !w-fit;
   }
 
   .falling {

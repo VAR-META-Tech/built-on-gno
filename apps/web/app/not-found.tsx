@@ -1,4 +1,5 @@
 'use client'
+import { ROUTES } from '@/lib/routes'
 import { Button } from '@repo/ui'
 import { ArrowLeftIcon } from '@var-meta/icons'
 import Link from 'next/link'
@@ -28,10 +29,10 @@ export default function NotFound() {
               <ArrowLeftIcon />
               <span>Go back</span>
             </Button>
-            <Link href="/">
+            <Link href={ROUTES.HOME}>
               <Button
                 variant="solid"
-                className="bg-secondary/30 hover:bg-secondary border-secondary focus:bg-secondary flex w-1/2 items-center gap-x-2 rounded-lg border px-5 py-2 text-sm text-white hover:text-white/90 sm:w-auto"
+                className="bg-secondary hover:bg-secondary border-secondary focus:bg-secondary flex w-1/2 items-center gap-x-2 rounded-lg border px-5 py-2 text-sm text-white hover:text-white/90 sm:w-auto"
               >
                 Take me home
               </Button>
