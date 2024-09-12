@@ -23,7 +23,7 @@ export const Category = ({ id, name, description }: ICategory) => {
               <p className="text-xl font-bold lg:text-3xl">
                 {name}{' '}
                 <span className="text-disabled text-xl">
-                  {data.pagination.total_items}
+                  {data.pagination.total_items || '-'}
                 </span>
               </p>
 

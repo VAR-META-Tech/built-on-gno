@@ -40,7 +40,7 @@ const RootLayout = ({
           <QueryClientProvider client={queryClient}>
             <>
               <Header />
-              <div className='pt-20 pb-28 bg-light dark:bg-primary h-[100vh]'>
+              <div className='pt-24 pb-28 bg-light min-h-[100vh] dark:bg-primary'>
                 {children}
               </div>
               <Footer />
