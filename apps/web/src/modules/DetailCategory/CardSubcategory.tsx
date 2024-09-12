@@ -25,9 +25,9 @@ const CardSubcategory = ({ category_id, sub_category }: IProps) => {
           <h3 className="text-ellipsis text-lg font-bold lg:text-2xl">
             {sub_category.name}
           </h3>
-          <div className="flex w-full flex-wrap justify-start gap-6">
-            {data.data.map((project) => (
-              <CardPreview key={project.id} {...project} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {data.data.map((project, index) => (
+              <CardPreview key={project.id} {...project} index={index}/>
             ))}
           </div>
         </div>
