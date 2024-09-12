@@ -3,5 +3,5 @@ export const ROUTES = {
   PROJECT: '/ecosystem/project',
   TAG: '/ecosystem/tag',
   CATEGORY: '/ecosystem',
-  CATEGORIES: '/categories'
+  CATEGORIES: '/ecosystem/categories',
 } as const;

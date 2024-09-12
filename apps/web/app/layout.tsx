@@ -34,13 +34,13 @@ const RootLayout = ({
         <meta name="apple-mobile-web-app-title" content="BuiltOnGno" />
       </head>
       <body
-        className={`${noto.variable} relative min-h-screen overflow-x-hidden bg-light`}
+        className={`${noto.variable} bg-light relative min-h-screen overflow-x-hidden`}
       >
-        <ThemeProvider attribute="class" defaultTheme='light'>
+        <ThemeProvider attribute="class" defaultTheme="light">
           <QueryClientProvider client={queryClient}>
             <>
               <Header />
-              <div className='pt-24 pb-28 bg-light min-h-[100vh] dark:bg-primary'>
+              <div className='pt-24 pb-28 bg-light min-h-screen dark:bg-primary'>
                 {children}
               </div>
               <Footer />

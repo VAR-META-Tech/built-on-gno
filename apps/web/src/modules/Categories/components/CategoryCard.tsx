@@ -1,7 +1,9 @@
 import { useProjects } from '@/apis'
 import { DEFAULT_API_RETURN } from '@/constants'
+import { ROUTES } from '@/lib/routes'
 import { ICategory } from '@repo/ui'
 import { Avatar, cn, VStack } from '@var-meta/ui'
+import { useRouter } from 'next/navigation'
 import React, { FC } from 'react'
 
 interface Props {
@@ -9,13 +11,14 @@ interface Props {
 }
 
 const CategoryCard: FC<Props> = ({ category }) => {
+  const router = useRouter()
   const { data: projects = DEFAULT_API_RETURN } = useProjects({
     page_size: 3,
     category_id: category?.id,
   })
 
   return (
-    <VStack className="group relative h-full w-full cursor-pointer overflow-hidden rounded-3xl px-8 py-7 shadow-[0_3px_6px_rgb(0,0,0,0.1)]">
+    <VStack onClick={() => router.push(`${ROUTES.CATEGORY}/${category?.id}`)} className="group relative h-full w-full cursor-pointer overflow-hidden rounded-3xl px-8 py-7 shadow-[0_3px_6px_rgb(0,0,0,0.1)]">
       <span className="absolute right-0 top-0 z-0 h-36 w-36 -translate-y-1/2 translate-x-1/2 rounded-full bg-gray-300 transition-all duration-700 ease-out group-hover:scale-[900%]" />
 
       <div className="h-14 space-x-2">
