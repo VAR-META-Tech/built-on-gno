@@ -24,7 +24,7 @@ const DetailProject = () => {
   if (isLoading) return <Loading />
 
   return (
-    <div className="container grid w-full grid-flow-row grid-cols-12 gap-4 pt-32">
+    <div className="container grid w-full grid-flow-row grid-cols-12 gap-4">
       <div className="col-span-12 lg:col-span-8">
         <div className="border-gray shadow-xs shadow-secondary flex flex-col gap-8 rounded-lg border p-8">
           <div className="flex items-center gap-2">

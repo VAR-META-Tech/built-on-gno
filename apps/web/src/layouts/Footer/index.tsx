@@ -6,8 +6,10 @@ const Footer = () => {
   const { theme } = useTheme();
 
   return (
-    <footer className="bg-light dark:bg-primary fixed bottom-0 left-0 right-0 mt-12 flex h-auto w-full flex-col justify-center gap-8">
-      <div className="container grid w-full grid-cols-1 items-center gap-5 py-6">
+    <footer className="container bg-light dark:bg-primary pt-12 flex h-auto w-full flex-col justify-center gap-8">
+      <div className='h-[.0625rem] w-full bg-disabled/30'/>
+
+      <div className="flex flex-col md:flex-row gap-6 justify-between items-center w-full py-6">
         <div className="col-span-2 flex justify-center lg:col-span-1">
           <span className="text-sm">
             Copyright © {new Date().getFullYear()} by {' '}
