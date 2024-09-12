@@ -1,10 +1,6 @@
-include:
-  - project: foundation/templates/ci-template
-    file: backend-ci.yml
-    inputs:
-      branch: develop
-  - project: foundation/templates/ci-template
-    file: update-manifest.yml
+# include:
+#   - project: foundation/templates/ci-template
+#     file: update-manifest.yml
 
 # stages:
 #   - test
