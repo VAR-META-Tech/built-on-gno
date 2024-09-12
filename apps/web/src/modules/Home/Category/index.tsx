@@ -5,10 +5,12 @@ import { ICategory } from '@repo/ui'
 import { Avatar, Skeleton } from '@var-meta/ui'
 import Link from 'next/link'
 import { ChevronRightIcon } from '@var-meta/icons'
+import CardPreview from '@repo/ui/src/card/CardPreview'
 
 export const Category = ({ id, name, description }: ICategory) => {
   const { data = DEFAULT_API_RETURN, isLoading } = useProjects({
     category_id: id,
+    page_size: 6,
   })
 
   return (
@@ -25,7 +27,7 @@ export const Category = ({ id, name, description }: ICategory) => {
                 </span>
               </p>
 
-              <Link href={'/'}>
+              <Link href={`${ROUTES.CATEGORY}/${id}`}>
                 <p className='bg-white py-1 flex justify-around items-center gap-2 whitespace-nowrap hover:bg-light font-medium px-3 rounded-3xl border border-disabled/50'>See all <ChevronRightIcon /></p>
               </Link>
             </div>
@@ -33,26 +35,8 @@ export const Category = ({ id, name, description }: ICategory) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {data?.data.map((project, i) => (
-              <Link href={`${ROUTES.PROJECT}/${project.id}`} key={project.id}>
-                <div className="flex gap-3 p-2 min-h-[7.25rem] bg-white rounded-md border border-transparent hover:border-disabled/50">
-                  <div className='relative'>
-                    <Avatar
-                      indicator="none"
-                      size="4xl"
-                      className="relative z-0"
-                      src={project.logoUrl}
-                    />
-
-                    <span className='absolute -bottom-[0.125rem] -right-[.25rem] z-1 w-6 h-6 rounded-full bg-light flex items-center justify-center font-bold'>{i + 1}</span>
-                  </div>
-                  
-                  <div className='flex flex-col gap-2'>
-                    <p className='font-bold'>{project.name}</p>
-                    <p className='text-disabled line-clamp-2'>{project.shortDescription}</p>
-                  </div>
-                </div>
-              </Link>
+            {data?.data.map((project, index) => (
+              <CardPreview key={project.id} {...project} index={index}/>
             ))}
           </div>
         </div>

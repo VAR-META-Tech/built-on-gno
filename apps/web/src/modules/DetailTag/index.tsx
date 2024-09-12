@@ -41,8 +41,8 @@ const DetailTag = () => {
           {tagName}
         </h3>
         <div className="flex w-full flex-wrap justify-start gap-6">
-          {projects.data.map((project) => (
-            <CardPreview key={project.id} {...project} />
+          {projects.data.map((project, index) => (
+            <CardPreview key={project.id} {...project} index={index}/>
           ))}
         </div>
       </div>
