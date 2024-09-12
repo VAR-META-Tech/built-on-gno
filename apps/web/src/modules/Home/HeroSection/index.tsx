@@ -91,7 +91,7 @@ const HeroSection = ({ categories, totalProjects = 0 }: Props) => {
   }
 
   return (
-    <div className="container w-full">
+    <div className="w-full">
       <p className="text-center text-[3rem] font-bold transition-all">
         Explore <span className="!text-secondary lowercase">{qty}</span> in GNO
         Ecosystem
@@ -112,7 +112,7 @@ const HeroSection = ({ categories, totalProjects = 0 }: Props) => {
           </Slider>
         </div>
       ) : (
-        <div className="py-10 flex items-center justify-center gap-4">
+        <div className="py-10 flex items-center flex-wrap justify-center gap-4">
           {categories?.data.map((cat) => (
             <div
               key={cat.id}

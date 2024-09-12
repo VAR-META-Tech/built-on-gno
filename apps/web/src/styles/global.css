@@ -3,14 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #110F12;
-  --secondary-color: #00A0F0;
-  --background: #E8E9ED;
+  --primary-color: #110f12;
+  --secondary-color: #00a0f0;
+  --background: #e8e9ed;
   --foreground: black;
+
+  --accent: #d6dbdc;
+  --accent-foreground: #1c1f21;
+
+  --destructive: #b5004a;
+  --destructive-foreground: #f9f9f9;
+
+  --ring: #aebcc6;
+
+  --radius: 8px;
+  --gradient: linear-gradient(90deg, #75c2f6 0%, #fbeeac 100%);
+
+  --base: #191b1f;
+  --disable: #bdbdbd;
+  --secondary-1: #f4901e;
+  --text-primary: #4f4f4f;
+  --pending: #ffa940;
+  --base2: #191b1f;
+  --success: #30cd60;
+
+  --line: #555e71;
+  --error: #da4343;
+
+  --gray100: #f0f1f1;
+  --gray200: #c9cace;
+  --gray300: #a1a4a9;
+  --gray400: #7c7e84;
+  --gray500: #595b5f;
+  --gray600: #383a3d;
+  --gray700: #1b1c1d;
 }
 
 [data-theme='dark'] {
-  --background: #110F12;
+  --background: #110f12;
   --foreground: white;
 }
 
@@ -29,7 +59,7 @@ body {
   }
 
   .slick-list {
-    @apply mx-1 !pt-3 !flex;
+    @apply mx-1 !flex !pt-3;
   }
 
   .slick-list .slick-slide > div {
