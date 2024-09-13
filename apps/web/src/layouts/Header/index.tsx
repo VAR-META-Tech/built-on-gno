@@ -10,6 +10,7 @@ import { useDebouncedValue } from '@mantine/hooks'
 import { useTheme } from 'next-themes'
 import { NavbarDesktop, NavbarMobile } from './components/Navbar'
 import Logo from '@/components/Logo'
+import ToggleThemeButton from '@/components/ToggleThemeButton'
 
 const Header = () => {
   const { theme } = useTheme()
@@ -58,7 +59,7 @@ const Header = () => {
             />
           </Link>
 
-          {/* <ToggleThemeButton /> */}
+          <ToggleThemeButton />
           {/* <Button
             startIcon={<Dice5Icon color="#110F12" />}
             loading={isPending}

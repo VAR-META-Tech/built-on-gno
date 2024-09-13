@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export const ExploreAll = () => {
   return (
-    <div className="flex justify-center items-center max-h-[23.75rem] w-full flex-col gap-8 rounded-3xl bg-white px-8 py-16">
+    <div className="flex justify-center items-center max-h-[23.75rem] w-full flex-col gap-8 rounded-3xl bg-white dark:bg-primary-dark px-8 py-16">
       <p className="text-xl font-bold lg:text-4xl">
         Explore all categories
       </p>

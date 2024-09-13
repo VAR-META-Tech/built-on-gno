@@ -13,7 +13,10 @@ const config = {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#110F12',
+				primary: {
+					DEFAULT: '#110F12',
+					dark: '#272728',
+				},
 				secondary: '#00A0F0',
 				light: '#F9F9FB',
 				background: 'hsl(var(--background))',
