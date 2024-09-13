@@ -90,7 +90,7 @@ export const CardInfo = ({ data }: { data: IProjectDetail | undefined }) => {
                 <Image
                   alt=""
                   unoptimized
-                  className="rounded-full p-1"
+                  className="rounded-full p-1 bg-primary hover:bg-secondary transition-all"
                   src={social.iconUrl}
                   fill
                 />
