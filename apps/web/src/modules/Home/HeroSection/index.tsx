@@ -106,27 +106,31 @@ const HeroSection = ({ categories, totalProjects }: Props) => {
         <div className="py-10">
           <Slider {...settingsTab}>
             {categories?.data.map((cat) => (
-              <div
-                onMouseEnter={() => handleMouseEnter(cat)}
-                onMouseLeave={handleMouseLeave}
-                className="dark:bg-primary/70 cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all hover:bg-white"
-              >
-                {cat.name}
-              </div>
+              <Link href={`${ROUTES.CATEGORY}/${cat?.id}`} key={cat?.id}>
+                <div
+                  onMouseEnter={() => handleMouseEnter(cat)}
+                  onMouseLeave={handleMouseLeave}
+                  className="dark:bg-primary/70 cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all hover:bg-white"
+                >
+                  {cat.name}
+                </div>
+              </Link>
             ))}
           </Slider>
         </div>
       ) : (
         <div className="flex flex-wrap items-center justify-center gap-4 py-10">
-          {categories?.data.map((cat) => (
-            <div
-              key={cat.id}
-              onMouseEnter={() => handleMouseEnter(cat)}
-              onMouseLeave={handleMouseLeave}
-              className="cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all hover:bg-white dark:bg-[#333335]"
-            >
-              {cat.name}
-            </div>
+            {categories?.data.map((cat) => (
+            <Link href={`${ROUTES.CATEGORY}/${cat?.id}`} key={cat?.id}>
+              <div
+                key={cat.id}
+                onMouseEnter={() => handleMouseEnter(cat)}
+                onMouseLeave={handleMouseLeave}
+                className="cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all hover:bg-white dark:bg-[#333335]"
+              >
+                {cat.name}
+              </div>
+            </Link>
           ))}
         </div>
       )}
