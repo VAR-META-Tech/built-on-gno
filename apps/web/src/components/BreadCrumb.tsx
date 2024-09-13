@@ -26,7 +26,7 @@ const BreadCrumb = forwardRef<
                 className="text-primary/50 hover:text-primary/80"
                 href={href}
               >
-                Home
+                {label}
               </Link>
             </BreadcrumbItem>
           )
