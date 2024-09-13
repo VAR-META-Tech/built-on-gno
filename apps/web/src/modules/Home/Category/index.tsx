@@ -22,16 +22,16 @@ export const Category = ({ id, name, description }: ICategory) => {
             <div className='flex justify-between items-center'>
               <p className="text-xl font-bold lg:text-3xl">
                 {name}{' '}
-                <span className="text-disabled text-xl">
+                <span className="text-gray-500 text-xl">
                   {data.pagination.total_items || '-'}
                 </span>
               </p>
 
               <Link href={`${ROUTES.CATEGORY}/${id}`}>
-                <p className='bg-white py-1 flex justify-around items-center gap-2 whitespace-nowrap hover:bg-light font-medium px-3 rounded-3xl border border-disabled/50'>See all <ChevronRightIcon /></p>
+                <p className='bg-white py-1 flex justify-around items-center gap-2 whitespace-nowrap hover:bg-light font-medium px-3 rounded-3xl border border-gray-500/50'>See all <ChevronRightIcon /></p>
               </Link>
             </div>
-            <p className="text-disabled text-sm">{description}</p>
+            <p className="text-gray-500 text-sm">{description}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
