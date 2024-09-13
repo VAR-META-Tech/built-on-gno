@@ -28,7 +28,7 @@ function CardPreview({
 
         <div className="flex flex-col gap-2">
           <p className="font-bold">{name}</p>
-          <p className="text-gray-500 line-clamp-2">{shortDescription}</p>
+          <p className="text-gray-500 line-clamp-2 dark:text-white">{shortDescription}</p>
         </div>
       </div>
       {/* <div className="flex w-full gap-1 overflow-hidden p-1">

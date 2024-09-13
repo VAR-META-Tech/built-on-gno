@@ -33,7 +33,7 @@ export const Category = ({ id, name, description }: ICategory) => {
                 </p>
               </Link>
             </div>
-            <p className="text-sm text-gray-500">{description}</p>
+            <p className="text-sm text-gray-500 dark:text-white">{description}</p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">

@@ -14,10 +14,10 @@ const HomePage = () => {
   const { data: projects = DEFAULT_API_RETURN } = useProjects()
 
   if (isLoading) return <Loading />
-  
+
   return (
     <div className="h-full">
-      <div className="container flex w-full flex-col gap-18">
+      <div className="gap-18 container flex w-full flex-col">
         <HeroSection
           categories={categories as ICategoriesResponse}
           totalProjects={projects?.pagination?.total_items}
@@ -25,7 +25,6 @@ const HomePage = () => {
         {categories.data.map((category) => (
           <Category key={category.id} {...category} />
         ))}
-
         <ExploreAll />
       </div>
     </div>

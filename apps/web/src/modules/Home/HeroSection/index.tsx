@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Slider, { Settings } from 'react-slick'
 import LogoGno from '@/components/LogoGno'
+import SearchInput from '@/components/SearchInput'
 
 // interface ITab {
 //   icon:
@@ -94,6 +95,10 @@ const HeroSection = ({ categories, totalProjects }: Props) => {
         </span>
         Ecosystem
       </p>
+
+      <div className="mx-auto mt-6 max-w-96">
+        <SearchInput />
+      </div>
 
       {!!categories?.data && categories?.data?.length > 7 ? (
         <div className="py-10">

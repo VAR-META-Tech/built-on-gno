@@ -30,7 +30,7 @@ const CardSubcategory = ({ category_id, sub_category }: IProps) => {
               </span>
             </h3>
 
-            <p className='text-gray-500 lg:max-w-[50%]'>{sub_category?.description}</p>
+            <p className='text-gray-500 lg:max-w-[50%] dark:text-white'>{sub_category?.description}</p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
