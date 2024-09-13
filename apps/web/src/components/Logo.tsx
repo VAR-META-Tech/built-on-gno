@@ -1,9 +1,8 @@
 import { ROUTES } from '@/lib/routes'
 import { cn } from '@var-meta/ui'
-import { useTheme } from 'next-themes'
-import Image from 'next/image'
 import Link from 'next/link'
 import React, { forwardRef, HTMLAttributes } from 'react'
+import LogoGno from './LogoGno'
 
 interface ILogoProps extends HTMLAttributes<HTMLAnchorElement> {
   width?: number
@@ -12,7 +11,6 @@ interface ILogoProps extends HTMLAttributes<HTMLAnchorElement> {
 
 const Logo = forwardRef<HTMLAnchorElement, ILogoProps>(
   ({ className, width = 42, height = 42, ...props }, ref) => {
-    const { theme } = useTheme()
 
     return (
       <Link
@@ -24,16 +22,7 @@ const Logo = forwardRef<HTMLAnchorElement, ILogoProps>(
         <span className="text-primary hidden pb-3.5 text-2xl font-bold tracking-wide sm:flex md:text-[2rem] dark:text-white">
           Built on gn
         </span>
-        {theme === 'dark' ? (
-          <Image
-            src="/gno-light.logo.svg"
-            alt=""
-            width={width}
-            height={height}
-          />
-        ) : (
-          <Image src="/gno.logo.svg" alt="" width={width} height={height} />
-        )}
+        <LogoGno width={width} height={height} />
       </Link>
     )
   },
