@@ -28,7 +28,7 @@ export const Category = ({ id, name, description }: ICategory) => {
               </p>
 
               <Link href={`${ROUTES.CATEGORY}/${id}`}>
-                <p className='bg-white py-1 flex justify-around items-center gap-2 whitespace-nowrap hover:bg-light font-medium px-3 rounded-3xl border border-gray-500/50'>See all <ChevronRightIcon /></p>
+                <p className='bg-white dark:bg-primary-dark py-1 dark:hover:bg-primary-dark/35 flex justify-around items-center gap-2 whitespace-nowrap hover:bg-light font-medium px-3 rounded-3xl border border-gray-500/50'>See all <ChevronRightIcon /></p>
               </Link>
             </div>
             <p className="text-gray-500 text-sm">{description}</p>
