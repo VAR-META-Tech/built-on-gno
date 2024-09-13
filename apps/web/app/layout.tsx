@@ -1,9 +1,9 @@
 'use client'
 import { Footer, Header } from '@/layouts'
 import '@/styles/global.css'
+import ThemeProvider from '@/themes/ThemeProvider'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ThemeProvider } from 'next-themes'
 import { Noto_Sans } from 'next/font/google'
 
 const noto = Noto_Sans({
@@ -36,7 +36,7 @@ const RootLayout = ({
       <body
         className={`${noto.variable} bg-light dark:bg-primary relative min-h-screen overflow-x-hidden`}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        <ThemeProvider>
           <QueryClientProvider client={queryClient}>
             <>
               <Header />
