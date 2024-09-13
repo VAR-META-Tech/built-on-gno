@@ -23,7 +23,7 @@ const BreadCrumb = forwardRef<
           return (
             <BreadcrumbItem key={label}>
               <Link
-                className="text-primary/50 hover:text-primary/80"
+                className="text-primary/50 hover:text-primary/80 dark:text-white dark:text-white/50 hover:dark:text-white/80"
                 href={href}
               >
                 {label}
@@ -34,7 +34,7 @@ const BreadCrumb = forwardRef<
 
         return (
           <BreadcrumbItem key={label}>
-            <span className="text-primary">{label}</span>
+            <span className="text-primary dark:text-white">{label}</span>
           </BreadcrumbItem>
         )
       })}
