@@ -30,6 +30,7 @@ const CategoryCard: FC<Props> = ({ category }) => {
 
           return (
             <Avatar
+              key={project.id}
               className={cn(
                 `z-${zIndex} transition-all duration-500 group-hover:translate-x-0`,
                 {

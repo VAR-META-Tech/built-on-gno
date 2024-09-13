@@ -4,6 +4,7 @@ import { ICategoriesResponse, ICategory } from '@repo/ui'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Slider, { Settings } from 'react-slick'
+import LogoGno from '@/components/LogoGno'
 
 // interface ITab {
 //   icon:
@@ -85,7 +86,12 @@ const HeroSection = ({ categories, totalProjects }: Props) => {
   return (
     <div className="w-full">
       <p className="text-center text-[3rem] font-bold transition-all">
-        Explore <span className="!text-secondary lowercase">{qty}</span> in GNO
+        Explore <span className="!text-secondary lowercase">{qty}</span> in
+        <span className="inline-flex w-fit items-center">
+          <span>&nbsp;Gn</span>
+          <LogoGno className="-mb-3" />
+          &nbsp;
+        </span>
         Ecosystem
       </p>
 
@@ -105,6 +111,7 @@ const HeroSection = ({ categories, totalProjects }: Props) => {
         <div className="flex flex-wrap items-center justify-center gap-4 py-10">
           {categories?.data.map((cat) => (
             <HeroTabItem
+              key={cat.id}
               cat={cat}
               handleMouseEnter={() => handleMouseEnter(cat)}
               handleMouseLeave={handleMouseLeave}

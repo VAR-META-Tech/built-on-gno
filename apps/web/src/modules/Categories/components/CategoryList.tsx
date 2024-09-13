@@ -26,9 +26,8 @@ const CategoryList = () => {
     return (
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {categories?.data?.map((category, index) => (
-          <div className="col-span-1">
+          <div className="col-span-1" key={`${category?.id}-${index}`}>
             <CategoryCard
-              key={`${category?.id}-${index}`}
               category={category}
             />
           </div>
