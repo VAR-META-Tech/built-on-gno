@@ -1,30 +1,34 @@
-import { useProjects, useTags } from '@/apis'
-import { Github, Search } from '@repo/ui'
+// import { useProjects, useTags } from '@/apis'
+import { Github } from '@repo/ui'
 // import { Dice5Icon } from '@var-meta/icons'
 import { HStack } from '@var-meta/ui'
 import Link from 'next/link'
 // import { useRouter } from 'next/navigation'
-import { useState } from 'react'
-import { useDebouncedValue } from '@mantine/hooks'
+// import { useState } from 'react'
+// import { useDebouncedValue } from '@mantine/hooks'
 // import ToggleThemeButton from '@/components/ToggleThemeButton'
 import { useTheme } from 'next-themes'
 import { NavbarDesktop, NavbarMobile } from './components/Navbar'
 import Logo from '@/components/Logo'
 import ToggleThemeButton from '@/components/ToggleThemeButton'
+import SearchInput from '@/components/SearchInput'
+import { usePathname } from 'next/navigation'
+import { ROUTES } from '@/lib/routes'
 
 const Header = () => {
+  const pathname = usePathname()
   const { theme } = useTheme()
   // const { mutateAsync, isPending } = useRandomProject()
-  const [search, setSearch] = useState('')
-  const [searchDebounced] = useDebouncedValue(search, 200)
-  const { data: projects = { data: [] } } = useProjects(
-    { search: searchDebounced },
-    { enabled: !!searchDebounced },
-  )
-  const { data: tags = { data: [] } } = useTags(
-    { search: searchDebounced },
-    { enabled: !!searchDebounced },
-  )
+  // const [search, setSearch] = useState('')
+  // const [searchDebounced] = useDebouncedValue(search, 200)
+  // const { data: projects = { data: [] } } = useProjects(
+  //   { search: searchDebounced },
+  //   { enabled: !!searchDebounced },
+  // )
+  // const { data: tags = { data: [] } } = useTags(
+  //   { search: searchDebounced },
+  //   { enabled: !!searchDebounced },
+  // )
 
   // const { push } = useRouter()
 
@@ -39,16 +43,26 @@ const Header = () => {
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 flex h-20 w-full justify-center border-b-[0.25px] before:absolute before:h-20 before:w-full before:backdrop-blur-[15px]">
-      <HStack className="container relative z-30 flex w-full flex-nowrap justify-between">
-        <Logo />
+      <HStack pos="apart" noWrap className="container relative z-30 w-full">
+        <HStack spacing={12} noWrap>
+          <Logo />
+
+          {pathname !== ROUTES.HOME && (
+            <div className="hidden w-80 lg:block">
+              <SearchInput />
+            </div>
+          )}
+        </HStack>
+
         <div className="flex w-auto items-center justify-end gap-2 md:gap-4 xl:gap-6">
           <NavbarDesktop />
-          <Search
+          {/* <Search
             onSearch={setSearch}
             projects={projects.data}
             terms={tags.data}
             search={search}
-          />
+          /> */}
+
           <Link
             href="https://github.com/VAR-META-Tech/built-on-gno/issues"
             target="_blank"

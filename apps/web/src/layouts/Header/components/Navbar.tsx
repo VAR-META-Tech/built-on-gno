@@ -1,16 +1,18 @@
 import Logo from '@/components/Logo'
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
 import { ROUTES } from '@/lib/routes'
-import { AlignJustifyIcon } from '@var-meta/icons'
-import { cn } from '@var-meta/ui'
+import { AlignJustifyIcon, SearchLgIcon } from '@var-meta/icons'
+import { CloseIcon, cn, HStack } from '@var-meta/ui'
 import Link from 'next/link'
 import React from 'react'
+import SearchModal from './SearchModal'
 
 const NavList = [
   {
@@ -40,7 +42,7 @@ const NavItem = ({
 
 const NavbarDesktop = () => {
   return (
-    <nav className="hidden md:block">
+    <nav className="hidden lg:block">
       <ul className="flex gap-2">
         {NavList?.map((item) => (
           <NavItem
@@ -57,17 +59,31 @@ const NavbarDesktop = () => {
 
 const NavbarMobile = () => {
   return (
-    <div className="flex items-center justify-center md:hidden">
+    <div className="flex items-center justify-center lg:hidden">
       <Sheet>
         <SheetTrigger asChild>
           <button>
             <AlignJustifyIcon width={24} height={24} />
           </button>
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent isShowCloseIcon={false}>
           <SheetHeader>
             <SheetTitle>
-              <Logo width={28} height={28} />
+              <HStack pos="apart">
+                <Logo width={28} height={28} />
+
+                <HStack>
+                  <SearchModal>
+                    <button>
+                      <SearchLgIcon width={24} height={24} />
+                    </button>
+                  </SearchModal>
+
+                  <SheetClose>
+                    <CloseIcon width={32} height={32} />
+                  </SheetClose>
+                </HStack>
+              </HStack>
             </SheetTitle>
           </SheetHeader>
           <ul className="flex flex-col gap-2">
