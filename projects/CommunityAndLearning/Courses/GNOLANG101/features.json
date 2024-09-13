@@ -1,0 +1,14 @@
+[
+  {
+    "key": "community_and_learning",
+    "value": true
+  },
+  {
+    "key": "meetups_and_events",
+    "value": true
+  },
+  {
+    "key": "education",
+    "value": true
+  }
+]

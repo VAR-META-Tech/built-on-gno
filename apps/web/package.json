@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@mantine/hooks": "^7.12.1",
+    "@radix-ui/react-dialog": "^1.1.1",
     "@repo/ui": "workspace:*",
     "@tanstack/react-query": "^5.49.2",
     "@types/react-slick": "^0.23.13",
@@ -19,17 +20,21 @@
     "@var-meta/ui": "^0.0.7",
     "autoprefixer": "^10.4.19",
     "axios": "^1.7.2",
+    "class-variance-authority": "^0.7.0",
     "framer-motion": "^11.2.12",
     "next": "15.0.0-rc.0",
+    "next-themes": "^0.3.0",
     "react": "19.0.0-rc-f994737d14-20240522",
     "react-dom": "19.0.0-rc-f994737d14-20240522",
     "react-markdown": "^9.0.1",
     "react-parallax-mouse": "^2.1.0",
     "react-slick": "^0.30.2",
     "react-type-animation": "^3.2.0",
+    "remark-gfm": "^4.0.0",
     "slick-carousel": "^1.8.1",
     "tailwind-variants": "^0.2.1",
-    "tailwindcss": "^3.4.4"
+    "tailwindcss": "^3.4.4",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",

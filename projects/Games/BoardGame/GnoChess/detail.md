@@ -1,0 +1,9 @@
+**Chess: The Gnolang Way**
+
+GnoChess is an online chess server implementation with Gno. It is used to demonstrate Gno's capability in developing semi-complex dApps. It comes with a user interface and a faucet for easy participation, and both the backend and frontend implement many features commonly found in chess servers (full rules implementation, leaderboards, time control, Glicko2 rating).
+
+GopherCon is the most hotly anticipated event on the gopher community’s calendar. A place where gophers from around the world get together to exchange ideas, share their work, and expand the Go network. What better place to spread the word about Gno.land and show web2 developers how easily they can port their apps to web3 or build new ones from scratch? And why not have a little fun while doing it?
+
+As a gold sponsor at GC23, we wanted to spotlight Gno, not only through an interactive workshop where Go devs develop and deploy smart contracts but also through a little friendly competition! That’s how GnoChess was born. After building a web3 chess server, attendees will be able to test their work, play chess against other gophers, experiment with the Gno.land chain, uncover bugs, provide feedback, and stack points to win cool raffle prizes.
+
+Even the lowliest pawn can become a king or queen, as you don’t need any technical skills to play. Simply add your unique ID token and get castling! We’re excited to see the discussions, suggestions, and innovations that will stem from this competition. May the best gopher win!
