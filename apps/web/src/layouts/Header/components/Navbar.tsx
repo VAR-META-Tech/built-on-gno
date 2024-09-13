@@ -11,7 +11,7 @@ import { ROUTES } from '@/lib/routes'
 import { AlignJustifyIcon, SearchLgIcon } from '@var-meta/icons'
 import { CloseIcon, cn, HStack } from '@var-meta/ui'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import SearchModal from './SearchModal'
 
 const NavList = [
@@ -58,9 +58,13 @@ const NavbarDesktop = () => {
 }
 
 const NavbarMobile = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleClose = () => setIsOpen(false)
+
   return (
     <div className="flex items-center justify-center lg:hidden">
-      <Sheet>
+      <Sheet open={isOpen} onOpenChange={setIsOpen}>
         <SheetTrigger asChild>
           <button>
             <AlignJustifyIcon width={24} height={24} />
@@ -73,7 +77,7 @@ const NavbarMobile = () => {
                 <Logo width={28} height={28} />
 
                 <HStack>
-                  <SearchModal>
+                  <SearchModal callback={handleClose}>
                     <button>
                       <SearchLgIcon width={24} height={24} />
                     </button>

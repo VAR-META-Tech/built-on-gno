@@ -11,8 +11,11 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React, { FC, HTMLAttributes, useEffect, useRef, useState } from 'react'
 
-interface Props extends HTMLAttributes<HTMLDivElement> {}
-const SearchInput: FC<Props> = ({ className }) => {
+interface Props extends HTMLAttributes<HTMLDivElement> {
+  callback?: () => void
+}
+
+const SearchInput: FC<Props> = ({ className, callback }) => {
   const router = useRouter()
   const [inputValue, setInputValue] = useState<string>('')
   const [isShow, setIsShow] = useState<boolean>(false)
@@ -58,6 +61,10 @@ const SearchInput: FC<Props> = ({ className }) => {
     router.push(ROUTES.PROJECT + '/' + id)
     setIsShow(false)
     setInputValue('')
+
+    if(callback) {
+      callback()
+    }
   }
 
   return (
@@ -93,7 +100,7 @@ const SearchInput: FC<Props> = ({ className }) => {
               {projects?.data?.length || 0}
             </span>
           </HStack>
-          <ul className="flex flex-col">
+          <ul className="flex flex-col pt-2">
             {projects?.data?.map((project, index) => (
               <SearchItem
                 key={`${project?.id}-${index}`}
