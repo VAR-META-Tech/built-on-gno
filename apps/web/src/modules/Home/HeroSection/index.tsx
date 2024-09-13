@@ -1,21 +1,8 @@
 import { ROUTES } from '@/lib/routes'
-import {
-  Button,
-  Github,
-  ICategoriesResponse,
-  ICategory,
-  Rectangle,
-} from '@repo/ui'
-import { PlaneIcon } from '@var-meta/icons'
-import Image from 'next/image'
+import { ICategoriesResponse, ICategory } from '@repo/ui'
+
 import Link from 'next/link'
-import {
-  ForwardRefExoticComponent,
-  RefAttributes,
-  SVGProps,
-  useEffect,
-  useState,
-} from 'react'
+import { useEffect, useState } from 'react'
 import Slider, { Settings } from 'react-slick'
 
 // interface ITab {
@@ -84,7 +71,7 @@ const HeroSection = ({ categories, totalProjects }: Props) => {
   const [qty, setQty] = useState(defaultValue)
 
   useEffect(() => {
-    setQty(defaultValue);
+    setQty(defaultValue)
   }, [totalProjects])
 
   const handleMouseEnter = (tab: ICategory) => {
@@ -106,126 +93,51 @@ const HeroSection = ({ categories, totalProjects }: Props) => {
         <div className="py-10">
           <Slider {...settingsTab}>
             {categories?.data.map((cat) => (
-              <Link href={`${ROUTES.CATEGORY}/${cat?.id}`} key={cat?.id}>
-                <div
-                  onMouseEnter={() => handleMouseEnter(cat)}
-                  onMouseLeave={handleMouseLeave}
-                  className="dark:bg-primary/70 cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all hover:bg-white"
-                >
-                  {cat.name}
-                </div>
-              </Link>
+              <HeroTabItem
+                cat={cat}
+                handleMouseEnter={() => handleMouseEnter(cat)}
+                handleMouseLeave={handleMouseLeave}
+              />
             ))}
           </Slider>
         </div>
       ) : (
         <div className="flex flex-wrap items-center justify-center gap-4 py-10">
-            {categories?.data.map((cat) => (
-            <Link href={`${ROUTES.CATEGORY}/${cat?.id}`} key={cat?.id}>
-              <div
-                key={cat.id}
-                onMouseEnter={() => handleMouseEnter(cat)}
-                onMouseLeave={handleMouseLeave}
-                className="cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all hover:bg-white dark:bg-[#333335]"
-              >
-                {cat.name}
-              </div>
-            </Link>
+          {categories?.data.map((cat) => (
+            <HeroTabItem
+              cat={cat}
+              handleMouseEnter={() => handleMouseEnter(cat)}
+              handleMouseLeave={handleMouseLeave}
+            />
           ))}
         </div>
       )}
-
-      {/* <div className="bg-primary absolute inset-0 h-full w-full bg-[linear-gradient(to_right,#80808020_.125rem,transparent_.125rem),linear-gradient(to_bottom,#80808020_.125rem,transparent_.125rem)] bg-[size:8rem_8rem]" />
-      <div className="absolute left-[calc(50%_-_100%_/_2)] top-0 z-10 h-[100vh] w-[100%] flex-none overflow-hidden bg-[radial-gradient(50%_50%_at_50%_0%,_rgba(0,_89,_255,_.48)_0%,_rgba(0,_89,_255,_0)_100%)]" />
-      <div className="absolute bottom-[10%] hidden overflow-visible md:flex">
-        <Image
-          src="/gnoscan.png"
-          alt=""
-          width={200}
-          height={20}
-          className="h-full w-full"
-        />
-      </div>
-      <div className="flex w-full flex-row items-start justify-between bg-transparent">
-        <div className="relative z-0 hidden md:flex">
-          <div className="absolute left-12 overflow-visible lg:left-56">
-            <div className="w-0.25 mx-auto h-32 bg-gray-400"></div>
-            <Rectangle src="/gno.logo.png" />
-          </div>
-        </div>
-        <div className="container relative z-10 flex w-full flex-col items-center justify-around gap-8">
-          <p className="text-center text-6xl font-medium text-white">
-            <span className="text-white">Built on</span>
-            <span className="inline-flex w-fit items-center text-white">
-              <span className="text-white">&nbsp;Gn</span>
-              <Image
-                width={72}
-                height={72}
-                className="-mb-5"
-                alt=""
-                src="/gno.logo.svg"
-              />
-            </span>
-          </p>
-          <p className="max-w-screen-md text-center text-lg text-white">
-            Listed below are the top crypto coins and tokens used for the
-            <span className="inline-flex w-fit items-center text-white">
-              <span className="text-white">&nbsp;Gn</span>
-              <Image
-                width={20}
-                height={20}
-                className="-mb-1"
-                alt=""
-                src="/gno.logo.svg"
-              />
-              <span>.land&nbsp;</span>
-            </span>
-            Ecosystem. They are listed in size by many contributors. We welcome
-            you to contribute your projects to the system, please create a pull
-            request to{' '}
-            <Link
-              href="https://github.com/VAR-META-Tech/built-on-gno/issues"
-              target="_blank"
-              className="inline-flex w-fit items-start gap-1 text-white"
-            >
-              <Github className="h-5 w-5" color="#0059ff" />{' '}
-              <span className="text-lg text-[#0059ff]">github</span>
-            </Link>{' '}
-            if you have one or many projects/tools built with
-            <span className="inline-flex w-fit items-center text-white">
-              <span className="text-white">&nbsp;Gn</span>
-              <Image
-                width={20}
-                height={20}
-                className="-mb-1"
-                alt=""
-                src="/gno.logo.svg"
-              />
-              <span>.land.</span>
-            </span>
-          </p>
-
-          <Link href="/ecosystem/project/all">
-            <Button
-              startIcon={<PlaneIcon />}
-              radius="full"
-              size="xl"
-              variant="outline"
-              className="bg-secondary hover:bg-primary/50 border-secondary focus:bg-primary rounded-lg text-white hover:text-white/90"
-            >
-              Explore all
-            </Button>
-          </Link>
-        </div>
-        <div className="relative z-0 hidden md:flex">
-          <div className="absolute right-12 overflow-visible lg:right-56">
-            <div className="w-0.25 mx-auto h-32 bg-gray-400"></div>
-            <Rectangle src="/adena.svg" />
-          </div>
-        </div>
-      </div> */}
     </div>
   )
 }
 
 export default HeroSection
+
+type HeroTabItemProps = {
+  cat: ICategory
+  handleMouseEnter: () => void
+  handleMouseLeave: () => void
+}
+
+const HeroTabItem = ({
+  cat,
+  handleMouseEnter,
+  handleMouseLeave,
+}: HeroTabItemProps) => {
+  return (
+    <Link href={`${ROUTES.CATEGORY}/${cat?.id}`} key={cat?.id}>
+      <div
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className="dark:bg-primary-dark dark:hover:bg-primary-dark/35 cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all hover:bg-white"
+      >
+        {cat.name}
+      </div>
+    </Link>
+  )
+}

@@ -18,8 +18,11 @@ const CategoryCard: FC<Props> = ({ category }) => {
   })
 
   return (
-    <VStack onClick={() => router.push(`${ROUTES.CATEGORY}/${category?.id}`)} className="group relative h-full w-full cursor-pointer overflow-hidden rounded-3xl px-8 py-7 shadow-[0_3px_6px_rgb(0,0,0,0.1)]">
-      <span className="absolute right-0 top-0 z-0 h-36 w-36 -translate-y-1/2 translate-x-1/2 rounded-full bg-gray-300 transition-all duration-700 ease-out group-hover:scale-[900%]" />
+    <VStack
+      onClick={() => router.push(`${ROUTES.CATEGORY}/${category?.id}`)}
+      className="group relative h-full w-full cursor-pointer overflow-hidden rounded-3xl px-8 py-7 shadow-[0_3px_6px_rgb(0,0,0,0.1)] dark:bg-white/5"
+    >
+      <span className="absolute right-0 top-0 z-0 h-36 w-36 -translate-y-1/2 translate-x-1/2 rounded-full bg-gray-300 transition-all duration-700 ease-out group-hover:scale-[900%] dark:bg-white/10" />
 
       <div className="h-14 space-x-2">
         {projects?.data?.map((project, index) => {
