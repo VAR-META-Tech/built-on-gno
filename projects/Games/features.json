@@ -1,6 +1,6 @@
 [
   {
-    "key": "3d_art",
+    "key": "3dArt",
     "label": "3D Art",
     "status": "active"
   },
@@ -20,7 +20,7 @@
     "status": "active"
   },
   {
-    "key": "board_game",
+    "key": "boardGame",
     "label": "Board Game",
     "status": "active"
   },
@@ -50,12 +50,17 @@
     "status": "active"
   },
   {
-    "key": "games_and_gaming",
+    "key": "gallery",
+    "label": "Gallery",
+    "status": "active"
+  },
+  {
+    "key": "gamesAndGaming",
     "label": "Games & Gaming",
     "status": "active"
   },
   {
-    "key": "generative_art",
+    "key": "generativeArt",
     "label": "Generative Art",
     "status": "active"
   },
@@ -70,7 +75,17 @@
     "status": "active"
   },
   {
-    "key": "on_chain",
+    "key": "nft",
+    "label": "NFT",
+    "status": "active"
+  },
+  {
+    "key": "nftCollections",
+    "label": "NFT Collections",
+    "status": "active"
+  },
+  {
+    "key": "onChain",
     "label": "On-chain",
     "status": "active"
   },
@@ -105,7 +120,7 @@
     "status": "active"
   },
   {
-    "key": "fractional_ownership",
+    "key": "fractionalOwnership",
     "label": "Fractional Ownership",
     "status": "active"
   },
@@ -140,12 +155,17 @@
     "status": "active"
   },
   {
-    "key": "industry_solutions",
+    "key": "industrySolutions",
     "label": "Industry Solutions",
     "status": "active"
   },
   {
-    "key": "investment_management",
+    "key": "interactive",
+    "label": "Interactive",
+    "status": "active"
+  },
+  {
+    "key": "investmentManagement",
     "label": "Investment Management",
     "status": "active"
   },
@@ -160,7 +180,7 @@
     "status": "active"
   },
   {
-    "key": "meetups_and_events",
+    "key": "meetupsAndEvents",
     "label": "Meetups & Events",
     "status": "active"
   },
@@ -170,7 +190,7 @@
     "status": "active"
   },
   {
-    "key": "mini_games",
+    "key": "miniGames",
     "label": "Mini-games",
     "status": "active"
   },
@@ -185,42 +205,47 @@
     "status": "active"
   },
   {
-    "key": "nft_collections",
+    "key": "nftCollections",
     "label": "NFT Collections",
     "status": "active"
   },
   {
-    "key": "nft_minting",
+    "key": "nftMinting",
     "label": "NFT Minting",
     "status": "active"
   },
   {
-    "key": "nft_tools",
+    "key": "nftTools",
     "label": "NFT Tools",
     "status": "active"
   },
   {
-    "key": "pixel_art",
+    "key": "onChain",
+    "label": "On-chain",
+    "status": "active"
+  },
+  {
+    "key": "pixelArt",
     "label": "Pixel Art",
     "status": "active"
   },
   {
-    "key": "play_and_earn",
+    "key": "playAndEarn",
     "label": "Play And Earn",
     "status": "active"
   },
   {
-    "key": "play_to_earn",
+    "key": "playToEarn",
     "label": "Play-to-earn",
     "status": "active"
   },
   {
-    "key": "proof_of_fact",
+    "key": "proofOfFact",
     "label": "Proof-of-fact",
     "status": "active"
   },
   {
-    "key": "proof_of_ownership",
+    "key": "proofOfOwnership",
     "label": "Proof-of-ownership",
     "status": "active"
   },
@@ -235,7 +260,7 @@
     "status": "active"
   },
   {
-    "key": "smart_contract",
+    "key": "smartContract",
     "label": "Smart Contract",
     "status": "active"
   },
@@ -245,12 +270,12 @@
     "status": "active"
   },
   {
-    "key": "store_of_value",
+    "key": "storeOfValue",
     "label": "Store Of Value",
     "status": "active"
   },
   {
-    "key": "supply_chain_management",
+    "key": "supplyChainManagement",
     "label": "Supply Chain Management",
     "status": "active"
   },
@@ -260,17 +285,17 @@
     "status": "active"
   },
   {
-    "key": "token_burning",
+    "key": "tokenBurning",
     "label": "Token Burning",
     "status": "active"
   },
   {
-    "key": "token_distribution",
+    "key": "tokenDistribution",
     "label": "Token Distribution",
     "status": "active"
   },
   {
-    "key": "token_minting",
+    "key": "tokenMinting",
     "label": "Token Minting",
     "status": "active"
   },
@@ -285,7 +310,7 @@
     "status": "active"
   },
   {
-    "key": "wrapped_assets",
+    "key": "wrappedAssets",
     "label": "Wrapped Assets",
     "status": "active"
   },
