@@ -10,16 +10,6 @@
     "status": "active"
   },
   {
-    "key": "calendar",
-    "label": "Calendar",
-    "status": "active"
-  },
-  {
-    "key": "chat",
-    "label": "Chat",
-    "status": "active"
-  },
-  {
     "key": "communityAndLearning",
     "label": "Community & Learning",
     "status": "active"
@@ -27,11 +17,6 @@
   {
     "key": "education",
     "label": "Education",
-    "status": "active"
-  },
-  {
-    "key": "journalism",
-    "label": "Journalism",
     "status": "active"
   },
   {
@@ -50,11 +35,6 @@
     "status": "active"
   },
   {
-    "key": "nearMe",
-    "label": "Near Me",
-    "status": "active"
-  },
-  {
     "key": "news",
     "label": "News",
     "status": "active"
@@ -70,58 +50,13 @@
     "status": "active"
   },
   {
-    "key": "nfv",
-    "label": "NFV",
-    "status": "active"
-  },
-  {
     "key": "onboarding",
     "label": "Onboarding",
     "status": "active"
   },
   {
-    "key": "realTime",
-    "label": "Real Time",
-    "status": "active"
-  },
-  {
     "key": "socialMedia",
     "label": "Social Media",
-    "status": "active"
-  },
-  {
-    "key": "staking",
-    "label": "Staking",
-    "status": "active"
-  },
-  {
-    "key": "twitterSpaces",
-    "label": "Twitter Spaces",
-    "status": "active"
-  },
-  {
-    "key": "virtualHubs",
-    "label": "Virtual Hubs",
-    "status": "active"
-  },
-  {
-    "key": "voting",
-    "label": "Voting",
-    "status": "active"
-  },
-  {
-    "key": "accelerator",
-    "label": "Accelerator",
-    "status": "active"
-  },
-  {
-    "key": "audit",
-    "label": "Audit",
-    "status": "active"
-  },
-  {
-    "key": "buildToEarn",
-    "label": "Build-to-earn",
     "status": "active"
   },
   {
@@ -145,123 +80,8 @@
     "status": "active"
   },
   {
-    "key": "ecosystem",
-    "label": "Ecosystem",
-    "status": "active"
-  },
-  {
-    "key": "fractionalOwnership",
-    "label": "Fractional Ownership",
-    "status": "active"
-  },
-  {
-    "key": "governance",
-    "label": "Governance",
-    "status": "active"
-  },
-  {
-    "key": "ido",
-    "label": "IDO",
-    "status": "active"
-  },
-  {
-    "key": "incubator",
-    "label": "Incubator",
-    "status": "active"
-  },
-  {
-    "key": "industrySolutions",
-    "label": "Industry Solutions",
-    "status": "active"
-  },
-  {
     "key": "interactive",
     "label": "Interactive",
-    "status": "active"
-  },
-  {
-    "key": "investmentManagement",
-    "label": "Investment Management",
-    "status": "active"
-  },
-  {
-    "key": "jobs",
-    "label": "Jobs",
-    "status": "active"
-  },
-  {
-    "key": "kyc",
-    "label": "KYC",
-    "status": "active"
-  },
-  {
-    "key": "nftMinting",
-    "label": "NFT Minting",
-    "status": "active"
-  },
-  {
-    "key": "nftTools",
-    "label": "NFT Tools",
-    "status": "active"
-  },
-  {
-    "key": "proofOfFact",
-    "label": "Proof-of-fact",
-    "status": "active"
-  },
-  {
-    "key": "proofOfOwnership",
-    "label": "Proof-of-ownership",
-    "status": "active"
-  },
-  {
-    "key": "smartContract",
-    "label": "Smart Contract",
-    "status": "active"
-  },
-  {
-    "key": "startup",
-    "label": "Startup",
-    "status": "active"
-  },
-  {
-    "key": "storeOfValue",
-    "label": "Store Of Value",
-    "status": "active"
-  },
-  {
-    "key": "supplyChainManagement",
-    "label": "Supply Chain Management",
-    "status": "active"
-  },
-  {
-    "key": "ticketing",
-    "label": "Ticketing",
-    "status": "active"
-  },
-  {
-    "key": "tokenBurning",
-    "label": "Token Burning",
-    "status": "active"
-  },
-  {
-    "key": "tokenDistribution",
-    "label": "Token Distribution",
-    "status": "active"
-  },
-  {
-    "key": "tokenMinting",
-    "label": "Token Minting",
-    "status": "active"
-  },
-  {
-    "key": "treasury",
-    "label": "Treasury",
-    "status": "active"
-  },
-  {
-    "key": "wrappedAssets",
-    "label": "Wrapped Assets",
     "status": "active"
   },
   {

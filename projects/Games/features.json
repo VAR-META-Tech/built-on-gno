@@ -25,16 +25,6 @@
     "status": "active"
   },
   {
-    "key": "buy",
-    "label": "Buy",
-    "status": "active"
-  },
-  {
-    "key": "charity",
-    "label": "Charity",
-    "status": "active"
-  },
-  {
     "key": "collectible",
     "label": "Collectible",
     "status": "active"
@@ -42,16 +32,6 @@
   {
     "key": "collection",
     "label": "Collection",
-    "status": "active"
-  },
-  {
-    "key": "data",
-    "label": "Data",
-    "status": "active"
-  },
-  {
-    "key": "gallery",
-    "label": "Gallery",
     "status": "active"
   },
   {
@@ -70,28 +50,8 @@
     "status": "active"
   },
   {
-    "key": "meme",
-    "label": "Meme",
-    "status": "active"
-  },
-  {
-    "key": "nft",
-    "label": "NFT",
-    "status": "active"
-  },
-  {
     "key": "nftCollections",
     "label": "NFT Collections",
-    "status": "active"
-  },
-  {
-    "key": "onChain",
-    "label": "On-chain",
-    "status": "active"
-  },
-  {
-    "key": "sell",
-    "label": "Sell",
     "status": "active"
   },
   {
@@ -115,16 +75,6 @@
     "status": "active"
   },
   {
-    "key": "fantasy",
-    "label": "Fantasy",
-    "status": "active"
-  },
-  {
-    "key": "fractionalOwnership",
-    "label": "Fractional Ownership",
-    "status": "active"
-  },
-  {
     "key": "gallery",
     "label": "Gallery",
     "status": "active"
@@ -140,43 +90,8 @@
     "status": "active"
   },
   {
-    "key": "governance",
-    "label": "Governance",
-    "status": "active"
-  },
-  {
-    "key": "ido",
-    "label": "IDO",
-    "status": "active"
-  },
-  {
-    "key": "incubator",
-    "label": "Incubator",
-    "status": "active"
-  },
-  {
-    "key": "industrySolutions",
-    "label": "Industry Solutions",
-    "status": "active"
-  },
-  {
-    "key": "interactive",
-    "label": "Interactive",
-    "status": "active"
-  },
-  {
     "key": "investmentManagement",
     "label": "Investment Management",
-    "status": "active"
-  },
-  {
-    "key": "jobs",
-    "label": "Jobs",
-    "status": "active"
-  },
-  {
-    "key": "kyc",
-    "label": "KYC",
     "status": "active"
   },
   {
@@ -205,16 +120,6 @@
     "status": "active"
   },
   {
-    "key": "nftCollections",
-    "label": "NFT Collections",
-    "status": "active"
-  },
-  {
-    "key": "nftMinting",
-    "label": "NFT Minting",
-    "status": "active"
-  },
-  {
     "key": "nftTools",
     "label": "NFT Tools",
     "status": "active"
@@ -222,106 +127,6 @@
   {
     "key": "onChain",
     "label": "On-chain",
-    "status": "active"
-  },
-  {
-    "key": "pixelArt",
-    "label": "Pixel Art",
-    "status": "active"
-  },
-  {
-    "key": "playAndEarn",
-    "label": "Play And Earn",
-    "status": "active"
-  },
-  {
-    "key": "playToEarn",
-    "label": "Play-to-earn",
-    "status": "active"
-  },
-  {
-    "key": "proofOfFact",
-    "label": "Proof-of-fact",
-    "status": "active"
-  },
-  {
-    "key": "proofOfOwnership",
-    "label": "Proof-of-ownership",
-    "status": "active"
-  },
-  {
-    "key": "quests",
-    "label": "Quests",
-    "status": "active"
-  },
-  {
-    "key": "rpg",
-    "label": "RPG",
-    "status": "active"
-  },
-  {
-    "key": "smartContract",
-    "label": "Smart Contract",
-    "status": "active"
-  },
-  {
-    "key": "startup",
-    "label": "Startup",
-    "status": "active"
-  },
-  {
-    "key": "storeOfValue",
-    "label": "Store Of Value",
-    "status": "active"
-  },
-  {
-    "key": "supplyChainManagement",
-    "label": "Supply Chain Management",
-    "status": "active"
-  },
-  {
-    "key": "ticketing",
-    "label": "Ticketing",
-    "status": "active"
-  },
-  {
-    "key": "tokenBurning",
-    "label": "Token Burning",
-    "status": "active"
-  },
-  {
-    "key": "tokenDistribution",
-    "label": "Token Distribution",
-    "status": "active"
-  },
-  {
-    "key": "tokenMinting",
-    "label": "Token Minting",
-    "status": "active"
-  },
-  {
-    "key": "treasury",
-    "label": "Treasury",
-    "status": "active"
-  },
-  {
-    "key": "voting",
-    "label": "Voting",
-    "status": "active"
-  },
-  {
-    "key": "wrappedAssets",
-    "label": "Wrapped Assets",
-    "status": "active"
-  },
-  {
-    "key": "airdrop",
-    "label": "Airdrop",
-    "status": "active"
-  },
-  {
-    "key": "retro",
-    "label": "Retro",
     "status": "active"
   }
 ]
