@@ -1,0 +1,42 @@
+[
+  {
+    "key": "stablecoins",
+    "value": true
+  },
+  {
+    "key": "transparency",
+    "value": true
+  },
+  {
+    "key": "decentralizedexchanges",
+    "value": true
+  },
+  {
+    "key": "liquiditymining",
+    "value": true
+  },
+  {
+    "key": "smartcontracts",
+    "value": true
+  },
+  {
+    "key": "analytics",
+    "value": true
+  },
+  {
+    "key": "decentralization",
+    "value": true
+  },
+  {
+    "key": "exchange",
+    "value": true
+  },
+  {
+    "key": "nonFungibletoken",
+    "value": true
+  },
+  {
+    "key": "noncustodial",
+    "value": true
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "industry": [
+    "Games & Gaming"
+  ],
+  "display_term": "Flippando",
+  "term": "Flippando",
+  "tags": [
+    "NFT",
+    "Games & Gaming",
+    "NFT Collections"
+  ],
+  "glossaries": [],
+  "short_description": "Flippando is a simple on-chain memory game, ported from Solidity to Gno.​",
+  "partnerships": [],
+  "author": "Dragos Roua",
+  "social": {
+    "website": "https://gno.flippando.xyz/",
+    "x-twitter": "https://twitter.com/Flippand0"
+  }
+}

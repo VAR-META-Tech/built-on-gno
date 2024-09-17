@@ -1,0 +1,26 @@
+{
+  "industry": [
+    "DeFi",
+    "DEX"
+  ],
+  "display_term": "GnoScan",
+  "term": "GnoScan",
+  "tags": [
+    "NFT"
+  ],
+  "glossaries": [],
+  "short_description": "Gnoscan is a blockchain explorer for Gnoland. Gnoscan provides information on the Gnoland blockchain such as tx hashes, blocks, wallet addresses, and contracts to make on-chain data readable and intuitive.​",
+  "partnerships": [
+    {
+      "name": "Gitbook",
+      "image": "https://avatars.githubusercontent.com/u/7111340"
+    }
+  ],
+  "author": "builtongno",
+  "social": {
+    "website": "https://gnoscan.io/",
+    "x-twitter": "https://x.com/gnoscan",
+    "github": "https://github.com/onbloc/gnoscan",
+    "discord": "https://discord.com/invite/Bhgkr7hMEz"
+  }
+}
