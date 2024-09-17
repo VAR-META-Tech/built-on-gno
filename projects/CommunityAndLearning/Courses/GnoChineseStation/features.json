@@ -1,0 +1,18 @@
+[
+  {
+    "key": "communityAndLearning",
+    "value": true
+  },
+  {
+    "key": "development",
+    "value": true
+  },
+  {
+    "key": "education",
+    "value": true
+  },
+  {
+    "key": "onboarding",
+    "value": true
+  }
+]
