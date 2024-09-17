@@ -1,6 +1,6 @@
 [
   {
-    "key": "games_and_gaming",
+    "key": "gamesAndGaming",
     "value": true
   },
   {
@@ -12,15 +12,15 @@
     "value": true
   },
   {
-    "key": "nft_collections",
+    "key": "nftCollections",
     "value": true
   },
   {
-    "key": "on_chain",
+    "key": "onChain",
     "value": true
   },
   {
-    "key": "board_game",
+    "key": "boardGame",
     "value": true
   }
 ]
