@@ -41,8 +41,8 @@ const DetailProject = () => {
   if (isLoading) return <Loading />
 
   return (
-    <div className='container'>
-      <BreadCrumb data={breadcrumbList} className='mb-8'/>
+    <div className="container">
+      <BreadCrumb data={breadcrumbList} className="mb-8" />
 
       <div className="grid w-full grid-flow-row grid-cols-12 gap-4">
         <div className="col-span-12 lg:col-span-8">
@@ -68,9 +68,13 @@ const DetailProject = () => {
             divider
             defaultValue={[String(data?.glossaryProjects[0]?.id ?? '')]}
           >
-            <div className='space-y-4'>
+            <div className="space-y-4">
               {data?.glossaryProjects?.map(({ glossary, id }) => (
-                <AccordionItem value={String(id)} key={id} className='!border !border-gray rounded-lg shadow-xs shadow-secondary'>
+                <AccordionItem
+                  value={String(id)}
+                  key={id}
+                  className="!border-gray shadow-xs shadow-secondary rounded-lg !border"
+                >
                   <AccordionTrigger className="text-xl font-bold uppercase">
                     {glossary.name}
                   </AccordionTrigger>

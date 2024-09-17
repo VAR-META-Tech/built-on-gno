@@ -1,4 +1,4 @@
-import { useTheme } from 'next-themes'
+import { useAppContext } from '@/context/app.context'
 import Image from 'next/image'
 
 import React, { forwardRef, HTMLAttributes } from 'react'
@@ -10,11 +10,11 @@ interface ILogoProps extends HTMLAttributes<HTMLAnchorElement> {
 
 const LogoGno = forwardRef<HTMLAnchorElement, ILogoProps>(
   ({ className, width = 42, height = 42 }) => {
-    const { theme } = useTheme()
+    const { theme } = useAppContext()
 
     return (
       <>
-        {theme === 'dark' ? (
+        {theme !== 'light' ? (
           <Image
             src="/gno-light.logo.svg"
             alt=""
