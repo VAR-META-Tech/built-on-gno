@@ -24,6 +24,12 @@
   ],
   "sub_categories": [
     {
+      "name": "Blog",
+      "pathname": "Blog",
+      "status": "active",
+      "description": "A section dedicated to articles, news, and updates related to the Gnoland ecosystem. The blog features insights, opinions, and information to keep the community informed and engaged."
+    },
+    {
       "name": "Courses",
       "pathname": "Courses",
       "status": "active",
@@ -34,12 +40,6 @@
       "pathname": "Youtube",
       "status": "active",
       "description": "A platform for sharing and viewing videos. Youtube is a popular medium for content creators to reach a wide audience and engage with viewers through video content."
-    },
-    {
-      "name": "Blog",
-      "pathname": "Blog",
-      "status": "active",
-      "description": "A section dedicated to articles, news, and updates related to the Gnoland ecosystem. The blog features insights, opinions, and information to keep the community informed and engaged."
     }
   ]
 }

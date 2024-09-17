@@ -20,7 +20,7 @@
     "status": "active"
   },
   {
-    "key": "community_and_learning",
+    "key": "communityAndLearning",
     "label": "Community & Learning",
     "status": "active"
   },
@@ -45,12 +45,12 @@
     "status": "active"
   },
   {
-    "key": "meetups_and_events",
+    "key": "meetupsAndEvents",
     "label": "Meetups & Events",
     "status": "active"
   },
   {
-    "key": "near_me",
+    "key": "nearMe",
     "label": "Near Me",
     "status": "active"
   },
@@ -65,7 +65,7 @@
     "status": "active"
   },
   {
-    "key": "nft_collections",
+    "key": "nftCollections",
     "label": "NFT Collections",
     "status": "active"
   },
@@ -80,12 +80,12 @@
     "status": "active"
   },
   {
-    "key": "real_time",
+    "key": "realTime",
     "label": "Real Time",
     "status": "active"
   },
   {
-    "key": "social_media",
+    "key": "socialMedia",
     "label": "Social Media",
     "status": "active"
   },
@@ -95,12 +95,12 @@
     "status": "active"
   },
   {
-    "key": "twitter_spaces",
+    "key": "twitterSpaces",
     "label": "Twitter Spaces",
     "status": "active"
   },
   {
-    "key": "virtual_hubs",
+    "key": "virtualHubs",
     "label": "Virtual Hubs",
     "status": "active"
   },
@@ -120,12 +120,12 @@
     "status": "active"
   },
   {
-    "key": "build_to_earn",
+    "key": "buildToEarn",
     "label": "Build-to-earn",
     "status": "active"
   },
   {
-    "key": "community_management",
+    "key": "communityManagement",
     "label": "Community Management",
     "status": "active"
   },
@@ -150,7 +150,7 @@
     "status": "active"
   },
   {
-    "key": "fractional_ownership",
+    "key": "fractionalOwnership",
     "label": "Fractional Ownership",
     "status": "active"
   },
@@ -170,7 +170,7 @@
     "status": "active"
   },
   {
-    "key": "industry_solutions",
+    "key": "industrySolutions",
     "label": "Industry Solutions",
     "status": "active"
   },
@@ -180,7 +180,7 @@
     "status": "active"
   },
   {
-    "key": "investment_management",
+    "key": "investmentManagement",
     "label": "Investment Management",
     "status": "active"
   },
@@ -195,27 +195,27 @@
     "status": "active"
   },
   {
-    "key": "nft_minting",
+    "key": "nftMinting",
     "label": "NFT Minting",
     "status": "active"
   },
   {
-    "key": "nft_tools",
+    "key": "nftTools",
     "label": "NFT Tools",
     "status": "active"
   },
   {
-    "key": "proof_of_fact",
+    "key": "proofOfFact",
     "label": "Proof-of-fact",
     "status": "active"
   },
   {
-    "key": "proof_of_ownership",
+    "key": "proofOfOwnership",
     "label": "Proof-of-ownership",
     "status": "active"
   },
   {
-    "key": "smart_contract",
+    "key": "smartContract",
     "label": "Smart Contract",
     "status": "active"
   },
@@ -225,12 +225,12 @@
     "status": "active"
   },
   {
-    "key": "store_of_value",
+    "key": "storeOfValue",
     "label": "Store Of Value",
     "status": "active"
   },
   {
-    "key": "supply_chain_management",
+    "key": "supplyChainManagement",
     "label": "Supply Chain Management",
     "status": "active"
   },
@@ -240,17 +240,17 @@
     "status": "active"
   },
   {
-    "key": "token_burning",
+    "key": "tokenBurning",
     "label": "Token Burning",
     "status": "active"
   },
   {
-    "key": "token_distribution",
+    "key": "tokenDistribution",
     "label": "Token Distribution",
     "status": "active"
   },
   {
-    "key": "token_minting",
+    "key": "tokenMinting",
     "label": "Token Minting",
     "status": "active"
   },
@@ -260,7 +260,7 @@
     "status": "active"
   },
   {
-    "key": "wrapped_assets",
+    "key": "wrappedAssets",
     "label": "Wrapped Assets",
     "status": "active"
   },
