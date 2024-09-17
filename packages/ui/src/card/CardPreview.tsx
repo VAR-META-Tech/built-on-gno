@@ -1,41 +1,37 @@
-import { Tag } from '@var-meta/ui'
-// eslint-disable-next-line no-redeclare
-import Image from 'next/image'
+import { Avatar } from '@var-meta/ui'
 import Link from 'next/link'
 import { IProject } from '../types'
 
 function CardPreview({
   id,
-  projectTags,
+  // projectTags,
   shortDescription,
   logoUrl,
   name,
-}: IProject) {
+  index,
+}: IProject & { index: number }) {
   return (
-    <Link
-      href={'/ecosystem/project/' + id}
-      className="shadow-xs shadow-secondary flex w-full cursor-pointer flex-col justify-between gap-2 rounded-lg border border-gray-500 p-3 md:w-[48%] lg:w-[23.6%]"
-    >
-      <div className="flex flex-row flex-nowrap items-start">
-        <div className="basics-1/3">
-          <div className="relative z-[0] flex h-20 w-20 overflow-hidden rounded-full border-2 border-gray-500">
-            <Image
-              unoptimized
-              src={logoUrl}
-              alt=""
-              className="relative z-[0] h-16 w-16 rounded-full transition-all delay-75 duration-300 ease-in-out hover:scale-125"
-              fill
-            />
-          </div>
+    <Link href={'/ecosystem/project/' + id}>
+      <div className="hover:border-gray-500/50 flex min-h-[7.25rem] gap-3 rounded-md border border-transparent bg-white dark:bg-primary-dark p-2">
+        <div className="relative">
+          <Avatar
+            indicator="none"
+            size="4xl"
+            className="relative z-0"
+            src={logoUrl}
+          />
+
+          <span className="z-1 bg-light dark:bg-primary absolute -bottom-[0.125rem] -right-[.25rem] flex h-6 w-6 items-center justify-center rounded-full font-bold">
+            {index + 1}
+          </span>
         </div>
-        <div className="flex w-44 flex-col gap-1 p-0 px-2">
-          <h2 className="text-lg font-semibold">{name}</h2>
-          <p className="h-full max-h-14 overflow-hidden text-ellipsis text-sm text-gray-300">
-            {shortDescription}
-          </p>
+
+        <div className="flex flex-col gap-2">
+          <p className="font-bold">{name}</p>
+          <p className="text-gray-500 line-clamp-2 dark:text-white">{shortDescription}</p>
         </div>
       </div>
-      <div className="flex w-full gap-1 overflow-hidden p-1">
+      {/* <div className="flex w-full gap-1 overflow-hidden p-1">
         {projectTags.map((item) => (
           <div
             key={item.id}
@@ -51,7 +47,7 @@ function CardPreview({
             </Tag>
           </div>
         ))}
-      </div>
+      </div> */}
     </Link>
   )
 }

@@ -3,13 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #110F12;
-  --secondary-color: #0059ff;
+  --primary-color: #110f12;
+  --secondary-color: #00a0f0;
+  --background: #e8e9ed;
+  --foreground: black;
+
+  --accent: #d6dbdc;
+  --accent-foreground: #1c1f21;
+
+  --destructive: #b5004a;
+  --destructive-foreground: #f9f9f9;
+
+  --ring: #aebcc6;
+
+  --radius: 8px;
+  --gradient: linear-gradient(90deg, #75c2f6 0%, #fbeeac 100%);
+
+  --base: #191b1f;
+  --disable: #bdbdbd;
+  --secondary-1: #f4901e;
+  --text-primary: #4f4f4f;
+  --pending: #ffa940;
+  --base2: #191b1f;
+  --success: #30cd60;
+
+  --line: #555e71;
+  --error: #da4343;
+
+  --gray100: #f0f1f1;
+  --gray200: #c9cace;
+  --gray300: #a1a4a9;
+  --gray400: #7c7e84;
+  --gray500: #595b5f;
+  --gray600: #383a3d;
+  --gray700: #1b1c1d;
+}
+
+[data-theme='dark'] {
+  --background: #110f12;
+  --foreground: white;
 }
 
 body {
   font-family: var(--font-karla);
-  @apply text-white;
 }
 
 @layer {
@@ -18,12 +54,20 @@ body {
     @apply !text-secondary !text-3xl;
   }
 
+  .slick-track {
+    @apply !w-full;
+  }
+
   .slick-list {
-    @apply mx-1;
+    @apply mx-1 !flex !pt-3;
   }
 
   .slick-list .slick-slide > div {
     @apply px-1.5;
+  }
+
+  .slick-slide {
+    @apply !w-fit;
   }
 
   .falling {
@@ -112,5 +156,70 @@ body {
   }
   100% {
     box-shadow: 38px 20px 0 0 rgba(152, 128, 255, 0);
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

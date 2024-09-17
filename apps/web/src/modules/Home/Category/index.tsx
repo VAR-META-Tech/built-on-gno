@@ -1,51 +1,47 @@
 import { useProjects } from '@/apis'
 import { DEFAULT_API_RETURN } from '@/constants'
+import { ROUTES } from '@/lib/routes'
 import { ICategory } from '@repo/ui'
-import { Avatar, Skeleton } from '@var-meta/ui'
+import { Skeleton } from '@var-meta/ui'
 import Link from 'next/link'
-import { useMemo } from 'react'
+import { ChevronRightIcon } from '@var-meta/icons'
+import CardPreview from '@repo/ui/src/card/CardPreview'
 
-export const Category = ({ id, name }: ICategory) => {
+export const Category = ({ id, name, description }: ICategory) => {
   const { data = DEFAULT_API_RETURN, isLoading } = useProjects({
     category_id: id,
+    page_size: 6,
   })
-
-  const [firstThree, remaining] = useMemo(
-    () => [
-      data.data.slice(0, 3),
-      data.pagination.total_items > 3 ? data.pagination.total_items - 3 : 0,
-    ],
-    [data.data],
-  )
 
   return (
     <>
-      {isLoading && <Skeleton className="h-40 w-80" />}
+      {isLoading && <Skeleton className="h-60 w-full" />}
       {data.pagination.total_items > 0 && (
-        <Link href={'/ecosystem/' + id}>
-          <div className="shadow-xs shadow-secondary flex h-full flex-col gap-4 rounded-lg border border-gray-500 p-6">
-            <div className="text-lg font-bold lg:text-2xl">{name}</div>
-            <div className="flex gap-0.5">
-              {firstThree.map((i) => (
-                <Avatar
-                  key={i.logoUrl}
-                  indicator="none"
-                  radius="half"
-                  size="2xl"
-                  className="relative z-0 border-2 border-gray-500"
-                  src={i.logoUrl}
-                />
-              ))}
-              {remaining > 0 && (
-                <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-gray-500">
-                  <span className="text-center text-xl text-white">
-                    +{remaining}
-                  </span>
-                </div>
-              )}
+        <div className="flex h-full w-full flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center justify-between">
+              <p className="text-xl font-bold lg:text-3xl">
+                {name}{' '}
+                <span className="text-xl text-gray-500">
+                  {data.pagination.total_items || '-'}
+                </span>
+              </p>
+
+              <Link href={`${ROUTES.CATEGORY}/${id}`}>
+                <p className="dark:bg-primary-dark dark:hover:bg-primary-dark/35 hover:bg-light flex items-center justify-around gap-2 whitespace-nowrap rounded-3xl border border-gray-500/50 bg-white px-3 py-1 font-medium">
+                  See all <ChevronRightIcon />
+                </p>
+              </Link>
             </div>
+            <p className="text-sm text-gray-500 dark:text-white">{description}</p>
           </div>
-        </Link>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {data?.data.map((project, index) => (
+              <CardPreview key={project.id} {...project} index={index} />
+            ))}
+          </div>
+        </div>
       )}
     </>
   )

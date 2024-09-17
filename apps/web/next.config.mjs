@@ -5,6 +5,9 @@ const nextConfig = {
       {
         hostname: 'images.thedapplist.com',
       },
+      {
+        hostname: 'raw.githubusercontent.com',
+      },
     ],
   },
   env: {

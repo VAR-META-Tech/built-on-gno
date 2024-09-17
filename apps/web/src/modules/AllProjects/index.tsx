@@ -1,6 +1,6 @@
 'use client'
 import { useInfiniteProjects } from '@/apis'
-import HeroSection from '@/components/HeroSection'
+import HeroSection from '@/modules/Home/HeroSection'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import { IProject, IProjectsResponse, Loading } from '@repo/ui'
 import CardPreview from '@repo/ui/src/card/CardPreview'
@@ -26,11 +26,13 @@ const AllProjects = () => {
     <div>
       <HeroSection />
       <div className="container mt-20 flex w-full flex-wrap justify-center gap-4 md:mt-32">
-        {data?.pages?.map((page) =>
-          (page as IProjectsResponse)?.data?.map((project: IProject) => (
-            <CardPreview key={project.id} {...project} />
-          )),
-        )}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {data?.pages?.map((page, index) =>
+            (page as IProjectsResponse)?.data?.map((project: IProject) => (
+              <CardPreview key={project.id} {...project} index={index} />
+            )),
+          )}
+        </div>
         {hasNextPage && (
           <div ref={ref} className="grid w-full grid-cols-4 gap-4 px-4">
             {[...Array(8)].map((x, i) => (
