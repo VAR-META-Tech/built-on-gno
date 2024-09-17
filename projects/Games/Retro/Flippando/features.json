@@ -18,13 +18,5 @@
   {
     "key": "onChain",
     "value": true
-  },
-  {
-    "key": "airdrop",
-    "value": true
-  },
-  {
-    "key": "retro",
-    "value": true
   }
 ]
