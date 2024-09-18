@@ -1,0 +1,41 @@
+{
+  "name": "Community & Learning",
+  "description": "A hub for engaging with the Gnoland community and accessing educational resources. This category includes news, media, NFT content, and learning resources for those interested in exploring and participating in the Gnoland ecosystem.",
+  "pathname": "CommunityAndLearning",
+  "status": "active",
+  "tags": [
+    "Community & Learning",
+    "Meetups & Events",
+    "News",
+    "Voting",
+    "NFT Collections",
+    "Media",
+    "Youtube Content Creator",
+    "Interviewer",
+    "Interview",
+    "Youtube Channel",
+    "Guides",
+    "Videos",
+    "Onboarding"
+  ],
+  "sub_categories": [
+    {
+      "name": "Blog",
+      "pathname": "Blog",
+      "status": "active",
+      "description": "A section dedicated to articles, news, and updates related to the Gnoland ecosystem. The blog features insights, opinions, and information to keep the community informed and engaged."
+    },
+    {
+      "name": "Courses",
+      "pathname": "Courses",
+      "status": "active",
+      "description": "Courses and tutorials to help users understand and navigate the Gnoland blockchain, including development guides and educational content for beginners and advanced users."
+    },
+    {
+      "name": "Youtube",
+      "pathname": "Youtube",
+      "status": "active",
+      "description": "A platform for sharing and viewing videos. Youtube is a popular medium for content creators to reach a wide audience and engage with viewers through video content."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "industry": [
+    "Community & Learning",
+    "Blog"
+  ],
+  "display_term": "Deployment on Ubuntu",
+  "term": "Deployment on Ubuntu",
+  "tags": [
+    "News"
+  ],
+  "glossaries": [],
+  "short_description": "Local installation & realm deployment on Ubuntu",
+  "partnerships": [],
+  "author": "builtongno",
+  "social": {
+    "website": "https://proggr.hashnode.dev/gnoland-localnet-walkthrough-first-realm-on-ubuntu"
+  }
+}
