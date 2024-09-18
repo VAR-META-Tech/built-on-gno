@@ -1,0 +1,137 @@
+[
+  {
+    "key": "wallets",
+    "label": "Wallets",
+    "status": "active"
+  },
+  {
+    "key": "nonCustodial",
+    "label": "Non-Custodial",
+    "status": "active"
+  },
+  {
+    "key": "lightWallet",
+    "label": "Light Wallet",
+    "status": "active"
+  },
+  {
+    "key": "wallet",
+    "label": "Wallet",
+    "status": "active"
+  },
+  {
+    "key": "testnet",
+    "label": "Testnet",
+    "status": "active"
+  },
+  {
+    "key": "webBasedWallet",
+    "label": "Web-based Wallet",
+    "status": "active"
+  },
+  {
+    "key": "hardwareWallet",
+    "label": "Hardware Wallet",
+    "status": "active"
+  },
+  {
+    "key": "hardwareWalletIntegration",
+    "label": "Hardware Wallet Integration",
+    "status": "active"
+  },
+  {
+    "key": "mobileApp",
+    "label": "Mobile App",
+    "status": "active"
+  },
+  {
+    "key": "payLess",
+    "label": "Pay Less",
+    "status": "active"
+  },
+  {
+    "key": "createRestoreWallet",
+    "label": "Create & Restore Wallet",
+    "status": "active"
+  },
+  {
+    "key": "viewAccountBalances",
+    "label": "View Account Balances",
+    "status": "active"
+  },
+  {
+    "key": "depositSendTokens",
+    "label": "Deposit & Send Tokens",
+    "status": "active"
+  },
+  {
+    "key": "transactionHistory",
+    "label": "Transaction History",
+    "status": "active"
+  },
+  {
+    "key": "settings",
+    "label": "Settings",
+    "status": "active"
+  },
+  {
+    "key": "connectDapps",
+    "label": "Connect DApps",
+    "status": "active"
+  },
+  {
+    "key": "signGNOContracts",
+    "label": "Sign GNO Contracts",
+    "status": "active"
+  },
+  {
+    "key": "exploreDapps",
+    "label": "Explore Dapps",
+    "status": "active"
+  },
+  {
+    "key": "multiAccounts",
+    "label": "Multi Accounts",
+    "status": "active"
+  },
+  {
+    "key": "multiNetworks",
+    "label": "Multi Networks",
+    "status": "active"
+  },
+  {
+    "key": "ledgerSupport",
+    "label": "Ledger Support",
+    "status": "active"
+  },
+  {
+    "key": "web3LoginSupport",
+    "label": "Web3 Login Support",
+    "status": "active"
+  },
+  {
+    "key": "manageCustomTokens",
+    "label": "Manage Custom Tokens",
+    "status": "active"
+  },
+  {
+    "key": "airgapChain",
+    "label": "Airgap Chain",
+    "status": "active"
+  },
+  {
+    "key": "multiChain",
+    "label": "Multi-Chain",
+    "status": "active"
+  },
+  {
+    "key": "viewTransferNFTs",
+    "label": "View & Transfer NFTs",
+    "status": "active"
+  },
+  {
+    "key": "inAppSwap​",
+    "label": "In-app Swap​",
+    "status": "active"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "key": "blockchainoperations",
+    "value": true
+  },
+  {
+    "key": "wallet",
+    "value": true
+  },
+  {
+    "key": "toolkit",
+    "value": true
+  }
+]
