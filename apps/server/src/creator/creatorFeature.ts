@@ -11,17 +11,13 @@ export async function creatorFeature(parentPath: string) {
 
     const datas: Array<FeatureJSON> = JSON.parse(dataRaw)
 
-    const inQuery = `${datas.map((data) => `"${data.key}"`).join(',')}`
-
-    // what happen if the tag is empty?
-    const queryString = `
-      SELECT features.key
-      FROM features
-      WHERE features.key IN ( ${inQuery} );
-  `
-
-    const result: Array<{ key: string }> =
-      await connection.manager.query(queryString)
+    const result: Array<{ key: string }> = await connection.manager
+      .createQueryBuilder(Features, 'features')
+      .where('features.key IN ( :...inQuery )', {
+        inQuery: datas.map((data) => data.key),
+      })
+      .select('features.key as `key`')
+      .getRawMany()
 
     const featuresNotExist = datas.filter((entity) => {
       const data = result.find((value) => value.key === entity.key)

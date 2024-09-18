@@ -56,9 +56,6 @@ const DetailProject = () => {
               {data?.projectDescriptions?.description ?? ''}
             </ReactMarkDown>
           </div>
-          <ReactMarkDown remarkPlugins={[remarkGfm]}>
-            {data?.projectDescriptions?.description ?? ''}
-          </ReactMarkDown>
         </div>
         <div className="col-span-12 flex w-full flex-col gap-6 lg:col-span-4">
           <CardInfo data={data!} />

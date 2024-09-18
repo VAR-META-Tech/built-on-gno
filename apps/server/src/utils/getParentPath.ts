@@ -1,12 +1,15 @@
-export function getParentPath(path: string) {
-  let array = path.split('/')
-  if (array.length == 0) {
-    console.log('sub path error')
-  }
-  let dataReturn = ''
-  for (let i = 0; i < array.length - 1; i++) {
-    dataReturn += `${array[i]}/`
+export function getParentPath(path: string): string {
+  if (!path || path === '/') {
+    console.log('sub path error');
+    return '';
   }
 
-  return dataReturn
+  const array = path.split('/').filter(Boolean);
+  if (array.length === 0) {
+    console.log('sub path error');
+    return '';
+  }
+
+  const parentPath = array.slice(0, -1).join('/');
+  return parentPath ? `/${parentPath}` : '/';
 }
