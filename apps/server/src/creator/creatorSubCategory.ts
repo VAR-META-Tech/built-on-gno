@@ -15,16 +15,14 @@ export async function creatorSubCategory(subPath: string) {
   const parentPath = getParentPath(subPath)
 
   try {
+    const dataString = await fsWrapper.readFile(`${parentPath}/category.json`)
+    const data: CategoryJSON = JSON.parse(dataString)
     const cat = await connection
       .getRepository(Categories)
-      .findOneBy({ name: getFileName(parentPath) })
-
-    const dataString = await fsWrapper.readFile(`${parentPath}/category.json`)
-
-    const data: CategoryJSON = JSON.parse(dataString)
+      .findOneBy({ name: data?.name })
 
     const tmp = data.sub_categories.filter(
-      (entity) => (entity.pathname = subPathName),
+      (entity) => (entity.pathname === subPathName),
     )
     if (tmp.length == 0) {
       console.log('This pull request is not valid')
