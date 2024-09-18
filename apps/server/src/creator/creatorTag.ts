@@ -3,17 +3,12 @@ import { Tags } from '@/databases/entities/Tags'
 import { logger } from '@/utils/logger'
 
 export async function creatorTag(tags: Array<string>) {
-  const inQuery = `${tags.map((tag) => `\"${tag}\"`).join(',')}`
-  // what happen if the tag is empty?
-  const queryString = `
-        SELECT tags.name
-        FROM tags
-        WHERE name IN ( ${inQuery} );
-      `
-
   try {
-    const result: Array<{ name: string }> =
-      await connection.manager.query(queryString)
+    const result: Array<{ name: string }> = await connection.manager
+      .createQueryBuilder(Tags, 'tags')
+      .where('tags.name IN ( :...inQuery )', { inQuery: tags })
+      .select('tags.name as name')
+      .getRawMany()
 
     const tagsNotExist = tags.filter((tag) => {
       const data = result.find((value) => value.name === tag)
