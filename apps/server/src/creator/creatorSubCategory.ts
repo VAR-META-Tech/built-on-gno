@@ -19,7 +19,7 @@ export async function creatorSubCategory(subPath: string) {
       .getRepository(Categories)
       .findOneBy({ name: getFileName(parentPath) })
 
-    const dataString = await fsWrapper.readFile(`${parentPath}category.json`)
+    const dataString = await fsWrapper.readFile(`${parentPath}/category.json`)
 
     const data: CategoryJSON = JSON.parse(dataString)
 
