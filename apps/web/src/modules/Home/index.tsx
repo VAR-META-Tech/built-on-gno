@@ -11,6 +11,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import { VStack } from '@var-meta/ui'
 import News from './News'
 import Ads from './Ads'
+import Jettons from './Jetttons'
 
 const HomePage = () => {
   const { data: categories = DEFAULT_API_RETURN, isLoading } = useCategories()
@@ -25,11 +26,14 @@ const HomePage = () => {
           categories={categories as ICategoriesResponse}
           totalProjects={projects?.pagination?.total_items}
         />
+
         <VStack spacing={16} className="text-black lg:flex-row">
           <Ads />
 
           <News />
         </VStack>
+
+        <Jettons />
 
         {categories.data.map((category) => (
           <Category key={category.id} {...category} />
