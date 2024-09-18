@@ -1,0 +1,17 @@
+[
+  {
+    "key": "boardGame",
+    "label": "Board Game",
+    "status": "active"
+  },
+  {
+    "key": "gamesAndGaming",
+    "label": "Games & Gaming",
+    "status": "active"
+  },
+  {
+    "key": "nftCollections",
+    "label": "NFT Collections",
+    "status": "active"
+  }
+]
