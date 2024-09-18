@@ -1,37 +1,7 @@
 [
   {
-    "key": "3dArt",
-    "label": "3D Art",
-    "status": "active"
-  },
-  {
-    "key": "ar",
-    "label": "AR",
-    "status": "active"
-  },
-  {
-    "key": "art",
-    "label": "Art",
-    "status": "active"
-  },
-  {
-    "key": "auction",
-    "label": "Auction",
-    "status": "active"
-  },
-  {
     "key": "boardGame",
     "label": "Board Game",
-    "status": "active"
-  },
-  {
-    "key": "collectible",
-    "label": "Collectible",
-    "status": "active"
-  },
-  {
-    "key": "collection",
-    "label": "Collection",
     "status": "active"
   },
   {
@@ -40,93 +10,8 @@
     "status": "active"
   },
   {
-    "key": "generativeArt",
-    "label": "Generative Art",
-    "status": "active"
-  },
-  {
-    "key": "interactive",
-    "label": "Interactive",
-    "status": "active"
-  },
-  {
     "key": "nftCollections",
     "label": "NFT Collections",
-    "status": "active"
-  },
-  {
-    "key": "dao",
-    "label": "DAO",
-    "status": "active"
-  },
-  {
-    "key": "defi",
-    "label": "DeFi",
-    "status": "active"
-  },
-  {
-    "key": "development",
-    "label": "Development",
-    "status": "active"
-  },
-  {
-    "key": "ecosystem",
-    "label": "Ecosystem",
-    "status": "active"
-  },
-  {
-    "key": "gallery",
-    "label": "Gallery",
-    "status": "active"
-  },
-  {
-    "key": "games",
-    "label": "Games",
-    "status": "active"
-  },
-  {
-    "key": "gaming",
-    "label": "Gaming",
-    "status": "active"
-  },
-  {
-    "key": "investmentManagement",
-    "label": "Investment Management",
-    "status": "active"
-  },
-  {
-    "key": "meetupsAndEvents",
-    "label": "Meetups & Events",
-    "status": "active"
-  },
-  {
-    "key": "metaverse",
-    "label": "Metaverse",
-    "status": "active"
-  },
-  {
-    "key": "miniGames",
-    "label": "Mini-games",
-    "status": "active"
-  },
-  {
-    "key": "multiplayer",
-    "label": "Multiplayer",
-    "status": "active"
-  },
-  {
-    "key": "nft",
-    "label": "NFT",
-    "status": "active"
-  },
-  {
-    "key": "nftTools",
-    "label": "NFT Tools",
-    "status": "active"
-  },
-  {
-    "key": "onChain",
-    "label": "On-chain",
     "status": "active"
   }
 ]
