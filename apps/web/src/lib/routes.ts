@@ -4,4 +4,5 @@ export const ROUTES = {
   TAG: '/ecosystem/tag',
   CATEGORY: '/ecosystem',
   CATEGORIES: '/ecosystem/categories',
+  EVENTS: '/events'
 } as const;

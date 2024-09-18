@@ -19,6 +19,10 @@ const NavList = [
     name: 'Categories',
     href: ROUTES.CATEGORIES,
   },
+  {
+    name: 'Events',
+    href: ROUTES.EVENTS,
+  },
 ]
 
 const NavItem = ({
