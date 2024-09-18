@@ -1,0 +1,77 @@
+[
+  {
+    "key": "awards",
+    "label": "Awards",
+    "status": "active"
+  },
+  {
+    "key": "calculator",
+    "label": "Calculator",
+    "status": "active"
+  },
+  {
+    "key": "communityAndLearning",
+    "label": "Community & Learning",
+    "status": "active"
+  },
+  {
+    "key": "education",
+    "label": "Education",
+    "status": "active"
+  },
+  {
+    "key": "media",
+    "label": "Media",
+    "status": "active"
+  },
+  {
+    "key": "meet",
+    "label": "Meet",
+    "status": "active"
+  },
+  {
+    "key": "meetupsAndEvents",
+    "label": "Meetups & Events",
+    "status": "active"
+  },
+  {
+    "key": "news",
+    "label": "News",
+    "status": "active"
+  },
+  {
+    "key": "nft",
+    "label": "NFT",
+    "status": "active"
+  },
+  {
+    "key": "onboarding",
+    "label": "Onboarding",
+    "status": "active"
+  },
+  {
+    "key": "socialMedia",
+    "label": "Social Media",
+    "status": "active"
+  },
+  {
+    "key": "communityManagement",
+    "label": "Community Management",
+    "status": "active"
+  },
+  {
+    "key": "development",
+    "label": "Development",
+    "status": "active"
+  },
+  {
+    "key": "blog",
+    "label": "Blog",
+    "status": "active"
+  },
+  {
+    "key": "onChain",
+    "label": "On-chain",
+    "status": "active"
+  }
+]
