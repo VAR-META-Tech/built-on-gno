@@ -45,11 +45,6 @@
     "status": "active"
   },
   {
-    "key": "nftCollections",
-    "label": "NFT Collections",
-    "status": "active"
-  },
-  {
     "key": "onboarding",
     "label": "Onboarding",
     "status": "active"
@@ -65,28 +60,18 @@
     "status": "active"
   },
   {
-    "key": "dao",
-    "label": "DAO",
-    "status": "active"
-  },
-  {
-    "key": "defi",
-    "label": "DeFi",
-    "status": "active"
-  },
-  {
     "key": "development",
     "label": "Development",
     "status": "active"
   },
   {
-    "key": "interactive",
-    "label": "Interactive",
+    "key": "blog",
+    "label": "Blog",
     "status": "active"
   },
   {
-    "key": "blog",
-    "label": "Blog",
+    "key": "onChain",
+    "label": "On-chain",
     "status": "active"
   }
 ]

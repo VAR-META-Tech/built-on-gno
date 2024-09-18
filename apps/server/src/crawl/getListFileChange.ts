@@ -21,8 +21,8 @@ function listProjectChanges(output: string): Array<string> {
   if (projectsRaw.length == 0) return []
 
   const projects = projectsRaw.map((data) => {
-    const arr = data.split('|')
-    return arr[0].trim()
+    const arr = data.split(' ')
+    return arr[1]
   })
   return projects
 }
@@ -33,7 +33,7 @@ export function getListFileChange(): Promise<Array<string>> {
       const merge = getIDsMergeAction(stdout)
 
       exec(
-        `git diff --name-only ${merge.past} ${merge.recent}`,
+        `git diff --stat ${merge.past} ${merge.recent}`,
         (error, stdout, stderr) => {
           res(listProjectChanges(stdout))
         },
