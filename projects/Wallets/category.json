@@ -1,0 +1,21 @@
+{
+  "name": "Wallets",
+  "description": "A wallet is a digital tool for securely storing and managing cryptocurrencies. It holds private keys needed to access your assets, allows you to send and receive funds, and provides a way to track your balance and transaction history.",
+  "pathname": "NFT",
+  "status": "active",
+  "tags": [
+    "Non-custodial",
+    "Browser Extension",
+    "Mobile App",
+    "IOS App",
+    "Android App"
+  ],
+  "sub_categories": [
+    {
+      "name": "Light wallet",
+      "pathname": "Light wallet",
+      "status": "active",
+      "description": "A light wallet, or light client wallet, is a type of cryptocurrency wallet that offers a balance between security and convenience."
+    }
+  ]
+}
