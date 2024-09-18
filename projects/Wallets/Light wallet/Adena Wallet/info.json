@@ -1,0 +1,34 @@
+{
+  "industry": [
+    "Wallets",
+    "Light wallet"
+  ],
+  "display_term": "Adena Wallet",
+  "term": "Adena Wallet",
+  "tags": [
+    "Non-custodial",
+    "Browser Extension",
+    "Mobile App",
+    "IOS App",
+    "Android App"
+  ],
+  "glossaries": [
+    "Non-Custodial",
+    "Browser Extension"
+  ],
+  "short_description": "Adena is a friendly, open-source, non-custodial Gnoland wallet,built for Gnomes worldwide. Adena exists to power millions of realms and tokens that will flourish the Gnoland ecosystem with a quality interface, NFT & custom token support, and a seamless integration procedure.​",
+  "partnerships": [
+    {
+      "name": "Onbloc",
+      "image": "https://onbloc.xyz/assets/images/logo_lg.svg"
+    }
+  ],
+  "author": "builtongno",
+  "social": {
+    "website": "https://www.adena.app/",
+    "x-twitter": "https://twitter.com/adenaapp",
+    "github": "https://github.com/onbloc/adena-wallet",
+    "discord": "https://discord.com/invite/YGmvk6CBsp",
+    "medium": "https://medium.com/@adena.app"
+  }
+}

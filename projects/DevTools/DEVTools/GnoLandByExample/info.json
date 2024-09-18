@@ -1,0 +1,23 @@
+{
+  "industry": [
+    "Developer Tools",
+    "DEV Tools"
+  ],
+  "display_term": "Gno.land by Example",
+  "term": "Gno.landByExample",
+  "tags": [
+    "Blockchain Operations",
+    "Toolkit"
+  ],
+  "glossaries": [],
+  "short_description": "Gno By Example is a community-dedicated web app that showcases the fundamentals of Gnolang, the Smart Contract language used on Gno.land.​",
+  "partnerships": [],
+  "author": "builtongno",
+  "social": {
+    "website": "https://gno-by-example.com/",
+    "x-twitter": "https://twitter.com/_gnoland",
+    "discord": "https://discord.com/invite/YFtMjWwUN7",
+    "github": "https://github.com/gnolang/gno",
+    "telegram": "https://t.me/gnoland"
+  }
+}
