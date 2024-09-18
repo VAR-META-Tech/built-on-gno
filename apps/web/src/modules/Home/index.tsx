@@ -10,7 +10,7 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { VStack } from '@var-meta/ui'
 import News from './News'
-import Events from './Events'
+import Ads from './Ads'
 
 const HomePage = () => {
   const { data: categories = DEFAULT_API_RETURN, isLoading } = useCategories()
@@ -26,7 +26,7 @@ const HomePage = () => {
           totalProjects={projects?.pagination?.total_items}
         />
         <VStack spacing={16} className="text-black lg:flex-row">
-          <Events />
+          <Ads />
 
           <News />
         </VStack>
