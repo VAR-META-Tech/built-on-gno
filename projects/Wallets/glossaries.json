@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Non-Custodial",
+    "description": "Non-custodial programs or applications do not hold the custody of your assets. This means that there is no third party company or person who is responsible for the security of the assets. Non-custodial can be applied to wallets, where the user is the sole proprietor of their private keys. This means that you, and you only, are responsible for securing your assets. The non-custodial tag can be used by platforms and applications other than wallets, such as NFT marketplaces, peer to peer, swapping platforms, and blockchain bridges. When non-custodial is used with regard to these platforms then assets are locked up in smart contracts, and no person has custody over the assets as they are secured by the code of the smart contract. If your wallet is non-custodial this means that only you have the ability to recover access to your wallet. This means that you should store your recovery seed and a backup of your password in a very secure location"},
+  {
+    "name": "Browser Extension",
+    "description": "A browser extension is an application that lives in your browser and can be injected into websites and dApps, allowing you to interact with them. The most common browser extensions in the crypto world are light wallets that allow users to interact with dApps such as NFT marketplaces and other blockchain based websites and dApps. Other things such as ad-blockers and coupon applications are also browser extensions. Browser extensions are often located in the top right hand corner of your browser, inline with the search bar."}
+]
