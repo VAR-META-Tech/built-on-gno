@@ -14,12 +14,6 @@
       "pathname": "BoardGame",
       "status": "active",
       "description": "A sub-category dedicated to board games that leverage blockchain technology, including digital versions of classic board games and new on-chain board game experiences."
-    },
-    {
-      "name": "Retro",
-      "pathname": "Retro",
-      "status": "active",
-      "description": "A sub-category focused on retro-themed projects and experiences, emphasizing nostalgia and classic gaming, with a twist of modern blockchain technology."
     }
   ]
 }
