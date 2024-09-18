@@ -3,13 +3,23 @@
   "description": "A category focused on games and gaming experiences, including on-chain games, NFT-based games, and interactive entertainment. This category highlights the intersection of gaming with blockchain technology and digital art.",
   "pathname": "Games",
   "status": "active",
-  "tags": [],
+  "tags": [
+    "Games & Gaming",
+    "Board Game",
+    "NFT Collections"
+  ],
   "sub_categories": [
     {
-      "name": "BoardGame",
+      "name": "Board Game",
       "pathname": "BoardGame",
       "status": "active",
       "description": "A sub-category dedicated to board games that leverage blockchain technology, including digital versions of classic board games and new on-chain board game experiences."
+    },
+    {
+      "name": "Retro",
+      "pathname": "Retro",
+      "status": "active",
+      "description": "A sub-category focused on retro-themed projects and experiences, emphasizing nostalgia and classic gaming, with a twist of modern blockchain technology."
     }
   ]
 }
