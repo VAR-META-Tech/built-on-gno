@@ -52,7 +52,7 @@ const EventList: FC<Props> = ({ data }) => {
                   className="group"
                 >
                   <VStack className="relative col-span-1 h-full w-full cursor-pointer overflow-hidden rounded-3xl px-8 py-7 shadow-[0_3px_6px_rgb(0,0,0,0.1)] transition-all duration-200 ease-linear dark:bg-white/5">
-                    <span className="absolute right-0 top-0 z-0 h-36 w-36 -translate-y-1/2 translate-x-1/2 rounded-full bg-gray-300 transition-all duration-700 ease-out group-hover:scale-[900%] dark:bg-white/10" />
+                    <span className="absolute right-0 top-0 z-0 h-36 w-36 -translate-y-1/2 translate-x-1/2 rounded-full bg-gray-300 transition-all duration-700 ease-out group-hover:scale-[1000%] dark:bg-white/10" />
 
                     <LogoGno width={64} height={64} className="z-10" />
                     <span className="z-10 font-medium opacity-50">{`${startDate} - ${endDate}`}</span>
