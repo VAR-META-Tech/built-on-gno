@@ -32,7 +32,7 @@ export async function creatorSubCategory(subPath: string) {
     const category = new Categories()
     category.name = detail.name
     category.description = detail.description
-    category.parentId = cat.id
+    category.parentId = cat.parentId
 
     const created = await connection.getRepository(Categories).save(category)
 
