@@ -15,17 +15,28 @@ import 'dotenv/config'
 import { DataReturn } from './classificationCase'
 import { deleteProject } from './utils/deleteProject'
 
-function getCategoryName(projectFolder: string): string {
+function getCategoryName(projectFolder: string): {
+  category: string
+  subCategory: string
+} {
   const array = projectFolder.split('/')
-  return array[array.length - 2]
+  return {
+    category: array[array.length - 3],
+    subCategory: array[array.length - 2],
+  }
 }
 
 async function getCategory(projectFolder: string) {
-  const name = getCategoryName(projectFolder)
+  const { category: parent, subCategory } = getCategoryName(projectFolder)
+  console.log({ projectFolder, parent, subCategory })
 
   const category = await connection
     .getRepository(Categories)
-    .findOneBy({ name })
+    .createQueryBuilder('category')
+    .leftJoin('category.parent', 'parent')
+    .where('category.name = :name', { name: subCategory })
+    .andWhere('parent.name = :parent', { parent })
+    .getOne()
 
   return category
 }
