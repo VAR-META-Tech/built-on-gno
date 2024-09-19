@@ -8,5 +8,10 @@
     "key": "toolkit",
     "label": "Toolkit",
     "status": "active"
+  },
+  {
+    "key": "testnet",
+    "label": "Testnet",
+    "status": "active"
   }
 ]
