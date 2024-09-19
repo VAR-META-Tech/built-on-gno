@@ -38,7 +38,7 @@ const Jettons = () => {
             </Link> */}
         </div>
         <p className="text-sm text-gray-500 dark:text-white">
-          Jettons are custom fungible tokens on the GNO Blockchain
+          Tokens are custom fungible tokens on the GNO Blockchain
         </p>
       </div>
       <Table>

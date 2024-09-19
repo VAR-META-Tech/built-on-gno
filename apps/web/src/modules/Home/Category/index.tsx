@@ -36,7 +36,7 @@ export const Category = ({ id, name, description }: ICategory) => {
                 </span>
               </p>
 
-              {data?.data?.length > 6 && (
+              {data?.pagination?.total_items > 6 && (
                 <Link href={`${ROUTES.CATEGORY}/${id}`}>
                   <p className="dark:bg-primary-dark dark:hover:bg-primary-dark/35 hover:bg-light flex items-center justify-around gap-2 whitespace-nowrap rounded-3xl border border-gray-500/50 bg-white px-3 py-1 font-medium">
                     See all <ChevronRightIcon />
