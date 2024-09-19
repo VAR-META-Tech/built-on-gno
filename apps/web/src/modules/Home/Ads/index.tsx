@@ -14,20 +14,23 @@ const Ads = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [progress, setProgress] = useState(0)
 
-  const selectedProjects = projects.data.slice(0, 3)
+  const selectedProjects = projects?.data?.slice(0, 3)
   const currentProject = selectedProjects[currentIndex]
 
+  let nextAdInterval: any
+  let progressInterval: any
+
   useEffect(() => {
-    const interval = setInterval(() => {
+    nextAdInterval = setInterval(() => {
       setProgress(0)
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % selectedProjects.length)
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % selectedProjects?.length)
     }, 5000)
 
-    return () => clearInterval(interval)
-  }, [selectedProjects.length])
+    return () => clearInterval(nextAdInterval)
+  }, [selectedProjects?.length, currentIndex])
 
   useEffect(() => {
-    const progressInterval = setInterval(() => {
+    progressInterval = setInterval(() => {
       setProgress((prev) => {
         if (prev < 100) return prev + 100 / 50
         clearInterval(progressInterval)
@@ -122,6 +125,8 @@ const Ads = () => {
               onClick={() => {
                 setCurrentIndex(index)
                 setProgress(0)
+                clearInterval(progressInterval)
+                clearInterval(nextAdInterval)
               }}
               className="w-full"
               key={index}
