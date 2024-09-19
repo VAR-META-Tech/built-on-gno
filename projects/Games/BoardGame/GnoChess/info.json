@@ -4,7 +4,11 @@
   ],
   "display_term": "GnoChess",
   "term": "GnoChess",
-  "tags": [],
+  "tags": [
+    "Games & Gaming",
+    "Board Game",
+    "NFT Collections"
+  ],
   "glossaries": [],
   "short_description": "GnoChess is an online chess server implementation with Gno.",
   "partnerships": [],
