@@ -7,6 +7,13 @@ import Link from 'next/link'
 import { ChevronRightIcon } from '@var-meta/icons'
 import CardPreview from '@repo/ui/src/card/CardPreview'
 
+const exceptionText = [
+  {
+    name: 'devtools',
+    value: 'Dev Tools',
+  },
+]
+
 export const Category = ({ id, name, description }: ICategory) => {
   const { data = DEFAULT_API_RETURN, isLoading } = useProjects({
     category_id: id,
@@ -21,19 +28,25 @@ export const Category = ({ id, name, description }: ICategory) => {
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between">
               <p className="text-xl font-bold lg:text-3xl">
-                {name}{' '}
+                {exceptionText.find(
+                  (item) => item?.name === String(name).toLowerCase(),
+                )?.value || name}{' '}
                 <span className="text-xl text-gray-500">
                   {data.pagination.total_items || '-'}
                 </span>
               </p>
 
-              <Link href={`${ROUTES.CATEGORY}/${id}`}>
-                <p className="dark:bg-primary-dark dark:hover:bg-primary-dark/35 hover:bg-light flex items-center justify-around gap-2 whitespace-nowrap rounded-3xl border border-gray-500/50 bg-white px-3 py-1 font-medium">
-                  See all <ChevronRightIcon />
-                </p>
-              </Link>
+              {data?.data?.length > 6 && (
+                <Link href={`${ROUTES.CATEGORY}/${id}`}>
+                  <p className="dark:bg-primary-dark dark:hover:bg-primary-dark/35 hover:bg-light flex items-center justify-around gap-2 whitespace-nowrap rounded-3xl border border-gray-500/50 bg-white px-3 py-1 font-medium">
+                    See all <ChevronRightIcon />
+                  </p>
+                </Link>
+              )}
             </div>
-            <p className="text-sm text-gray-500 dark:text-white">{description}</p>
+            <p className="text-sm text-gray-500 dark:text-white">
+              {description}
+            </p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">

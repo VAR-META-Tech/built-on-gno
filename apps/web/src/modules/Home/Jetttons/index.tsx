@@ -29,7 +29,7 @@ const Jettons = () => {
     <VStack spacing={20}>
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
-          <p className="text-xl font-bold lg:text-3xl">Jettons</p>
+          <p className="text-xl font-bold lg:text-3xl">Tokens</p>
 
           {/* <Link href={`${ROUTES.CATEGORY}/${id}`}>
               <p className="dark:bg-primary-dark dark:hover:bg-primary-dark/35 hover:bg-light flex items-center justify-around gap-2 whitespace-nowrap rounded-3xl border border-gray-500/50 bg-white px-3 py-1 font-medium">

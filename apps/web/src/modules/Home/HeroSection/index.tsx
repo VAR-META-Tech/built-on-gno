@@ -146,7 +146,7 @@ const HeroTabItem = ({
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="dark:bg-primary-dark dark:hover:bg-primary-dark/35 cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all hover:bg-white"
+        className="dark:bg-primary-dark dark:hover:bg-primary-dark/35 hover:bg-secondary cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all duration-200 ease-linear hover:text-white"
       >
         {cat.name}
       </div>
