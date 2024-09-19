@@ -6,6 +6,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  Show,
 } from '@var-meta/ui'
 import { notFound, useParams } from 'next/navigation'
 import ReactMarkDown from 'react-markdown'
@@ -59,7 +60,9 @@ const DetailProject = () => {
         </div>
         <div className="col-span-12 flex w-full flex-col gap-6 lg:col-span-4">
           <CardInfo data={data!} />
-          <h2 className="px-4 text-3xl font-bold">Glossary</h2>
+          <Show when={(data?.glossaryProjects || []).length > 0}>
+            <h2 className="px-4 text-3xl font-bold">Glossary</h2>
+          </Show>
           <Accordion
             type="multiple"
             divider
