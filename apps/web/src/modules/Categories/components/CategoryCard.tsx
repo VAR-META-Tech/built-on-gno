@@ -49,7 +49,7 @@ const CategoryCard: FC<Props> = ({ category }) => {
         <span className="text-xl font-semibold lg:text-2xl">
           {category?.name}{' '}
           <span className="text-end text-base font-semibold text-gray-400 lg:text-lg">
-            {projects?.data?.length}
+            {projects?.pagination.total_items}
           </span>
         </span>
 
