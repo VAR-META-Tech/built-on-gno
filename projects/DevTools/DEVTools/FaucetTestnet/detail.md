@@ -1,0 +1,3 @@
+A faucet for GNOTs for those testing tools on the Cardano testnet, so they don't have to spend real GNO to test products, services, and tools.
+
+GNOTs, also known as testnet GNO, have no real 'value' but allow users to test products, services, and tools being built on Cardano without putting their real, mainchain GNO at risk. GNOTs only exist on the testnet and cannot be transferred to the mainchain. Vice versa, real GNO cannot be sent to the testnet.
