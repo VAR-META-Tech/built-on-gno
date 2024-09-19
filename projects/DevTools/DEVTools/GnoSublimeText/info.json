@@ -1,0 +1,20 @@
+{
+  "industry": [
+    "Developer Tools"
+  ],
+  "display_term": "Gno Sublime Text",
+  "term": "GnoSublimeText",
+  "tags": [
+    "Toolkit"
+  ],
+  "glossaries": [],
+  "short_description": "Gno syntax highlighting for Sublime Text.​",
+  "partnerships": [],
+  "author": "builtongno",
+  "social": {
+    "github": "https://github.com/gno-playground/gno-sublime-text",
+    "x-twitter": "https://x.com/_gnoland",
+    "discord": "https://discord.com/invite/YFtMjWwUN7",
+    "linkedin": "https://www.linkedin.com/company/gnoland/"
+  }
+}
