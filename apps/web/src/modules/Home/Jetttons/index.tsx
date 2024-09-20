@@ -71,7 +71,7 @@ const Jettons = () => {
         </TableBody>
 
         <div className="absolute left-[15%] top-[50%] md:left-[35%] lg:left-[45%]">
-          <h1 className="font-montserrat dark:animate-typingDark animate-typingLight text-secondary overflow-hidden whitespace-nowrap border-r-4 border-r-white py-3 text-xl font-bold italic transition-all md:text-2xl lg:text-[2.5rem]">
+          <h1 className="font-montserrat dark:animate-typingDark animate-typingLight dark:text-light text-secondary overflow-hidden whitespace-nowrap border-r-4 border-r-white py-3 text-xl font-bold italic transition-all md:text-2xl lg:text-[2.5rem]">
             Coming Soon
           </h1>
         </div>

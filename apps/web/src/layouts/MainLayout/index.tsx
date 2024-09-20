@@ -2,13 +2,17 @@
 
 import { AppContextProvider } from '@/context/app.context'
 import { FCC } from '@var-meta/ui'
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import Header from '../Header'
 import Footer from '../Footer'
 import { useTheme } from 'next-themes'
 
 const MainLayout: FCC = ({ children }) => {
   const { theme, setTheme } = useTheme()
+
+  useLayoutEffect(() => {
+    setTheme('light')
+  }, [])
 
   return (
     <AppContextProvider value={{ theme, setTheme }}>

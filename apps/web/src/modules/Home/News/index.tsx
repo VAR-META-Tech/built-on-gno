@@ -290,7 +290,7 @@ const News = () => {
               key={index}
               href={GNO_LAND_URL + item.url}
               target="_blank"
-              className="group flex cursor-pointer flex-nowrap items-start gap-4"
+              className="group flex cursor-pointer flex-nowrap items-start gap-4 pb-2.5"
             >
               <div className="py-1">
                 <LogoGno width={28} height={28} />
