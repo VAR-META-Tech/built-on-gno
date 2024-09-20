@@ -3,9 +3,10 @@ import { DEFAULT_API_RETURN } from '@/constants'
 import React, { useCallback, useEffect, useState } from 'react'
 import AdInfo from './AdInfo'
 import AdImage from './AdImage'
+import { Skeleton } from '@var-meta/ui'
 
 const Ads = () => {
-  const { data: projects = DEFAULT_API_RETURN } = useProjects()
+  const { data: projects = DEFAULT_API_RETURN, isLoading } = useProjects()
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [progress, setProgress] = useState<number>(0)
 
@@ -45,6 +46,10 @@ const Ads = () => {
     },
     [progressInterval, nextAdInterval],
   )
+
+  if (isLoading) {
+    return <Skeleton className="z-20 h-full min-h-80 flex-[3] rounded-3xl" />
+  }
 
   return (
     <div className="flex h-80 min-h-80 flex-[3] flex-col overflow-hidden rounded-3xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] md:flex-row dark:border dark:border-white/10">

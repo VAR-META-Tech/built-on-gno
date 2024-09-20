@@ -38,7 +38,12 @@ const EventList: FC<Props> = ({ data }) => {
     <div className="space-y-5">
       {sortedYears.map((year) => (
         <div key={year} className="space-y-5">
-          <h2 className="text-2xl font-bold">{year}</h2>
+          <h2 className="text-2xl font-bold">
+            {year}{' '}
+            <span className="text-end text-base font-semibold text-gray-400 lg:text-lg">
+              {eventsByYear[year]?.length}
+            </span>
+          </h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {eventsByYear[year]?.map((event, index) => {
               const startDate = format(new Date(event.start), 'dd MMM')
