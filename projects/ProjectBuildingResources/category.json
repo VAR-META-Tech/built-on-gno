@@ -1,0 +1,18 @@
+{
+  "name": "Project Building Resources",
+  "description": "Resources and tools designed to assist developers and teams in building and launching projects within the blockchain ecosystem. This includes documentation, frameworks, APIs, and financial support opportunities such as grants and funding programs.",
+  "pathname": "ProjectBuildingResources",
+  "status": "active",
+  "tags": [
+    "Fundraising",
+    "Community"
+  ],
+  "sub_categories": [
+    {
+      "name": "Funding",
+      "pathname": "Funding",
+      "status": "active",
+      "description": "Financial resources and grants available to support developers and projects in the blockchain space. This category aims to facilitate innovation and growth by providing necessary funding for promising ideas and initiatives."
+    }
+  ]
+}

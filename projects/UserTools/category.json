@@ -1,0 +1,19 @@
+{
+  "name": "User Tools",
+  "description": "User tools are designed to enhance the end-user experience by providing seamless interactions with blockchain operations, wallets, and other related services. These tools focus on accessibility, usability, and efficiency, catering to a wide range of users, from beginners to advanced participants in the blockchain ecosystem.",
+  "pathname": "UserTools",
+  "status": "active",
+  "tags": [
+    "User Tools",
+    "Ecosystem",
+    "Education"
+  ],
+  "sub_categories": [
+    {
+      "name": "Ecosystem",
+      "pathname": "Ecosystem",
+      "status": "active",
+      "description": "A broad category encompassing all the tools, services, and components that make up the blockchain network. It includes infrastructure elements, development resources, and integration tools that help in building, maintaining, and expanding the blockchain ecosystem."
+    }
+  ]
+}

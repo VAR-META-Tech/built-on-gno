@@ -36,6 +36,12 @@
       "pathname": "Youtube",
       "status": "active",
       "description": "A platform for sharing and viewing videos. Youtube is a popular medium for content creators to reach a wide audience and engage with viewers through video content."
+    },
+    {
+      "name": "Club",
+      "pathname": "Club",
+      "status": "active",
+      "description": "A community-driven platform for sharing and engaging with content related to specific interests, such as memes, discussions, and events. Clubs provide a space for members to connect, collaborate, and participate in activities that foster a sense of belonging."
     }
   ]
 }
