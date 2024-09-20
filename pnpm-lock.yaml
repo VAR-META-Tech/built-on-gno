@@ -132,6 +132,9 @@ importers:
       next-themes:
         specifier: ^0.3.0
         version: 0.3.0(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522)
+      next-view-transitions:
+        specifier: ^0.3.1
+        version: 0.3.1(next@15.0.0-rc.0(@babel/core@7.25.2)(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522))(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522)
       react:
         specifier: 19.0.0-rc-f994737d14-20240522
         version: 19.0.0-rc-f994737d14-20240522
@@ -5426,6 +5429,13 @@ packages:
     peerDependencies:
       react: ^16.8 || ^17 || ^18
       react-dom: ^16.8 || ^17 || ^18
+
+  next-view-transitions@0.3.1:
+    resolution: {integrity: sha512-6MSYp9KxqnXUK/UU08D5X+OwssFKQl407TEEGiuid0KpyPPJxKqtNzRBQz1GzFRY+7esvi+7kijoeNEtr2dX/w==}
+    peerDependencies:
+      next: ^14.0.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
 
   next@15.0.0-rc.0:
     resolution: {integrity: sha512-IWcCvxUSCAuOK5gig4+9yiyt/dLKpIa+WT01Qcx4CBE4TtwJljyTDnCVVn64jDZ4qmSzsaEYXpb4DTI8qbk03A==}
@@ -14928,6 +14938,12 @@ snapshots:
 
   next-themes@0.3.0(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522):
     dependencies:
+      react: 19.0.0-rc-f994737d14-20240522
+      react-dom: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
+
+  next-view-transitions@0.3.1(next@15.0.0-rc.0(@babel/core@7.25.2)(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522))(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522):
+    dependencies:
+      next: 15.0.0-rc.0(@babel/core@7.25.2)(react-dom@19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522))(react@19.0.0-rc-f994737d14-20240522)
       react: 19.0.0-rc-f994737d14-20240522
       react-dom: 19.0.0-rc-f994737d14-20240522(react@19.0.0-rc-f994737d14-20240522)
 

@@ -1,7 +1,7 @@
 import LogoGno from '@/components/LogoGno'
 import { GNO_LAND_URL } from '@/utils/const'
 import { HStack, VStack } from '@var-meta/ui'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import React, { useState, useEffect, useCallback } from 'react'
 
 interface NewsItem {

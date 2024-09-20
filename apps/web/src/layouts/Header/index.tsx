@@ -2,7 +2,8 @@
 import { Github } from '@repo/ui'
 // import { Dice5Icon } from '@var-meta/icons'
 import { HStack } from '@var-meta/ui'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
+
 // import { useRouter } from 'next/navigation'
 // import { useState } from 'react'
 // import { useDebouncedValue } from '@mantine/hooks'

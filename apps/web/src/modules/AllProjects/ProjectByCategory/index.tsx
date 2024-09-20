@@ -3,7 +3,7 @@ import { DEFAULT_API_RETURN } from '@/constants'
 import { ROUTES } from '@/lib/routes'
 import { ICategory } from '@repo/ui'
 import { Avatar, Skeleton } from '@var-meta/ui'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 
 export const ProjectByCategory = ({ id, name }: ICategory) => {
   const { data = DEFAULT_API_RETURN, isLoading } = useProjects({

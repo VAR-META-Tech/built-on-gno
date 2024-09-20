@@ -10,7 +10,7 @@ import {
 import { ROUTES } from '@/lib/routes'
 import { AlignJustifyIcon, SearchLgIcon } from '@var-meta/icons'
 import { CloseIcon, cn, HStack } from '@var-meta/ui'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import React, { useState } from 'react'
 import SearchModal from './SearchModal'
 

@@ -1,7 +1,7 @@
 import { ROUTES } from '@/lib/routes'
 import { ICategoriesResponse, ICategory } from '@repo/ui'
 
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { useEffect, useState } from 'react'
 import Slider, { Settings } from 'react-slick'
 import LogoGno from '@/components/LogoGno'

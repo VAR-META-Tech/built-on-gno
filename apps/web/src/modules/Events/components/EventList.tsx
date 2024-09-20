@@ -3,7 +3,7 @@ import { IEvent } from '../utils/type'
 import LogoGno from '@/components/LogoGno'
 import { format } from 'date-fns'
 import { VStack } from '@var-meta/ui'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 
 interface Props {
   data: IEvent[]

@@ -2,8 +2,8 @@
 import { ROUTES } from '@/lib/routes'
 import { Button } from '@repo/ui'
 import { ArrowLeftIcon } from '@var-meta/icons'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { Link } from 'next-view-transitions'
 
 export default function NotFound() {
   const { back } = useRouter()

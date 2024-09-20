@@ -1,7 +1,8 @@
 import { ROUTES } from '@/lib/routes'
 import { cn } from '@var-meta/ui'
-import Link from 'next/link'
-import React, { forwardRef, HTMLAttributes } from 'react'
+import { Link } from 'next-view-transitions'
+
+import React, { forwardRef, HTMLAttributes, memo } from 'react'
 import LogoGno from './LogoGno'
 
 interface ILogoProps extends HTMLAttributes<HTMLAnchorElement> {
@@ -29,4 +30,4 @@ const Logo = forwardRef<HTMLAnchorElement, ILogoProps>(
 
 Logo.displayName = 'Logo'
 
-export default Logo
+export default memo(Logo)
