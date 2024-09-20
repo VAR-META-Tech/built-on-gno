@@ -1,9 +1,10 @@
 'use client'
-import { Footer, Header } from '@/layouts'
+
 import '@/styles/global.css'
+import MainLayout from '@/layouts/MainLayout'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import ThemeProvider from '@/themes/ThemeProvider'
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Noto_Sans } from 'next/font/google'
 
 const noto = Noto_Sans({
@@ -38,13 +39,7 @@ const RootLayout = ({
       >
         <ThemeProvider>
           <QueryClientProvider client={queryClient}>
-            <>
-              <Header />
-              <div className='pt-24 bg-light min-h-screen dark:bg-primary'>
-                {children}
-              </div>
-              <Footer />
-            </>
+            <MainLayout>{children}</MainLayout>
           </QueryClientProvider>
         </ThemeProvider>
       </body>

@@ -14,6 +14,7 @@ import { logger } from '@/utils/logger'
 import 'dotenv/config'
 import { DataReturn } from './classificationCase'
 import { deleteProject } from './utils/deleteProject'
+import { CategoryJSON } from '@/shared/schema/CategoryKJSON'
 
 function getCategoryName(projectFolder: string): {
   category: string
@@ -28,14 +29,22 @@ function getCategoryName(projectFolder: string): {
 
 async function getCategory(projectFolder: string) {
   const { category: parent, subCategory } = getCategoryName(projectFolder)
-  console.log({ projectFolder, parent, subCategory })
+ 
+  const dataString = await fsWrapper.readFile(`${parent}/category.json`)
+  const data: CategoryJSON = JSON.parse(dataString)
+
+  const categoryName = data.name
+
+  const subCategoryName = data.sub_categories.find(
+    (entity) => entity.pathname === subCategory,
+  )
 
   const category = await connection
     .getRepository(Categories)
     .createQueryBuilder('category')
     .leftJoin('category.parent', 'parent')
-    .where('category.name = :name', { name: subCategory })
-    .andWhere('parent.name = :parent', { parent })
+    .where('category.name = :name', { name: subCategoryName })
+    .andWhere('parent.name = :parent', { parent: categoryName })
     .getOne()
 
   return category

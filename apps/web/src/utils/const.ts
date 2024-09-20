@@ -1,0 +1,1 @@
+export const GNO_LAND_URL = "https://gno.land"

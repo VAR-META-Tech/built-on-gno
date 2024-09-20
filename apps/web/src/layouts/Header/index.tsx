@@ -7,17 +7,17 @@ import Link from 'next/link'
 // import { useState } from 'react'
 // import { useDebouncedValue } from '@mantine/hooks'
 // import ToggleThemeButton from '@/components/ToggleThemeButton'
-import { useTheme } from 'next-themes'
 import { NavbarDesktop, NavbarMobile } from './components/Navbar'
 import Logo from '@/components/Logo'
 import ToggleThemeButton from '@/components/ToggleThemeButton'
 import SearchInput from '@/components/SearchInput'
 import { usePathname } from 'next/navigation'
 import { ROUTES } from '@/lib/routes'
+import { useAppContext } from '@/context/app.context'
 
 const Header = () => {
   const pathname = usePathname()
-  const { theme } = useTheme()
+  const { theme } = useAppContext()
   // const { mutateAsync, isPending } = useRandomProject()
   // const [search, setSearch] = useState('')
   // const [searchDebounced] = useDebouncedValue(search, 200)
@@ -69,7 +69,7 @@ const Header = () => {
           >
             <Github
               className="h-6 w-6"
-              color={theme === 'dark' ? 'white' : 'black'}
+              color={theme !== 'light' ? 'white' : 'black'}
             />
           </Link>
 
