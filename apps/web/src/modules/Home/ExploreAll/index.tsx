@@ -21,9 +21,9 @@ export const ExploreAll = () => {
         <Link
           href="https://github.com/VAR-META-Tech/built-on-gno/issues"
           target="_blank"
-          className="inline-flex w-fit items-center gap-1"
+          className="inline-flex w-fit items-baseline gap-1"
         >
-          <Github className="h-5 w-5" color="#00A0F0" />{' '}
+          <Github className="h-5 w-5 self-center" color="#00A0F0" />{' '}
           <span className="text-lg text-[#00A0F0]">github</span>
         </Link>{' '}
         if you have one or many projects/tools built with

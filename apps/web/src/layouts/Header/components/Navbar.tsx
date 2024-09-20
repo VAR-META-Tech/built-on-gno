@@ -53,7 +53,7 @@ const NavbarDesktop = () => {
             key={item.name}
             label={item.name}
             href={item.href}
-            className="px-4 text-black/60 transition-all duration-200 ease-in-out hover:bg-gray-100 hover:text-black active:scale-90 hover:dark:bg-white/10"
+            className="px-4 text-black/60 transition-all duration-200 ease-in-out hover:bg-gray-100 hover:text-black active:scale-90 dark:text-white/60 hover:dark:bg-white/10 hover:dark:text-white"
           />
         ))}
       </ul>
