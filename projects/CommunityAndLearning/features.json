@@ -73,5 +73,10 @@
     "key": "onChain",
     "label": "On-chain",
     "status": "active"
+  },
+  {
+    "key": "club",
+    "label": "Club",
+    "status": "active"
   }
 ]
