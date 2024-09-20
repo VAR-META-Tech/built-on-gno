@@ -35,7 +35,7 @@ const EventList: FC<Props> = ({ data }) => {
   )
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-16">
       {sortedYears.map((year) => (
         <div key={year} className="space-y-5">
           <h2 className="text-2xl font-bold">

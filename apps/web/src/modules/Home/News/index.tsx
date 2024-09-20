@@ -276,8 +276,8 @@ const News = () => {
 
   return (
     <div className="dark:bg-primary-dark h-80 flex-1 overflow-hidden rounded-3xl bg-white">
-      <HStack className="h-[3.25rem] border-b border-black/10 px-4 py-3 dark:border-white/10">
-        <span className="text-xl font-bold dark:text-white">News</span>
+      <HStack className="h-[3.25rem] px-4 py-3 dark:border-white/10">
+        <span className="text-2xl font-bold dark:text-white">News</span>
       </HStack>
       <VStack
         spacing={16}

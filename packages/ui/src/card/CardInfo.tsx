@@ -83,7 +83,7 @@ export const CardInfo = ({ data }: { data: IProjectDetail | undefined }) => {
               href={url}
               key={id}
               target="_blank"
-              className="relative border-secondary border h-10 w-10 overflow-hidden rounded-full transition-all duration-300 ease-in-out hover:opacity-50"
+              className="relative h-10 w-10 overflow-hidden rounded-full transition-all duration-300 ease-in-out hover:scale-110"
             >
               <Image
                 alt={social.name}
