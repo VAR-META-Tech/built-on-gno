@@ -1,0 +1,23 @@
+{
+  "industry": [
+    "Project Building",
+    "Resources",
+    "Funding"
+  ],
+  "display_term": "Gno.land Grants",
+  "term": "GnoGrants",
+  "tags": [
+    "Fundraising",
+    "Community"
+  ],
+  "glossaries": [],
+  "short_description": "​The gno.land grants program provides financial support to developers interested in new blockchain technology, and/or are already actively contributing to gno.land.",
+  "partnerships": [],
+  "author": "builtongno",
+  "social": {
+    "github": "https://github.com/gnolang/grants",
+    "x-twitter": "https://twitter.com/_gnoland",
+    "discord": "https://discord.com/channels/957002220384182312/957704857261834340",
+    "telegram": "https://t.me/gnoland"
+  }
+}
