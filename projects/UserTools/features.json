@@ -1,0 +1,12 @@
+[
+  {
+    "key": "ecosystem",
+    "label": "Ecosystem",
+    "status": "active"
+  },
+  {
+    "key": "userTools",
+    "label": "User Tools",
+    "status": "active"
+  }
+]
