@@ -89,8 +89,8 @@ const HeroSection = ({ categories, totalProjects }: Props) => {
       <p className="text-center text-[3rem] font-bold transition-all">
         Explore <span className="!text-secondary lowercase">{qty}</span> in
         <span className="inline-flex w-fit items-center">
-          <span>&nbsp;Gn</span>
-          <LogoGno className="-mb-3" />
+          <span>&nbsp;Gno</span>
+          {/* <LogoGno className="-mb-3" /> */}
           &nbsp;
         </span>
         Ecosystem

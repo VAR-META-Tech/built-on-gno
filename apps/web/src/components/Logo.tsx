@@ -20,9 +20,9 @@ const Logo = forwardRef<HTMLAnchorElement, ILogoProps>(
         {...props}
       >
         <span className="text-primary hidden text-nowrap pb-3.5 text-2xl font-bold tracking-wide sm:flex md:text-[2rem] dark:text-white">
-          Built on gn
+          Built on gno
         </span>
-        <LogoGno width={width} height={height} />
+        {/* <LogoGno width={width} height={height} /> */}
       </Link>
     )
   },

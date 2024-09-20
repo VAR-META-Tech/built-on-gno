@@ -11,8 +11,8 @@ export const ExploreAll = () => {
       <p className="text-md text-center font-medium md:max-w-[50%] lg:text-lg">
         Listed below are the top crypto coins and tokens used for the
         <span className="inline-flex w-fit items-center">
-          <span className="">&nbsp;Gn</span>
-          <LogoGno width={20} height={20} className="-mb-1" />
+          <span className="">&nbsp;Gno</span>
+          {/* <LogoGno width={20} height={20} className="-mb-1" /> */}
           <span>.land&nbsp;</span>
         </span>
         Ecosystem. They are listed in size by many contributors. We welcome you
@@ -28,8 +28,8 @@ export const ExploreAll = () => {
         </Link>{' '}
         if you have one or many projects/tools built with
         <span className="inline-flex w-fit items-center">
-          <span>&nbsp;Gn</span>
-          <LogoGno width={20} height={20} className="-mb-1" />
+          <span>&nbsp;Gno</span>
+          {/* <LogoGno width={20} height={20} className="-mb-1" /> */}
           <span>.land.</span>
         </span>
       </p>
