@@ -1,0 +1,18 @@
+{
+  "industry": [
+    "User Tools",
+    "Ecosystem"
+  ],
+  "display_term": "Gno-api",
+  "term": "GnoApi",
+  "tags": [
+    "Education"
+  ],
+  "glossaries": [],
+  "short_description": "A proxy for ABCI queries and txs endpoint used by keplr wallet.",
+  "partnerships": [],
+  "author": "builtongno",
+  "social": {
+    "github": "https://github.com/disperze/gno-api"
+  }
+}
