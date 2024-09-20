@@ -1,0 +1,17 @@
+[
+  {
+    "key": "projectBuilding",
+    "label": "Project Building",
+    "status": "active"
+  },
+  {
+    "key": "resources",
+    "label": "Resources",
+    "status": "active"
+  },
+  {
+    "key": "funding",
+    "label": "Funding",
+    "status": "active"
+  }
+]
