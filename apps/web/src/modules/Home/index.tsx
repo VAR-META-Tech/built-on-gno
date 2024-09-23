@@ -1,4 +1,5 @@
 'use client'
+
 import React from 'react'
 import HeroSection from '@/modules/Home/HeroSection'
 import { useCategories, useProjects } from '@/apis'

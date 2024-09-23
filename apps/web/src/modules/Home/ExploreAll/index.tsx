@@ -2,7 +2,6 @@ import { ROUTES } from '@/lib/routes'
 import { Button, Github } from '@repo/ui'
 import { Grid01Icon } from '@var-meta/icons'
 import { Link } from 'next-view-transitions'
-import LogoGno from '@/components/LogoGno'
 
 export const ExploreAll = () => {
   return (

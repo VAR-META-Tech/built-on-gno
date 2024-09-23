@@ -9,7 +9,8 @@ interface ILogoProps extends HTMLAttributes<HTMLAnchorElement> {
 }
 
 const LogoGno = forwardRef<HTMLAnchorElement, ILogoProps>(
-  ({ className, width = 42, height = 42 }) => {
+  // eslint-disable-next-line no-unused-vars
+  ({ className, width = 42, height = 42 }, ref) => {
     const { theme } = useAppContext()
 
     const renderIcon = useMemo(() => {

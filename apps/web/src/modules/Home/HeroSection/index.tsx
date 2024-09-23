@@ -4,7 +4,6 @@ import { ICategoriesResponse, ICategory } from '@repo/ui'
 import { Link } from 'next-view-transitions'
 import { useEffect, useState } from 'react'
 import Slider, { Settings } from 'react-slick'
-import LogoGno from '@/components/LogoGno'
 import SearchInput from '@/components/SearchInput'
 
 // interface ITab {
