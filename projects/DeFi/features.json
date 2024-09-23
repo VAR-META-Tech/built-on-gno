@@ -70,11 +70,6 @@
     "status": "active"
   },
   {
-    "key": "dao",
-    "label": "Dao",
-    "status": "active"
-  },
-  {
     "key": "decentralization",
     "label": "Decentralization",
     "status": "active"
@@ -95,7 +90,7 @@
     "status": "active"
   },
   {
-    "key": "non-fungibletoken",
+    "key": "nonFungibletoken",
     "label": "Non-fungible token",
     "status": "active"
   },

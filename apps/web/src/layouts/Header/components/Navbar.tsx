@@ -10,7 +10,7 @@ import {
 import { ROUTES } from '@/lib/routes'
 import { AlignJustifyIcon, SearchLgIcon } from '@var-meta/icons'
 import { CloseIcon, cn, HStack } from '@var-meta/ui'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import React, { useState } from 'react'
 import SearchModal from './SearchModal'
 
@@ -18,6 +18,10 @@ const NavList = [
   {
     name: 'Categories',
     href: ROUTES.CATEGORIES,
+  },
+  {
+    name: 'Events',
+    href: ROUTES.EVENTS,
   },
 ]
 
@@ -33,7 +37,7 @@ const NavItem = ({
   return (
     <Link
       href={href}
-      className={cn('w-full rounded-lg py-2.5 font-semibold', className)}
+      className={cn('w-full rounded-lg py-2.5 font-medium', className)}
     >
       {label}
     </Link>
@@ -49,7 +53,7 @@ const NavbarDesktop = () => {
             key={item.name}
             label={item.name}
             href={item.href}
-            className="px-4 hover:bg-gray-100 hover:dark:bg-white/10"
+            className="px-4 text-black/60 transition-all duration-200 ease-in-out hover:bg-gray-100 hover:text-black active:scale-90 dark:text-white/60 hover:dark:bg-white/10 hover:dark:text-white"
           />
         ))}
       </ul>

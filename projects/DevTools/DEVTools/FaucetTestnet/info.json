@@ -1,0 +1,25 @@
+{
+  "industry": [
+    "Developer Tools",
+    "DEV Tools"
+  ],
+  "display_term": "Testnet (GNOTs) Faucet",
+  "term": "TestnetFaucet",
+  "tags": [
+    "Testnet",
+    "Blockchain Operations",
+    "Wallet",
+    "Toolkit"
+  ],
+  "glossaries": [],
+  "short_description": "A faucet for GNOTs for those testing tools on the Cardano testnet​",
+  "partnerships": [],
+  "author": "builtongno",
+  "social": {
+    "website": "https://faucet.gno.land/",
+    "github": "https://github.com/gnolang/gno",
+    "x-twitter": "https://x.com/_gnoland",
+    "discord": "https://discord.com/invite/YFtMjWwUN7",
+    "linkedin": "https://www.linkedin.com/company/gnoland/"
+  }
+}

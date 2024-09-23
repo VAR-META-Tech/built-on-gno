@@ -1,0 +1,1 @@
+A proxy for ABCI queries and txs endpoint used by keplr wallet.

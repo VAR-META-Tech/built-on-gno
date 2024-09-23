@@ -6,6 +6,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  Show,
 } from '@var-meta/ui'
 import { notFound, useParams } from 'next/navigation'
 import ReactMarkDown from 'react-markdown'
@@ -41,8 +42,8 @@ const DetailProject = () => {
   if (isLoading) return <Loading />
 
   return (
-    <div className='container'>
-      <BreadCrumb data={breadcrumbList} className='mb-8'/>
+    <div className="container">
+      <BreadCrumb data={breadcrumbList} className="mb-8" />
 
       <div className="grid w-full grid-flow-row grid-cols-12 gap-4">
         <div className="col-span-12 lg:col-span-8">
@@ -59,15 +60,21 @@ const DetailProject = () => {
         </div>
         <div className="col-span-12 flex w-full flex-col gap-6 lg:col-span-4">
           <CardInfo data={data!} />
-          <h2 className="px-4 text-3xl font-bold">Glossary</h2>
+          <Show when={(data?.glossaryProjects || []).length > 0}>
+            <h2 className="px-4 text-3xl font-bold">Glossary</h2>
+          </Show>
           <Accordion
             type="multiple"
             divider
             defaultValue={[String(data?.glossaryProjects[0]?.id ?? '')]}
           >
-            <div className='space-y-4'>
+            <div className="space-y-4">
               {data?.glossaryProjects?.map(({ glossary, id }) => (
-                <AccordionItem value={String(id)} key={id} className='!border !border-gray rounded-lg shadow-xs shadow-secondary'>
+                <AccordionItem
+                  value={String(id)}
+                  key={id}
+                  className="!border-gray shadow-xs shadow-secondary rounded-lg !border"
+                >
                   <AccordionTrigger className="text-xl font-bold uppercase">
                     {glossary.name}
                   </AccordionTrigger>

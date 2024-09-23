@@ -56,7 +56,43 @@ const config = {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
-			}
+      },
+      keyframes: {
+        typing: {
+          '0%': {
+            width: '0%',
+            visibility: 'hidden',
+          },
+          '80%': {
+            width: '102%',
+          },
+          '100%': {
+            width: '102%',
+          },
+        },
+        blinkLight: {
+          '0%': {
+            borderColor: 'transparent',
+          },
+          '100%': {
+            borderColor: '#272728', // Light mode color
+          },
+        },
+        blinkDark: {
+          '0%': {
+            borderColor: 'transparent',
+          },
+          '100%': {
+            borderColor: 'white', // Dark mode color
+          },
+        },
+      },
+      animation: {
+        typingLight:
+          'typing 2s steps(20) infinite alternate, blinkLight .7s infinite',
+        typingDark:
+          'typing 2s steps(20) infinite alternate, blinkDark .7s infinite',
+      },
 		}
 	},
 	plugins: [createThemes(), require("tailwindcss-animate")],

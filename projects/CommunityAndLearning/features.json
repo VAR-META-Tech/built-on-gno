@@ -10,28 +10,13 @@
     "status": "active"
   },
   {
-    "key": "calendar",
-    "label": "Calendar",
-    "status": "active"
-  },
-  {
-    "key": "chat",
-    "label": "Chat",
-    "status": "active"
-  },
-  {
-    "key": "community_and_learning",
+    "key": "communityAndLearning",
     "label": "Community & Learning",
     "status": "active"
   },
   {
     "key": "education",
     "label": "Education",
-    "status": "active"
-  },
-  {
-    "key": "journalism",
-    "label": "Journalism",
     "status": "active"
   },
   {
@@ -45,13 +30,8 @@
     "status": "active"
   },
   {
-    "key": "meetups_and_events",
+    "key": "meetupsAndEvents",
     "label": "Meetups & Events",
-    "status": "active"
-  },
-  {
-    "key": "near_me",
-    "label": "Near Me",
     "status": "active"
   },
   {
@@ -65,78 +45,18 @@
     "status": "active"
   },
   {
-    "key": "nft_collections",
-    "label": "NFT Collections",
-    "status": "active"
-  },
-  {
-    "key": "nfv",
-    "label": "NFV",
-    "status": "active"
-  },
-  {
     "key": "onboarding",
     "label": "Onboarding",
     "status": "active"
   },
   {
-    "key": "real_time",
-    "label": "Real Time",
-    "status": "active"
-  },
-  {
-    "key": "social_media",
+    "key": "socialMedia",
     "label": "Social Media",
     "status": "active"
   },
   {
-    "key": "staking",
-    "label": "Staking",
-    "status": "active"
-  },
-  {
-    "key": "twitter_spaces",
-    "label": "Twitter Spaces",
-    "status": "active"
-  },
-  {
-    "key": "virtual_hubs",
-    "label": "Virtual Hubs",
-    "status": "active"
-  },
-  {
-    "key": "voting",
-    "label": "Voting",
-    "status": "active"
-  },
-  {
-    "key": "accelerator",
-    "label": "Accelerator",
-    "status": "active"
-  },
-  {
-    "key": "audit",
-    "label": "Audit",
-    "status": "active"
-  },
-  {
-    "key": "build_to_earn",
-    "label": "Build-to-earn",
-    "status": "active"
-  },
-  {
-    "key": "community_management",
+    "key": "communityManagement",
     "label": "Community Management",
-    "status": "active"
-  },
-  {
-    "key": "dao",
-    "label": "DAO",
-    "status": "active"
-  },
-  {
-    "key": "defi",
-    "label": "DeFi",
     "status": "active"
   },
   {
@@ -145,128 +65,18 @@
     "status": "active"
   },
   {
-    "key": "ecosystem",
-    "label": "Ecosystem",
-    "status": "active"
-  },
-  {
-    "key": "fractional_ownership",
-    "label": "Fractional Ownership",
-    "status": "active"
-  },
-  {
-    "key": "governance",
-    "label": "Governance",
-    "status": "active"
-  },
-  {
-    "key": "ido",
-    "label": "IDO",
-    "status": "active"
-  },
-  {
-    "key": "incubator",
-    "label": "Incubator",
-    "status": "active"
-  },
-  {
-    "key": "industry_solutions",
-    "label": "Industry Solutions",
-    "status": "active"
-  },
-  {
-    "key": "interactive",
-    "label": "Interactive",
-    "status": "active"
-  },
-  {
-    "key": "investment_management",
-    "label": "Investment Management",
-    "status": "active"
-  },
-  {
-    "key": "jobs",
-    "label": "Jobs",
-    "status": "active"
-  },
-  {
-    "key": "kyc",
-    "label": "KYC",
-    "status": "active"
-  },
-  {
-    "key": "nft_minting",
-    "label": "NFT Minting",
-    "status": "active"
-  },
-  {
-    "key": "nft_tools",
-    "label": "NFT Tools",
-    "status": "active"
-  },
-  {
-    "key": "proof_of_fact",
-    "label": "Proof-of-fact",
-    "status": "active"
-  },
-  {
-    "key": "proof_of_ownership",
-    "label": "Proof-of-ownership",
-    "status": "active"
-  },
-  {
-    "key": "smart_contract",
-    "label": "Smart Contract",
-    "status": "active"
-  },
-  {
-    "key": "startup",
-    "label": "Startup",
-    "status": "active"
-  },
-  {
-    "key": "store_of_value",
-    "label": "Store Of Value",
-    "status": "active"
-  },
-  {
-    "key": "supply_chain_management",
-    "label": "Supply Chain Management",
-    "status": "active"
-  },
-  {
-    "key": "ticketing",
-    "label": "Ticketing",
-    "status": "active"
-  },
-  {
-    "key": "token_burning",
-    "label": "Token Burning",
-    "status": "active"
-  },
-  {
-    "key": "token_distribution",
-    "label": "Token Distribution",
-    "status": "active"
-  },
-  {
-    "key": "token_minting",
-    "label": "Token Minting",
-    "status": "active"
-  },
-  {
-    "key": "treasury",
-    "label": "Treasury",
-    "status": "active"
-  },
-  {
-    "key": "wrapped_assets",
-    "label": "Wrapped Assets",
-    "status": "active"
-  },
-  {
     "key": "blog",
     "label": "Blog",
+    "status": "active"
+  },
+  {
+    "key": "onChain",
+    "label": "On-chain",
+    "status": "active"
+  },
+  {
+    "key": "club",
+    "label": "Club",
     "status": "active"
   }
 ]

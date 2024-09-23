@@ -1,0 +1,21 @@
+{
+  "industry": [
+    "Community & Learning",
+    "Club"
+  ],
+  "display_term": "Meme Land",
+  "term": "Meme.land",
+  "tags": [
+    "Club"
+  ],
+  "glossaries": [],
+  "short_description": "A Gno-powered meme sharing platform where you can share and upvote memes. Built with React and the Gno programming language.​",
+  "partnerships": [],
+  "author": "builtongno",
+  "social": {
+    "github": "https://github.com/gnolang/memeland",
+    "x-twitter": "https://twitter.com/_gnoland",
+    "discord": "https://discord.com/invite/YFtMjWwUN7",
+    "telegram": "https://t.me/gnoland"
+  }
+}

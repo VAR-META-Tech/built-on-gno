@@ -22,7 +22,7 @@ const CategoryCard: FC<Props> = ({ category }) => {
       onClick={() => router.push(`${ROUTES.CATEGORY}/${category?.id}`)}
       className="group relative h-full w-full cursor-pointer overflow-hidden rounded-3xl px-8 py-7 shadow-[0_3px_6px_rgb(0,0,0,0.1)] dark:bg-white/5"
     >
-      <span className="absolute right-0 top-0 z-0 h-36 w-36 -translate-y-1/2 translate-x-1/2 rounded-full bg-gray-300 transition-all duration-700 ease-out group-hover:scale-[900%] dark:bg-white/10" />
+      <span className="absolute right-0 top-0 z-0 h-36 w-36 -translate-y-1/2 translate-x-1/2 rounded-full bg-gray-300 transition-all duration-700 ease-out group-hover:scale-[1000%] dark:bg-white/10" />
 
       <div className="h-14 space-x-2">
         {projects?.data?.map((project, index) => {
@@ -49,7 +49,7 @@ const CategoryCard: FC<Props> = ({ category }) => {
         <span className="text-xl font-semibold lg:text-2xl">
           {category?.name}{' '}
           <span className="text-end text-base font-semibold text-gray-400 lg:text-lg">
-            {projects?.data?.length}
+            {projects?.pagination.total_items}
           </span>
         </span>
 

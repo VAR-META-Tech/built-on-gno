@@ -10,19 +10,21 @@
     "Voting",
     "NFT Collections",
     "Media",
-    "NFT",
     "Youtube Content Creator",
-    "Liquidity Manager",
     "Interviewer",
     "Interview",
-    "AMM",
-    "Swaps",
     "Youtube Channel",
     "Guides",
     "Videos",
     "Onboarding"
   ],
   "sub_categories": [
+    {
+      "name": "Blog",
+      "pathname": "Blog",
+      "status": "active",
+      "description": "A section dedicated to articles, news, and updates related to the Gnoland ecosystem. The blog features insights, opinions, and information to keep the community informed and engaged."
+    },
     {
       "name": "Courses",
       "pathname": "Courses",
@@ -36,10 +38,10 @@
       "description": "A platform for sharing and viewing videos. Youtube is a popular medium for content creators to reach a wide audience and engage with viewers through video content."
     },
     {
-      "name": "Blog",
-      "pathname": "Blog",
+      "name": "Club",
+      "pathname": "Club",
       "status": "active",
-      "description": "A section dedicated to articles, news, and updates related to the Gnoland ecosystem. The blog features insights, opinions, and information to keep the community informed and engaged."
+      "description": "A community-driven platform for sharing and engaging with content related to specific interests, such as memes, discussions, and events. Clubs provide a space for members to connect, collaborate, and participate in activities that foster a sense of belonging."
     }
   ]
 }

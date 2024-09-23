@@ -1,7 +1,7 @@
 import { ROUTES } from '@/lib/routes'
 import { ICategoriesResponse, ICategory } from '@repo/ui'
 
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { useEffect, useState } from 'react'
 import Slider, { Settings } from 'react-slick'
 import LogoGno from '@/components/LogoGno'
@@ -89,8 +89,8 @@ const HeroSection = ({ categories, totalProjects }: Props) => {
       <p className="text-center text-[3rem] font-bold transition-all">
         Explore <span className="!text-secondary lowercase">{qty}</span> in
         <span className="inline-flex w-fit items-center">
-          <span>&nbsp;Gn</span>
-          <LogoGno className="-mb-3" />
+          <span>&nbsp;Gno</span>
+          {/* <LogoGno className="-mb-3" /> */}
           &nbsp;
         </span>
         Ecosystem
@@ -146,7 +146,7 @@ const HeroTabItem = ({
       <div
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="dark:bg-primary-dark dark:hover:bg-primary-dark/35 cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all hover:bg-white"
+        className="dark:bg-primary-dark dark:hover:bg-primary-dark/35 hover:bg-secondary cursor-pointer whitespace-nowrap rounded-3xl bg-[#E8E9ED] px-4 py-1 text-center transition-all duration-200 ease-linear hover:text-white"
       >
         {cat.name}
       </div>

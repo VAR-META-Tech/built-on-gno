@@ -1,9 +1,10 @@
+import { useAppContext } from '@/context/app.context'
 import { Facebook, Github, LinkedIn, Twitter } from '@repo/ui'
-import { useTheme } from 'next-themes'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
+
 
 const Footer = () => {
-  const { theme } = useTheme()
+  const { theme } = useAppContext()
 
   return (
     <footer className="bg-light dark:bg-primary container z-50 flex h-auto w-full flex-col justify-center gap-8 pt-12">
@@ -32,8 +33,8 @@ const Footer = () => {
             >
               <Facebook
                 className="h-6 w-6"
-                color={theme === 'dark' ? 'white' : 'black'}
-                fill={theme === 'dark' ? 'black' : 'white'}
+                color={theme !== 'light' ? 'white' : 'black'}
+                fill={theme !== 'light' ? 'black' : 'white'}
               />
             </Link>
             <Link
@@ -43,7 +44,7 @@ const Footer = () => {
             >
               <LinkedIn
                 className="h-6 w-6"
-                color={theme === 'dark' ? 'white' : 'black'}
+                color={theme !== 'light' ? 'white' : 'black'}
               />
             </Link>
             <Link
@@ -53,7 +54,7 @@ const Footer = () => {
             >
               <Twitter
                 className="h-6 w-6"
-                color={theme === 'dark' ? 'white' : 'black'}
+                color={theme !== 'light' ? 'white' : 'black'}
               />
             </Link>
             <Link
@@ -63,7 +64,7 @@ const Footer = () => {
             >
               <Github
                 className="h-6 w-6"
-                color={theme === 'dark' ? 'white' : 'black'}
+                color={theme !== 'light' ? 'white' : 'black'}
               />
             </Link>
           </div>
