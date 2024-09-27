@@ -110,7 +110,7 @@ const CompareTable = ({ loading, data, features }: Props) => {
             </TableRow>
           ))}
         </TableBody>
-        <TableCaption />
+        {/* <TableCaption /> */}
       </Table>
     )
   }, [loading, data, features])

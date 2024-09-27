@@ -1,7 +1,7 @@
 import LogoGno from '@/components/LogoGno'
 import { GNO_LAND_URL } from '@/utils/const'
 import { HStack, VStack } from '@var-meta/ui'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import React, { useState, useEffect, useCallback } from 'react'
 
 interface NewsItem {
@@ -276,8 +276,8 @@ const News = () => {
 
   return (
     <div className="dark:bg-primary-dark h-80 flex-1 overflow-hidden rounded-3xl bg-white">
-      <HStack className="h-[3.25rem] border-b border-black/10 px-4 py-3 dark:border-white/10">
-        <span className="text-xl font-bold dark:text-white">News</span>
+      <HStack className="h-[3.25rem] px-4 py-3 dark:border-white/10">
+        <span className="text-2xl font-bold dark:text-white">News</span>
       </HStack>
       <VStack
         spacing={16}
@@ -290,7 +290,7 @@ const News = () => {
               key={index}
               href={GNO_LAND_URL + item.url}
               target="_blank"
-              className="group flex cursor-pointer flex-nowrap items-start gap-4"
+              className="group flex cursor-pointer flex-nowrap items-start gap-4 pb-2.5"
             >
               <div className="py-1">
                 <LogoGno width={28} height={28} />

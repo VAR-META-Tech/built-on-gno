@@ -1,6 +1,7 @@
 import { useAppContext } from '@/context/app.context'
 import { Facebook, Github, LinkedIn, Twitter } from '@repo/ui'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
+
 
 const Footer = () => {
   const { theme } = useAppContext()

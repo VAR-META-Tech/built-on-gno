@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Button, VStack } from '@var-meta/ui'
 import Image from 'next/image'
 import { ROUTES } from '@/lib/routes'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { IProject } from '@repo/ui'
 
 interface Props {

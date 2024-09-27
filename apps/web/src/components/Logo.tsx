@@ -1,8 +1,9 @@
+import { Icons } from '@/assets/icon'
 import { ROUTES } from '@/lib/routes'
 import { cn } from '@var-meta/ui'
-import Link from 'next/link'
-import React, { forwardRef, HTMLAttributes } from 'react'
-import LogoGno from './LogoGno'
+import { Link } from 'next-view-transitions'
+
+import React, { forwardRef, HTMLAttributes, memo } from 'react'
 
 interface ILogoProps extends HTMLAttributes<HTMLAnchorElement> {
   width?: number
@@ -10,7 +11,7 @@ interface ILogoProps extends HTMLAttributes<HTMLAnchorElement> {
 }
 
 const Logo = forwardRef<HTMLAnchorElement, ILogoProps>(
-  ({ className, width = 42, height = 42, ...props }, ref) => {
+  ({ className, ...props }, ref) => {
     return (
       <Link
         ref={ref}
@@ -18,10 +19,10 @@ const Logo = forwardRef<HTMLAnchorElement, ILogoProps>(
         className={cn('flex flex-nowrap items-center', className)}
         {...props}
       >
-        <span className="text-primary hidden text-nowrap pb-3.5 text-2xl font-bold tracking-wide sm:flex md:text-[2rem] dark:text-white">
-          Built on gn
-        </span>
-        <LogoGno width={width} height={height} />
+        {/* <span className="text-primary hidden text-nowrap pb-3.5 text-2xl font-bold tracking-wide sm:flex md:text-[2rem] dark:text-white">
+          Built on gno
+        </span> */}
+        <Icons.logo height={60} />
       </Link>
     )
   },
@@ -29,4 +30,4 @@ const Logo = forwardRef<HTMLAnchorElement, ILogoProps>(
 
 Logo.displayName = 'Logo'
 
-export default Logo
+export default memo(Logo)

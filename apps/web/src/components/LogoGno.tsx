@@ -1,7 +1,7 @@
+import { Icons } from '@/assets/icon'
 import { useAppContext } from '@/context/app.context'
-import Image from 'next/image'
 
-import React, { forwardRef, HTMLAttributes } from 'react'
+import React, { forwardRef, HTMLAttributes, useMemo } from 'react'
 
 interface ILogoProps extends HTMLAttributes<HTMLAnchorElement> {
   width?: number
@@ -9,30 +9,21 @@ interface ILogoProps extends HTMLAttributes<HTMLAnchorElement> {
 }
 
 const LogoGno = forwardRef<HTMLAnchorElement, ILogoProps>(
-  ({ className, width = 42, height = 42 }) => {
+  // eslint-disable-next-line no-unused-vars
+  ({ className, width = 42, height = 42 }, ref) => {
     const { theme } = useAppContext()
 
-    return (
-      <>
-        {theme !== 'light' ? (
-          <Image
-            src="/gno-light.logo.svg"
-            alt=""
-            width={width}
-            height={height}
-            className={className}
-          />
-        ) : (
-          <Image
-            src="/gno.logo.svg"
-            alt=""
-            width={width}
-            height={height}
-            className={className}
-          />
-        )}
-      </>
-    )
+    const renderIcon = useMemo(() => {
+      if (theme !== 'light') {
+        return <Icons.gno width={width} height={height} className={className} />
+      }
+
+      return (
+        <Icons.gnoLight width={width} height={height} className={className} />
+      )
+    }, [theme])
+
+    return <>{renderIcon}</>
   },
 )
 

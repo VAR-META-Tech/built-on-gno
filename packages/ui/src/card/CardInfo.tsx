@@ -1,5 +1,5 @@
 import { CheckCircleBrokenIcon } from '@var-meta/icons'
-import { Button, Divider } from '@var-meta/ui'
+import { Divider } from '@var-meta/ui'
 // eslint-disable-next-line no-redeclare
 import Image from 'next/image'
 import { useState } from 'react'
@@ -19,8 +19,7 @@ export const CardInfo = ({ data }: { data: IProjectDetail | undefined }) => {
       <div className="flex w-full flex-col gap-1">
         <p className="text-sm font-light">Industry</p>
         <p className="font-medium">
-          {(data?.category?.parent?.name ?? '') +
-            (', ' + data?.category?.name ?? '')}
+          {`${data?.category?.parent?.name ?? ''}, ${data?.category?.name ?? ''}`}
         </p>
         <Divider />
       </div>
@@ -80,21 +79,19 @@ export const CardInfo = ({ data }: { data: IProjectDetail | undefined }) => {
         <p className="text-sm font-light">Links</p>
         <p className="flex items-center gap-1 font-medium">
           {data?.projectSocials?.map(({ url, id, social }) => (
-            <Link href={url} key={id} target="_blank">
-              <Button
-                variant="outline"
-                radius="full"
-                className="border-secondary relative rounded-full"
-                iconOnly
-              >
-                <Image
-                  alt=""
-                  unoptimized
-                  className="rounded-full p-1 bg-primary hover:bg-secondary transition-all"
-                  src={social.iconUrl}
-                  fill
-                />
-              </Button>
+            <Link
+              href={url}
+              key={id}
+              target="_blank"
+              className="relative h-10 w-10 overflow-hidden rounded-full transition-all duration-300 ease-in-out hover:scale-110"
+            >
+              <Image
+                alt={social.name}
+                unoptimized
+                className="bg-primary object-contain p-1"
+                src={social.iconUrl}
+                fill
+              />
             </Link>
           ))}
         </p>

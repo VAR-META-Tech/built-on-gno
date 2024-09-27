@@ -3,7 +3,7 @@ import { IEvent } from '../utils/type'
 import LogoGno from '@/components/LogoGno'
 import { format } from 'date-fns'
 import { VStack } from '@var-meta/ui'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 
 interface Props {
   data: IEvent[]
@@ -35,7 +35,7 @@ const EventList: FC<Props> = ({ data }) => {
   )
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-16">
       {sortedYears.map((year) => (
         <div key={year} className="space-y-5">
           <h2 className="text-2xl font-bold">

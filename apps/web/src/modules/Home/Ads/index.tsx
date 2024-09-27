@@ -1,9 +1,12 @@
+'use client'
+
 import { useProjects } from '@/apis'
 import { DEFAULT_API_RETURN } from '@/constants'
 import React, { useCallback, useEffect, useState } from 'react'
 import AdInfo from './AdInfo'
 import AdImage from './AdImage'
 import { Skeleton } from '@var-meta/ui'
+import Empty from '@/components/Empty'
 
 const Ads = () => {
   const { data: projects = DEFAULT_API_RETURN, isLoading } = useProjects()
@@ -49,6 +52,14 @@ const Ads = () => {
 
   if (isLoading) {
     return <Skeleton className="z-20 h-full min-h-80 flex-[3] rounded-3xl" />
+  }
+
+  if (!projects?.data?.length) {
+    return (
+      <div className="flex h-80 min-h-80 flex-[3] flex-col items-center justify-center overflow-hidden rounded-3xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] md:flex-row dark:border dark:border-white/10">
+        <Empty />
+      </div>
+    )
   }
 
   return (

@@ -1,10 +1,9 @@
 import { ROUTES } from '@/lib/routes'
 import { ICategoriesResponse, ICategory } from '@repo/ui'
 
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { useEffect, useState } from 'react'
 import Slider, { Settings } from 'react-slick'
-import LogoGno from '@/components/LogoGno'
 import SearchInput from '@/components/SearchInput'
 
 // interface ITab {
@@ -89,8 +88,8 @@ const HeroSection = ({ categories, totalProjects }: Props) => {
       <p className="text-center text-[3rem] font-bold transition-all">
         Explore <span className="!text-secondary lowercase">{qty}</span> in
         <span className="inline-flex w-fit items-center">
-          <span>&nbsp;Gn</span>
-          <LogoGno className="-mb-3" />
+          <span>&nbsp;Gno</span>
+          {/* <LogoGno className="-mb-3" /> */}
           &nbsp;
         </span>
         Ecosystem

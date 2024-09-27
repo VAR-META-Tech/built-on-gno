@@ -12,7 +12,7 @@ function CardPreview({
 }: IProject & { index: number }) {
   return (
     <Link href={'/ecosystem/project/' + id}>
-      <div className="hover:border-gray-500/50 flex min-h-[7.25rem] gap-3 rounded-md border border-transparent bg-white dark:bg-primary-dark p-2">
+      <div className="dark:bg-primary-dark flex min-h-[7.25rem] gap-3 rounded-md border border-transparent hover:dark:bg-white/30 hover:dark:border-white/40 bg-white p-2 transition-all duration-300 ease-in-out hover:border-black/10 hover:bg-black/5">
         <div className="relative">
           <Avatar
             indicator="none"
@@ -28,7 +28,9 @@ function CardPreview({
 
         <div className="flex flex-col gap-2">
           <p className="font-bold">{name}</p>
-          <p className="text-gray-500 line-clamp-2 dark:text-white">{shortDescription}</p>
+          <p className="line-clamp-2 text-gray-500 dark:text-white">
+            {shortDescription}
+          </p>
         </div>
       </div>
       {/* <div className="flex w-full gap-1 overflow-hidden p-1">

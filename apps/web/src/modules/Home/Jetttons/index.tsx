@@ -41,41 +41,42 @@ const Jettons = () => {
           Tokens are custom fungible tokens on the GNO Blockchain
         </p>
       </div>
-      <Table className="relative">
-        <TableHeader className="dark:bg-primary-dark border-none bg-white font-bold">
-          <TableRow>
-            {columns.map((column) => (
-              <TableCell className="text-center" key={column.key}>
-                {column.title}
-              </TableCell>
-            ))}
-          </TableRow>
-        </TableHeader>
-
-        <TableBody className="blur-sm">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <TableRow key={index} className="dark:bg-primary-dark bg-white">
-              <TableCell className="text-center">{index + 1}</TableCell>
-              <TableCell className="text-center">GNO</TableCell>
-              <TableCell className="text-center">$235</TableCell>
-              <TableCell className="text-center">$235</TableCell>
-              <TableCell className="text-center">$235</TableCell>
-
-              <TableCell className="text-center">$235</TableCell>
-              <TableCell className="text-center">$235</TableCell>
-              <TableCell className="text-center">$235</TableCell>
-              <TableCell className="text-center">$235</TableCell>
-              <TableCell className="text-center">$235</TableCell>
+      <div className="relative">
+        <Table>
+          <TableHeader className="dark:bg-primary-dark border-none bg-white font-bold">
+            <TableRow>
+              {columns.map((column) => (
+                <TableCell className="text-center" key={column.key}>
+                  {column.title}
+                </TableCell>
+              ))}
             </TableRow>
-          ))}
-        </TableBody>
+          </TableHeader>
 
+          <TableBody className="blur-sm">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <TableRow key={index} className="dark:bg-primary-dark bg-white">
+                <TableCell className="text-center">{index + 1}</TableCell>
+                <TableCell className="text-center">GNO</TableCell>
+                <TableCell className="text-center">$235</TableCell>
+                <TableCell className="text-center">$235</TableCell>
+                <TableCell className="text-center">$235</TableCell>
+
+                <TableCell className="text-center">$235</TableCell>
+                <TableCell className="text-center">$235</TableCell>
+                <TableCell className="text-center">$235</TableCell>
+                <TableCell className="text-center">$235</TableCell>
+                <TableCell className="text-center">$235</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
         <div className="absolute left-[15%] top-[50%] md:left-[35%] lg:left-[45%]">
-          <h1 className="font-montserrat dark:animate-typingDark animate-typingLight text-secondary overflow-hidden whitespace-nowrap border-r-4 border-r-white py-3 text-xl font-bold italic transition-all md:text-2xl lg:text-[2.5rem]">
+          <h1 className="font-montserrat dark:animate-typingDark animate-typingLight dark:text-light overflow-hidden whitespace-nowrap border-r-4 border-r-white py-3 text-xl font-semibold text-black transition-all md:text-2xl lg:text-[2.5rem]">
             Coming Soon
           </h1>
         </div>
-      </Table>
+      </div>
     </VStack>
   )
 }

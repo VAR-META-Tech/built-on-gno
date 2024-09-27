@@ -3,7 +3,7 @@ import { DEFAULT_API_RETURN } from '@/constants'
 import { ROUTES } from '@/lib/routes'
 import { ICategory } from '@repo/ui'
 import { Skeleton } from '@var-meta/ui'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { ChevronRightIcon } from '@var-meta/icons'
 import CardPreview from '@repo/ui/src/card/CardPreview'
 
