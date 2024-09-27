@@ -31,7 +31,7 @@ const RootLayout = ({
           <title>Built On Gno</title>
           <meta name="description" content="Built On Gno Ecosystem" />
           <link rel="icon" href="/favicon.ico" />
-          <link rel="apple-touch-icon" href="/favicon.ico" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta name="application-name" content="BuiltOnGno" />
           <meta name="apple-mobile-web-app-title" content="BuiltOnGno" />
