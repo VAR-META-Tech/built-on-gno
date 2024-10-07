@@ -47,22 +47,15 @@ const Header = () => {
       <HStack pos="apart" noWrap className="container relative z-30 w-full">
         <HStack spacing={12} noWrap>
           <Logo />
+          <NavbarDesktop />
+        </HStack>
 
+        <div className="flex w-auto items-center justify-end gap-2 md:gap-4 xl:gap-6">
           {pathname !== ROUTES.HOME && (
             <div className="hidden w-80 lg:block">
               <SearchInput />
             </div>
           )}
-        </HStack>
-
-        <div className="flex w-auto items-center justify-end gap-2 md:gap-4 xl:gap-6">
-          <NavbarDesktop />
-          {/* <Search
-            onSearch={setSearch}
-            projects={projects.data}
-            terms={tags.data}
-            search={search}
-          /> */}
 
           <Link
             href="https://github.com/VAR-META-Tech/built-on-gno/issues"
