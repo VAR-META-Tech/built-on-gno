@@ -49,7 +49,7 @@ const EventList: FC<Props> = ({ data }) => {
 
               return (
                 <EventCard
-                  key={index}
+                  key={`${event?.title}-${index}`}
                   startDate={startDate}
                   endDate={endDate}
                   {...event}
